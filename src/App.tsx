@@ -51,7 +51,7 @@ function App() {
       if (filter === "") return;
 
       const response = await fetch(
-        `http://localhost:3001/cities?queryparams={"searchString":"${filter}","mode":"Flights"}`
+        `${process.env.REACT_APP_API_URL}/cities?queryparams={"searchString":"${filter}","mode":"Flights"}`
       );
       const cities: IResponse[] = await response.json();
 
