@@ -7,6 +7,7 @@ import "./App.css";
 interface IAirport {
   name: string;
   code: string;
+  city: string;
 }
 
 interface ICity {
@@ -34,8 +35,9 @@ interface IResponse {
 }
 
 function App() {
+  const [filter, setFilter] = React.useState("");
   const [open, setOpen] = React.useState(false);
-  const [options, setOptions] = React.useState<ICity[]>([]);
+  const [options, setOptions] = React.useState<IAirport[]>([]);
   const loading = open && options.length === 0;
 
   React.useEffect(() => {
@@ -46,35 +48,34 @@ function App() {
     }
 
     (async () => {
+      if (filter === "") return;
+
       const response = await fetch(
-        "http://localhost:3001/cities?queryparams={%22searchString%22:%22a%22,%22mode%22:%22Flights%22}"
+        `http://localhost:3001/cities?queryparams={"searchString":"${filter}","mode":"Flights"}`
       );
-      const cities = await response.json();
-      console.log(cities);
+      const cities: IResponse[] = await response.json();
 
       if (active) {
-        setOptions(
-          cities?.map(
-            ({ Display: display, nearbyAirports }: IResponse) =>
-              ({
-                name: display,
-                airports: nearbyAirports?.map(
-                  ap =>
-                    ({
-                      name: ap.name,
-                      code: ap.code
-                    } as IAirport)
-                )
-              } as ICity)
-          )
-        );
+        const list: IAirport[] = [];
+
+        cities.forEach(({ Display, nearbyAirports }) => {
+          nearbyAirports?.forEach(({ code, name }) =>
+            list.push({
+              code,
+              name,
+              city: Display
+            })
+          );
+
+          setOptions([...list]);
+        });
       }
     })();
 
     return () => {
       active = false;
     };
-  }, [loading]);
+  }, [loading, filter]);
 
   React.useEffect(() => {
     if (!open) {
@@ -88,20 +89,33 @@ function App() {
       style={{ width: 300 }}
       open={open}
       onOpen={() => {
-        setOpen(true);
+        if (filter !== "") setOpen(true);
       }}
       onClose={() => {
         setOpen(false);
       }}
       getOptionSelected={(option, value) => option.name === value.name}
-      getOptionLabel={option => option.name}
+      getOptionLabel={option =>
+        `${option.code.toLocaleUpperCase()} - ${option.name}`
+      }
+      freeSolo
       options={options}
       loading={loading}
+      groupBy={option => option.city}
       renderInput={params => (
         <TextField
           {...params}
-          label="Asynchronous"
+          label="Airport"
           variant="outlined"
+          onChange={e => {
+            setFilter(e.target.value);
+
+            if (e.target.value === "") {
+              setOpen(false);
+            } else {
+              setOpen(true);
+            }
+          }}
           InputProps={{
             ...params.InputProps,
             endAdornment: (
