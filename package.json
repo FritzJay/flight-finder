@@ -1,6 +1,7 @@
 {
   "name": "flight-finder",
   "version": "0.1.0",
+  "homepage": "http://FritzJay.github.io/flight-finder",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.7",
@@ -14,6 +15,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "cors": "^2.8.5",
+    "gh-pages": "^2.2.0",
     "http-proxy-middleware": "^1.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -26,7 +28,9 @@
     "start-api": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
