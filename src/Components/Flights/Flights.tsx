@@ -1,70 +1,103 @@
 import React from "react";
-import { IAirport } from "../../interfaces";
-import AirportSearchInput from "./AirportSearchInput/AirportSearchInput";
-import { Grid, Button } from "@material-ui/core";
-import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import { Grid, Button, CircularProgress } from "@material-ui/core";
+import {
+  KeyboardDatePicker,
+  KeyboardTimePicker,
+  MuiPickersUtilsProvider
+} from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import { IAirport, IFlight } from "../../interfaces";
+import AirportSearchInput from "./AirportSearchInput";
+import FlightsTable from "./FlightsTable";
+import queryFlights from "../../API/queryFlights";
 
 const Flights = () => {
-  const [fromAirport, setFromAirport]: [
-    IAirport | undefined,
-    any
-  ] = React.useState();
-  const [toAirport, setToAirport]: [
-    IAirport | undefined,
-    any
-  ] = React.useState();
-  const [departingDate, setDepartingDate] = React.useState<Date | null>(
-    new Date(Date.now())
-  );
-  const [returningDate, setReturningDate] = React.useState<Date | null>(
-    new Date(Date.now())
-  );
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [from, setFrom]: [IAirport | undefined, any] = React.useState();
+  const [to, setTo]: [IAirport | undefined, any] = React.useState();
+  const [date, setDate] = React.useState<Date | null>(new Date(Date.now()));
+  const [timeStart, setTimeStart] = React.useState<Date | null>(null);
+  const [timeEnd, setTimeEnd] = React.useState<Date | null>(null);
+  const [flights, setFlights] = React.useState<IFlight[]>([]);
+
+  const query = React.useCallback(async () => {
+    if (from === undefined || to === undefined || date === null) return;
+
+    setLoading(true);
+    setFlights(await queryFlights(from, to, date, timeStart, timeEnd));
+    setLoading(false);
+  }, [from, to, date, timeStart, timeEnd]);
 
   return (
     <React.Fragment>
       <Grid container spacing={3} justify="space-evenly">
         <Grid item xs={12} sm={6}>
-          <AirportSearchInput
-            setSelected={setFromAirport}
-            label="Flying from"
-          />
+          <AirportSearchInput setSelected={setFrom} label="Flying from" />
         </Grid>
 
         <Grid item xs={12} sm={6}>
-          <AirportSearchInput setSelected={setToAirport} label="Destination" />
+          <AirportSearchInput setSelected={setTo} label="Destination" />
         </Grid>
 
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <Grid item xs={12} sm={6}>
-            <DateTimePicker
-              label="Departing"
+          <Grid item xs={12} sm={12}>
+            <KeyboardDatePicker
+              required
+              label="Departing Date"
               inputVariant="outlined"
-              value={departingDate}
-              onChange={(date: Date | null) => setDepartingDate(date)}
+              value={date}
+              onChange={(date: Date | null) => setDate(date)}
               showTodayButton
               style={{ width: "100%" }}
             />
           </Grid>
 
           <Grid item xs={12} sm={6}>
-            <DateTimePicker
-              label="Returning"
-              inputVariant="outlined"
-              value={returningDate}
-              onChange={(date: Date | null) => setReturningDate(date)}
-              showTodayButton
-              style={{ width: "100%" }}
+            <KeyboardTimePicker
+              label="Start"
+              value={timeStart}
+              onChange={(date: Date | null) => setTimeStart(date)}
+              KeyboardButtonProps={{
+                "aria-label": "change start time"
+              }}
+            />
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <KeyboardTimePicker
+              label="End"
+              value={timeEnd}
+              onChange={(date: Date | null) => setTimeEnd(date)}
+              KeyboardButtonProps={{
+                "aria-label": "change end time"
+              }}
             />
           </Grid>
 
           <Grid item xs={12}>
-            <Button variant="contained" color="secondary">
+            <Button
+              variant="contained"
+              color="secondary"
+              disabled={loading}
+              onClick={() => {
+                query();
+              }}
+            >
               Search
             </Button>
           </Grid>
         </MuiPickersUtilsProvider>
+
+        <Grid item xs={12}>
+          {flights.length > 0 && <FlightsTable data={flights} />}
+        </Grid>
       </Grid>
+
+      {loading && (
+        <Grid container item xs={12} justify="center">
+          <CircularProgress size={36} />
+        </Grid>
+      )}
     </React.Fragment>
   );
 };

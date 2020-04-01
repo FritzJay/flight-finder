@@ -1,4 +1,4 @@
-import { IAirport } from "../interfaces";
+import { IAirport, IFlight } from "../interfaces";
 
 interface ILocation {
   city?: any;
@@ -171,7 +171,7 @@ interface IMedium {
   route: string;
 }
 
-interface IFare {
+interface IFareResponse {
   baseFare: number;
   tax: number;
   totalFare: number;
@@ -210,7 +210,7 @@ interface IFare {
   cabinClassCode: string;
 }
 
-interface IFlight {
+interface IFlightResponse {
   airportOnly: boolean;
   airlineCode: string;
   airlineName: string;
@@ -218,7 +218,7 @@ interface IFlight {
   duration: number;
   numStops: number;
   segments: ISegment[];
-  fares: IFare[];
+  fares: IFareResponse[];
   isPreferred: boolean;
 }
 
@@ -239,7 +239,7 @@ interface IResponse {
   airlines: IAirline[];
   columnBrands: IColumnBrand[];
   flightBrands: IFlightBrand[];
-  flights: IFlight[];
+  flights: IFlightResponse[];
   itineraries?: any;
   selectedFlights?: any;
   stopOptions: string[];
@@ -256,7 +256,7 @@ export const queryFlights = async (
   date: Date,
   timeStart: Date | null,
   timeEnd: Date | null
-) => {
+): Promise<IFlight[]> => {
   const response = await fetch(
     process.env.REACT_APP_API_URL +
       `/flights?queryparams=${formatFlightQueryParameters(
@@ -268,7 +268,22 @@ export const queryFlights = async (
       )}`
   );
   const json: IResponse = await response.json();
-  return json.flights;
+
+  return json.flights.map(f => ({
+    airline: f.airlineName,
+    grade: f.flightGrade,
+    duration: f.duration,
+    stops: f.numStops,
+    fares: f.fares.map(
+      ({ baseFare, tax, totalFare, refundable, wifi }: IFareResponse) => ({
+        baseFare,
+        tax,
+        totalFare,
+        refundable,
+        wifi
+      })
+    )
+  }));
 };
 
 export const formatFlightQueryParameters = (
@@ -285,11 +300,11 @@ export const formatFlightQueryParameters = (
       : null;
   return `{${legs},${
     timeFilters === null ? "" : timeFilters + ","
-  }"airlineView":"DL"}`;
+  }"airlineView":"DL","legNum":1}`;
 };
 
 export const formatFlightLegs = (from: IAirport, to: IAirport, date: Date) =>
-  `"legs":[{"date":"${date.getFullYear()}-${date.getMonth()}-${date.getDate()}",` +
+  `"legs":[{"date":"${date.toISOString().split("T")[0]}",` +
   `"fromLocId":"${from.locID}","toLocId":"${to.locID}"}]`;
 
 export const formatTimeFilters = (timeStart: Date, timeEnd: Date) =>

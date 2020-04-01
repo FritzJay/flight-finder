@@ -30,13 +30,13 @@ describe("formatFlightQueryParameters", () => {
     expect(
       formatFlightQueryParameters(from, to, date, timeStart, timeEnd)
     ).toBe(
-      '{"legs":[{"date":"2020-3-1","fromLocId":"AABC","toLocId":"ACBA"}],"filters":{"timeFilters":[{"departFromTime":"1000","departToTime":"1200"}],"airlineView":"DL"}'
+      '{"legs":[{"date":"2020-04-01","fromLocId":"AABC","toLocId":"ACBA"}],"filters":{"timeFilters":[{"departFromTime":"1000","departToTime":"1200"}],"airlineView":"DL","legNum":1}'
     );
   });
 
   it("works without time filters", () => {
     expect(formatFlightQueryParameters(from, to, date, null, null)).toBe(
-      '{"legs":[{"date":"2020-3-1","fromLocId":"AABC","toLocId":"ACBA"}],"airlineView":"DL"}'
+      '{"legs":[{"date":"2020-04-01","fromLocId":"AABC","toLocId":"ACBA"}],"airlineView":"DL","legNum":1}'
     );
   });
 });
@@ -44,7 +44,7 @@ describe("formatFlightQueryParameters", () => {
 describe("formatFlightsLegs", () => {
   it("works", () => {
     expect(formatFlightLegs(from, to, date)).toBe(
-      '"legs":[{"date":"2020-3-1","fromLocId":"AABC","toLocId":"ACBA"}]'
+      '"legs":[{"date":"2020-04-01","fromLocId":"AABC","toLocId":"ACBA"}]'
     );
   });
 });

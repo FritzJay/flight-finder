@@ -35,65 +35,38 @@ const AirportSearchInput = ({
   setSelected: (value: IAirport | undefined) => void;
   label: string;
 }) => {
-  const [filter, setFilter] = React.useState("");
-  const [open, setOpen] = React.useState(false);
   const [options, setOptions] = React.useState<IAirport[]>([]);
-  const loading = open && options.length === 0;
+  const [loading, setLoading] = React.useState<boolean>(false);
 
-  React.useEffect(() => {
-    let active = true;
+  const queryForOptions = async (e: any) => {
+    if (e.target.value === "") return;
 
-    if (!loading) {
-      return undefined;
-    }
+    setLoading(true);
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/airports?queryparams={"searchString":"${e.target.value}"}`
+    );
+    const cities: IResponse[] = await response.json();
 
-    (async () => {
-      if (filter === "") return;
+    const list: IAirport[] = [];
 
-      const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/airports?queryparams={"searchString":"${filter}","mode":"Flights"}`
+    cities.forEach(({ Display, nearbyAirports, LocID }) => {
+      nearbyAirports?.forEach(({ code, name }) =>
+        list.push({
+          code,
+          name,
+          locID: LocID,
+          city: Display
+        })
       );
-      const cities: IResponse[] = await response.json();
 
-      if (active) {
-        const list: IAirport[] = [];
-
-        cities.forEach(({ Display, nearbyAirports }) => {
-          nearbyAirports?.forEach(({ code, name }) =>
-            list.push({
-              code,
-              name,
-              city: Display
-            })
-          );
-
-          setOptions([...list]);
-        });
-      }
-    })();
-
-    return () => {
-      active = false;
-    };
-  }, [loading, filter]);
-
-  React.useEffect(() => {
-    if (!open) {
-      setOptions([]);
-    }
-  }, [open]);
+      setOptions([...list]);
+      setLoading(false);
+    });
+  };
 
   return (
     <Autocomplete
       id="airports"
-      open={open}
-      onOpen={() => {
-        if (filter !== "") setOpen(true);
-      }}
-      onClose={() => {
-        setOpen(false);
-        setFilter("");
-      }}
       getOptionSelected={(option, value) => option.name === value.name}
       getOptionLabel={option =>
         `${option.code.toLocaleUpperCase()} - ${option.name}`
@@ -110,16 +83,9 @@ const AirportSearchInput = ({
         <TextField
           {...params}
           label={label}
+          required
           variant="outlined"
-          onChange={e => {
-            setFilter(e.target.value);
-
-            if (e.target.value === "") {
-              setOpen(false);
-            } else {
-              setOpen(true);
-            }
-          }}
+          onChange={queryForOptions}
           InputProps={{
             ...params.InputProps,
             endAdornment: (
