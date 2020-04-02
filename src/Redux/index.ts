@@ -2,10 +2,12 @@ import { combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { systemReducer } from "./system";
 import { flightsReducer } from "./flights";
+import { informationReducer } from "./information";
 
 const rootReducer = combineReducers({
   system: systemReducer,
-  flights: flightsReducer
+  flights: flightsReducer,
+  information: informationReducer
 });
 
 export const store = createStore(rootReducer, composeWithDevTools());

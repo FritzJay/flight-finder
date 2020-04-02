@@ -17,6 +17,10 @@ export interface IFlight {
 
 /* Redux */
 
+export interface ISystemState {
+  step: number;
+}
+
 export interface IInformationState {
   fName: string | null;
   lName: string | null;
@@ -33,7 +37,3 @@ export interface IFlightsState {
 export interface ILodgingPage {}
 
 export interface ICarRentalsPage {}
-
-export interface ISystemState {
-  step: number;
-}
