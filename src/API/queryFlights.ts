@@ -254,8 +254,8 @@ export const queryFlights = async (
   from: IAirport,
   to: IAirport,
   date: Date,
-  timeStart: Date | null,
-  timeEnd: Date | null
+  timeStart: number,
+  timeEnd: number
 ): Promise<IFlight[]> => {
   const response = await fetch(
     process.env.REACT_APP_API_URL +
@@ -268,8 +268,6 @@ export const queryFlights = async (
       )}`
   );
   const json: IResponse = await response.json();
-
-  console.log(json);
 
   const list: IFlight[] = [];
 
@@ -294,24 +292,19 @@ export const formatFlightQueryParameters = (
   from: IAirport,
   to: IAirport,
   date: Date,
-  timeStart: Date | null,
-  timeEnd: Date | null
+  timeStart: number,
+  timeEnd: number
 ) => {
   const legs = formatFlightLegs(from, to, date);
-  const timeFilters =
-    timeStart !== null && timeEnd !== null
-      ? formatTimeFilters(timeStart, timeEnd)
-      : null;
-  return `{${legs},${
-    timeFilters === null ? "" : timeFilters + ","
-  }"airlineView":"DL","legNum":1}`;
+  const timeFilters = formatTimeFilters(timeStart, timeEnd);
+  return `{${legs},${timeFilters},"airlineView":"DL","legNum":1}`;
 };
 
 export const formatFlightLegs = (from: IAirport, to: IAirport, date: Date) =>
   `"legs":[{"date":"${date.toISOString().split("T")[0]}",` +
   `"fromLocId":"${from.locID}","toLocId":"${to.locID}"}]`;
 
-export const formatTimeFilters = (timeStart: Date, timeEnd: Date) =>
-  `"filters":{"timeFilters":[{"departFromTime":"${timeStart.getHours()}00","departToTime":"${timeEnd.getHours()}00"}]`;
+export const formatTimeFilters = (timeStart: number, timeEnd: number) =>
+  `"filters":{"timeFilters":[{"departFromTime":"${timeStart}00","departToTime":"${timeEnd}00"}]`;
 
 export default queryFlights;
