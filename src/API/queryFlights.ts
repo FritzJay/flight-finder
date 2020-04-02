@@ -310,6 +310,6 @@ export const formatFlightLegs = (from: IAirport, to: IAirport, date: Date) =>
   `"fromLocId":"${from.locID}","toLocId":"${to.locID}"}]`;
 
 export const formatTimeFilters = (timeStart: number, timeEnd: number) =>
-  `"filters":{"timeFilters":[{"departFromTime":"${timeStart}00","departToTime":"${timeEnd}00"}]}`;
+  `"filters":{"timeFilters":[{"departFromTime":"${timeStart}","departToTime":"${timeEnd}"}]}`;
 
 export default queryFlights;

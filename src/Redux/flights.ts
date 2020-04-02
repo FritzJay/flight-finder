@@ -73,7 +73,7 @@ export const initialFlightsState: IFlightsState = {
   from: null,
   to: null,
   date: new Date(Date.now()),
-  timeRange: [0, 23],
+  timeRange: [0, 2400],
   selectedFlight: null
 };
 

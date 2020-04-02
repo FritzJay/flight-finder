@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Grid, Button, Slider, Typography } from "@material-ui/core";
+import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import {
   KeyboardDatePicker,
   MuiPickersUtilsProvider
@@ -20,9 +21,9 @@ import {
 } from "../../Redux/flights";
 
 const formatTime = (time: number) => {
-  if (time === 0) return "12am";
-  else if (time > 12) return `${time % 12}pm`;
-  else return `${time}am`;
+  if (time === 0 || time === 2400) return "12am";
+  else if (time > 1200) return `${(time / 100) % 12}pm`;
+  else return `${time / 100}am`;
 };
 
 const useFlights = () => {
@@ -44,7 +45,6 @@ const useFlights = () => {
 };
 
 const Flights = () => {
-  const [active, setActive] = React.useState(false);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [flights, setFlights] = React.useState<IFlight[]>([]);
   const {
@@ -100,22 +100,41 @@ const Flights = () => {
             />
           </Grid>
 
-          <Grid item xs={8} container justify="center" alignItems="center">
-            <Typography variant="subtitle2" align="center">
-              {formatTime(timeRange[0])} - {formatTime(timeRange[1])}
-            </Typography>
+          <Grid
+            item
+            xs={8}
+            container
+            spacing={1}
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item xs={2}>
+              <Typography variant="h6" align="center">
+                {formatTime(timeRange[0])}
+              </Typography>
+            </Grid>
+
+            <Grid item xs={2} style={{ textAlign: "center" }}>
+              <AccessTimeIcon fontSize="large" />
+            </Grid>
+
+            <Grid item xs={2}>
+              <Typography variant="h6" align="center">
+                {formatTime(timeRange[1])}
+              </Typography>
+            </Grid>
 
             <Slider
               value={timeRange}
               onChange={(event: any, newValue: number | number[]) =>
                 handleTimeRangeChange(newValue as number[])
               }
-              step={1}
+              step={100}
               min={0}
-              max={23}
+              max={2400}
               marks={[
                 { value: 0, label: "12am" },
-                { value: 23, label: "11pm" }
+                { value: 2400, label: "12am" }
               ]}
               valueLabelDisplay="auto"
               aria-labelledby="range-slider"
@@ -128,10 +147,7 @@ const Flights = () => {
               variant="contained"
               color="secondary"
               disabled={loading}
-              onClick={() => {
-                setActive(true);
-                query();
-              }}
+              onClick={() => query()}
             >
               Search
             </Button>

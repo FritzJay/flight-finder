@@ -21,9 +21,9 @@ const to: IAirport = {
 
 const date = new Date(2020, 3, 1, 0, 0, 0, 0);
 
-const timeStart = 3;
+const timeStart = 300;
 
-const timeEnd = 15;
+const timeEnd = 1500;
 
 describe("formatFlightQueryParameters", () => {
   it("works with time filters", () => {
