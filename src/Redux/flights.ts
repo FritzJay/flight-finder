@@ -35,17 +35,17 @@ export type FlightsActionType =
 
 /* Actions */
 
-export const setFrom = (airport: IAirport) => ({
+export const setFrom = (airport: IAirport | null) => ({
   type: SET_FROM,
   payload: airport
 });
 
-export const setTo = (airport: IAirport) => ({
+export const setTo = (airport: IAirport | null) => ({
   type: SET_TO,
   payload: airport
 });
 
-export const setDate = (date: Date) => ({
+export const setDate = (date: Date | null) => ({
   type: SET_DATE,
   payload: date
 });
@@ -60,8 +60,8 @@ export const setTimeRange = (timeRange: number[]) => ({
 export const initialFlightsState: IFlightsState = {
   from: null,
   to: null,
-  date: null,
-  timeRange: null
+  date: new Date(Date.now()),
+  timeRange: [0, 23]
 };
 
 export const flightsReducer = (

@@ -8,16 +8,10 @@ import { setFirstName, setLastName, setSO } from "../../Redux/information";
 
 const useInformationPage = () => {
   const dispatch = useDispatch();
-  const { fName, lName, so } = useSelector((state: RootState) => ({
+  return useSelector((state: RootState) => ({
     fName: state.information.fName,
     lName: state.information.lName,
-    so: state.information.so
-  }));
-
-  return {
-    fName,
-    lName,
-    so,
+    so: state.information.so,
     handleFirstNameChange: (event: any) =>
       dispatch(
         setFirstName(event.target.value === "" ? null : event.target.value)
@@ -28,7 +22,7 @@ const useInformationPage = () => {
       ),
     handleSOChange: (event: any) =>
       dispatch(setSO(event.target.value === "" ? null : event.target.value))
-  };
+  }));
 };
 
 const Information = () => {

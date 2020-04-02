@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Grid, Button, Slider, Typography } from "@material-ui/core";
 import {
   KeyboardDatePicker,
@@ -9,6 +10,8 @@ import { IAirport, IFlight } from "../../interfaces";
 import AirportSearchInput from "./AirportSearchInput";
 import FlightsTable from "./FlightsTable";
 import queryFlights from "../../API/queryFlights";
+import { RootState } from "../../Redux";
+import { setTo, setFrom, setDate, setTimeRange } from "../../Redux/flights";
 
 const formatTime = (time: number) => {
   if (time === 0) return "12am";
@@ -16,17 +19,38 @@ const formatTime = (time: number) => {
   else return `${time}am`;
 };
 
+const useFlights = () => {
+  const dispatch = useDispatch();
+  return useSelector((state: RootState) => ({
+    from: state.flights.from,
+    to: state.flights.to,
+    date: state.flights.date,
+    timeRange: state.flights.timeRange,
+    handleToChange: (airport: IAirport | null) => dispatch(setTo(airport)),
+    handleFromChange: (airport: IAirport | null) => dispatch(setFrom(airport)),
+    handleDateChange: (date: Date | null) => dispatch(setDate(date)),
+    handleTimeRangeChange: (timeRange: number[]) =>
+      dispatch(setTimeRange(timeRange))
+  }));
+};
+
 const Flights = () => {
   const [active, setActive] = React.useState(false);
   const [loading, setLoading] = React.useState<boolean>(false);
-  const [from, setFrom]: [IAirport | undefined, any] = React.useState();
-  const [to, setTo]: [IAirport | undefined, any] = React.useState();
-  const [date, setDate] = React.useState<Date | null>(new Date(Date.now()));
-  const [timeRange, setTimeRange] = React.useState<number[]>([0, 24]);
   const [flights, setFlights] = React.useState<IFlight[]>([]);
+  const {
+    from,
+    to,
+    date,
+    timeRange,
+    handleToChange,
+    handleFromChange,
+    handleDateChange,
+    handleTimeRangeChange
+  } = useFlights();
 
   const query = React.useCallback(async () => {
-    if (from === undefined || to === undefined || date === null) return;
+    if (from === null || to === null || date === null) return;
 
     setLoading(true);
     setFlights(await queryFlights(from, to, date, timeRange[0], timeRange[1]));
@@ -37,11 +61,19 @@ const Flights = () => {
     <React.Fragment>
       <Grid container spacing={3} justify="space-evenly">
         <Grid item xs={12} sm={6}>
-          <AirportSearchInput setSelected={setFrom} label="Flying from" />
+          <AirportSearchInput
+            value={from}
+            handleChange={handleFromChange}
+            label="Flying from"
+          />
         </Grid>
 
         <Grid item xs={12} sm={6}>
-          <AirportSearchInput setSelected={setTo} label="Destination" />
+          <AirportSearchInput
+            value={to}
+            handleChange={handleToChange}
+            label="Destination"
+          />
         </Grid>
 
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -51,7 +83,7 @@ const Flights = () => {
               label="Departing Date"
               inputVariant="outlined"
               value={date}
-              onChange={(date: Date | null) => setDate(date)}
+              onChange={handleDateChange}
               showTodayButton
               style={{ width: "100%" }}
             />
@@ -65,7 +97,7 @@ const Flights = () => {
             <Slider
               value={timeRange}
               onChange={(event: any, newValue: number | number[]) =>
-                setTimeRange(newValue as number[])
+                handleTimeRangeChange(newValue as number[])
               }
               step={1}
               min={0}

@@ -29,10 +29,12 @@ interface ICity {
 }
 
 const AirportSearchInput = ({
-  setSelected,
+  value,
+  handleChange,
   label
 }: {
-  setSelected: (value: IAirport | undefined) => void;
+  value: IAirport | null;
+  handleChange: (value: IAirport | null) => void;
   label: string;
 }) => {
   const [options, setOptions] = React.useState<IAirport[]>([]);
@@ -73,8 +75,9 @@ const AirportSearchInput = ({
       }
       freeSolo
       clearOnEscape
+      value={value}
       onChange={(event: any, newValue: IAirport | null) => {
-        setSelected(newValue === null ? undefined : newValue);
+        handleChange(newValue);
       }}
       options={options}
       loading={loading}

@@ -55,12 +55,11 @@ const useStyles = makeStyles(theme => ({
 
 const useApp = () => {
   const dispatch = useDispatch();
-  const step = useSelector((state: RootState) => state.system.step);
-  return {
-    step,
-    handleNext: () => dispatch(setStep(step + 1)),
-    handleBack: () => dispatch(setStep(step - 1))
-  };
+  return useSelector((state: RootState) => ({
+    step: state.system.step,
+    handleNext: () => dispatch(setStep(state.system.step + 1)),
+    handleBack: () => dispatch(setStep(state.system.step - 1))
+  }));
 };
 
 const steps = ["Information", "Flights", "Lodging", "Car Rentals"];
