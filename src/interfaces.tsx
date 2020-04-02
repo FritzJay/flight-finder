@@ -14,3 +14,26 @@ export interface IFlight {
   fare: number;
   cabin: string;
 }
+
+/* Redux */
+
+export interface IInformationState {
+  fName: string | null;
+  lName: string | null;
+  so: string | null;
+}
+
+export interface IFlightsState {
+  from: IAirport | null;
+  to: IAirport | null;
+  date: Date | null;
+  timeRange: number[] | null;
+}
+
+export interface ILodgingPage {}
+
+export interface ICarRentalsPage {}
+
+export interface ISystemState {
+  step: number;
+}
