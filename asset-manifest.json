@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/flight-finder/static/css/main.8a3e7d32.chunk.css",
-    "main.js": "/flight-finder/static/js/main.429f343c.chunk.js",
-    "main.js.map": "/flight-finder/static/js/main.429f343c.chunk.js.map",
+    "main.css": "/flight-finder/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/flight-finder/static/js/main.f02dc376.chunk.js",
+    "main.js.map": "/flight-finder/static/js/main.f02dc376.chunk.js.map",
     "runtime-main.js": "/flight-finder/static/js/runtime-main.b6a55afa.js",
     "runtime-main.js.map": "/flight-finder/static/js/runtime-main.b6a55afa.js.map",
-    "static/js/2.0724c40d.chunk.js": "/flight-finder/static/js/2.0724c40d.chunk.js",
-    "static/js/2.0724c40d.chunk.js.map": "/flight-finder/static/js/2.0724c40d.chunk.js.map",
+    "static/js/2.00cf22f2.chunk.js": "/flight-finder/static/js/2.00cf22f2.chunk.js",
+    "static/js/2.00cf22f2.chunk.js.map": "/flight-finder/static/js/2.00cf22f2.chunk.js.map",
     "index.html": "/flight-finder/index.html",
-    "precache-manifest.99fcf77d9d182f41c86916941c568689.js": "/flight-finder/precache-manifest.99fcf77d9d182f41c86916941c568689.js",
+    "precache-manifest.f73a4f2daeeac673d3d3d251434cecf7.js": "/flight-finder/precache-manifest.f73a4f2daeeac673d3d3d251434cecf7.js",
     "service-worker.js": "/flight-finder/service-worker.js",
-    "static/css/main.8a3e7d32.chunk.css.map": "/flight-finder/static/css/main.8a3e7d32.chunk.css.map",
-    "static/js/2.0724c40d.chunk.js.LICENSE.txt": "/flight-finder/static/js/2.0724c40d.chunk.js.LICENSE.txt"
+    "static/css/main.5ecd60fb.chunk.css.map": "/flight-finder/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.00cf22f2.chunk.js.LICENSE.txt": "/flight-finder/static/js/2.00cf22f2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b6a55afa.js",
-    "static/js/2.0724c40d.chunk.js",
-    "static/css/main.8a3e7d32.chunk.css",
-    "static/js/main.429f343c.chunk.js"
+    "static/js/2.00cf22f2.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.f02dc376.chunk.js"
   ]
 }
