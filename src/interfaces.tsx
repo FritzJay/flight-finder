@@ -6,6 +6,7 @@ export interface IAirport {
 }
 
 export interface IFlight {
+  id: string;
   airline: string;
   grade: string;
   duration: number;

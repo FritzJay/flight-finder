@@ -269,18 +269,23 @@ export const queryFlights = async (
   );
   const json: IResponse = await response.json();
 
+  console.log(json);
+
   const list: IFlight[] = [];
 
   json.flights.forEach(
     ({ airlineName, flightGrade, duration, numStops, fares }) =>
-      fares.forEach(({ totalFare, cabinClassCode }: IFare) =>
+      fares.forEach(({ totalFare, seatsBySegment, itineraryFlights }: IFare) =>
         list.push({
+          id: itineraryFlights[0],
           airline: airlineName,
           grade: flightGrade,
           duration,
           stops: numStops,
           fare: totalFare,
-          cabin: cabinClassCode
+          cabin: seatsBySegment
+            .reduce((acc, cur) => `${acc}/${cur.cabin}`, "")
+            .substring(1)
         })
       )
   );
@@ -305,6 +310,6 @@ export const formatFlightLegs = (from: IAirport, to: IAirport, date: Date) =>
   `"fromLocId":"${from.locID}","toLocId":"${to.locID}"}]`;
 
 export const formatTimeFilters = (timeStart: number, timeEnd: number) =>
-  `"filters":{"timeFilters":[{"departFromTime":"${timeStart}00","departToTime":"${timeEnd}00"}]`;
+  `"filters":{"timeFilters":[{"departFromTime":"${timeStart}00","departToTime":"${timeEnd}00"}]}`;
 
 export default queryFlights;

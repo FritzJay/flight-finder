@@ -66,7 +66,7 @@ const AirportSearchInput = ({
 
   return (
     <Autocomplete
-      id="airports"
+      id={label.toLowerCase().replace(" ", "-")}
       getOptionSelected={(option, value) => option.name === value.name}
       getOptionLabel={option =>
         `${option.code.toLocaleUpperCase()} - ${option.name}`

@@ -21,22 +21,16 @@ const to: IAirport = {
 
 const date = new Date(2020, 3, 1, 0, 0, 0, 0);
 
-const timeStart = new Date(2020, 3, 1, 10, 30, 10);
+const timeStart = 3;
 
-const timeEnd = new Date(2020, 3, 1, 12, 5, 30);
+const timeEnd = 15;
 
 describe("formatFlightQueryParameters", () => {
   it("works with time filters", () => {
     expect(
       formatFlightQueryParameters(from, to, date, timeStart, timeEnd)
     ).toBe(
-      '{"legs":[{"date":"2020-04-01","fromLocId":"AABC","toLocId":"ACBA"}],"filters":{"timeFilters":[{"departFromTime":"1000","departToTime":"1200"}],"airlineView":"DL","legNum":1}'
-    );
-  });
-
-  it("works without time filters", () => {
-    expect(formatFlightQueryParameters(from, to, date, null, null)).toBe(
-      '{"legs":[{"date":"2020-04-01","fromLocId":"AABC","toLocId":"ACBA"}],"airlineView":"DL","legNum":1}'
+      '{"legs":[{"date":"2020-04-01","fromLocId":"AABC","toLocId":"ACBA"}],"filters":{"timeFilters":[{"departFromTime":"300","departToTime":"1500"}]},"airlineView":"DL","legNum":1}'
     );
   });
 });
@@ -52,7 +46,7 @@ describe("formatFlightsLegs", () => {
 describe("formatTimeFilters", () => {
   it("works", () => {
     expect(formatTimeFilters(timeStart, timeEnd)).toBe(
-      '"filters":{"timeFilters":[{"departFromTime":"1000","departToTime":"1200"}]'
+      '"filters":{"timeFilters":[{"departFromTime":"300","departToTime":"1500"}]}'
     );
   });
 });

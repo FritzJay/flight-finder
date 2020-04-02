@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Paper,
   TableContainer,
   TablePagination,
   Table,
@@ -83,6 +82,10 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "absolute",
       top: 20,
       width: 1
+    },
+    selected: {
+      backgroundColor: theme.palette.primary.light,
+      color: theme.palette.primary.contrastText
     }
   })
 );
@@ -99,6 +102,7 @@ const FlightsTable = ({
   const [orderBy, setOrderBy] = useState<keyof IFlight>("fare");
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [selected, setSelected] = useState<string | null>(null);
 
   const handleRequestSort = (property: keyof IFlight) => {
     const isAsc = orderBy === property && order === "asc";
@@ -117,7 +121,7 @@ const FlightsTable = ({
   };
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer>
       <Typography variant="h6" style={{ margin: "2rem" }}>
         Available Flights
       </Typography>
@@ -169,11 +173,23 @@ const FlightsTable = ({
             stableSort(data, getComparator(order, orderBy))
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map(
-                ({ airline, grade, duration, stops, fare, cabin }: IFlight) => (
+                ({
+                  id,
+                  airline,
+                  grade,
+                  duration,
+                  stops,
+                  fare,
+                  cabin
+                }: IFlight) => (
                   <TableRow
-                    hover
+                    hover={selected !== id}
+                    className={selected === id ? classes.selected : ""}
+                    onClick={() =>
+                      selected === id ? setSelected(null) : setSelected(id)
+                    }
                     tabIndex={-1}
-                    key={airline + grade + duration + stops + fare + cabin}
+                    key={id}
                   >
                     <TableCell>{airline}</TableCell>
                     <TableCell align="left">{cabin}</TableCell>

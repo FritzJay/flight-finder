@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button, Slider } from "@material-ui/core";
+import { Grid, Button, Slider, Typography } from "@material-ui/core";
 import {
   KeyboardDatePicker,
   MuiPickersUtilsProvider
@@ -45,7 +45,7 @@ const Flights = () => {
         </Grid>
 
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12}>
             <KeyboardDatePicker
               required
               label="Departing Date"
@@ -57,7 +57,11 @@ const Flights = () => {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={8} container justify="center" alignItems="center">
+            <Typography variant="subtitle2" align="center">
+              {formatTime(timeRange[0])} - {formatTime(timeRange[1])}
+            </Typography>
+
             <Slider
               value={timeRange}
               onChange={(event: any, newValue: number | number[]) =>
