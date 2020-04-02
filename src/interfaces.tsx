@@ -32,6 +32,7 @@ export interface IFlightsState {
   to: IAirport | null;
   date: Date | null;
   timeRange: number[];
+  selectedFlight: IFlight | null;
 }
 
 export interface ILodgingPage {}

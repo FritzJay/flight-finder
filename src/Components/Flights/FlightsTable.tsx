@@ -92,17 +92,23 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const FlightsTable = ({
   data,
-  loading
+  loading,
+  selectedFlight,
+  handleSelectFlight
 }: {
   data: IFlight[];
   loading: boolean;
+  selectedFlight: IFlight | null;
+  handleSelectFlight: (flight: IFlight | null) => void;
 }) => {
   const classes = useStyles();
   const [order, setOrder] = useState<Order>("asc");
   const [orderBy, setOrderBy] = useState<keyof IFlight>("fare");
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [selected, setSelected] = useState<string | null>(null);
+
+  const displayData =
+    data.length === 0 && selectedFlight !== null ? [selectedFlight] : data;
 
   const handleRequestSort = (property: keyof IFlight) => {
     const isAsc = orderBy === property && order === "asc";
@@ -155,7 +161,7 @@ const FlightsTable = ({
         </TableHead>
 
         <TableBody>
-          {data.length === 0 && !loading && (
+          {displayData.length === 0 && !loading && (
             <TableRow tabIndex={-1}>
               <TableCell colSpan={columns}>
                 There are no flights available at this time.
@@ -170,51 +176,45 @@ const FlightsTable = ({
               </TableCell>
             </TableRow>
           ) : (
-            stableSort(data, getComparator(order, orderBy))
+            stableSort(displayData, getComparator(order, orderBy))
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map(
-                ({
-                  id,
-                  airline,
-                  grade,
-                  duration,
-                  stops,
-                  fare,
-                  cabin
-                }: IFlight) => (
-                  <TableRow
-                    hover={selected !== id}
-                    className={selected === id ? classes.selected : ""}
-                    onClick={() =>
-                      selected === id ? setSelected(null) : setSelected(id)
-                    }
-                    tabIndex={-1}
-                    key={id}
-                  >
-                    <TableCell>{airline}</TableCell>
-                    <TableCell align="left">{cabin}</TableCell>
-                    <TableCell align="left">{grade}</TableCell>
-                    <TableCell align="left">{`${Math.floor(
-                      duration / 60
-                    )}h ${duration % 60}m`}</TableCell>
-                    <TableCell align="right">{stops}</TableCell>
-                    <TableCell align="right">
-                      {fare.toLocaleString("en-US", {
-                        style: "currency",
-                        currency: "USD",
-                        minimumFractionDigits: 2
-                      })}
-                    </TableCell>
-                  </TableRow>
-                )
-              )
+              .map((flight: IFlight) => (
+                <TableRow
+                  hover={selectedFlight?.id !== flight.id}
+                  className={
+                    selectedFlight?.id === flight.id ? classes.selected : ""
+                  }
+                  onClick={() =>
+                    selectedFlight?.id === flight.id
+                      ? handleSelectFlight(null)
+                      : handleSelectFlight(flight)
+                  }
+                  tabIndex={-1}
+                  key={flight.id}
+                >
+                  <TableCell>{flight.airline}</TableCell>
+                  <TableCell align="left">{flight.cabin}</TableCell>
+                  <TableCell align="left">{flight.grade}</TableCell>
+                  <TableCell align="left">{`${Math.floor(
+                    flight.duration / 60
+                  )}h ${flight.duration % 60}m`}</TableCell>
+                  <TableCell align="right">{flight.stops}</TableCell>
+                  <TableCell align="right">
+                    {flight.fare.toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                      minimumFractionDigits: 2
+                    })}
+                  </TableCell>
+                </TableRow>
+              ))
           )}
         </TableBody>
         <TableFooter>
           <TableRow>
             <TablePagination
               colSpan={columns}
-              count={data.length}
+              count={displayData.length}
               rowsPerPage={rowsPerPage}
               page={page}
               onChangePage={handleChangePage}

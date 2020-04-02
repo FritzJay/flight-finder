@@ -11,7 +11,13 @@ import AirportSearchInput from "./AirportSearchInput";
 import FlightsTable from "./FlightsTable";
 import queryFlights from "../../API/queryFlights";
 import { RootState } from "../../Redux";
-import { setTo, setFrom, setDate, setTimeRange } from "../../Redux/flights";
+import {
+  setTo,
+  setFrom,
+  setDate,
+  setTimeRange,
+  setSelectedFlight
+} from "../../Redux/flights";
 
 const formatTime = (time: number) => {
   if (time === 0) return "12am";
@@ -26,11 +32,14 @@ const useFlights = () => {
     to: state.flights.to,
     date: state.flights.date,
     timeRange: state.flights.timeRange,
+    selectedFlight: state.flights.selectedFlight,
     handleToChange: (airport: IAirport | null) => dispatch(setTo(airport)),
     handleFromChange: (airport: IAirport | null) => dispatch(setFrom(airport)),
     handleDateChange: (date: Date | null) => dispatch(setDate(date)),
     handleTimeRangeChange: (timeRange: number[]) =>
-      dispatch(setTimeRange(timeRange))
+      dispatch(setTimeRange(timeRange)),
+    handleSelectFlight: (flight: IFlight | null) =>
+      dispatch(setSelectedFlight(flight))
   }));
 };
 
@@ -43,10 +52,12 @@ const Flights = () => {
     to,
     date,
     timeRange,
+    selectedFlight,
     handleToChange,
     handleFromChange,
     handleDateChange,
-    handleTimeRangeChange
+    handleTimeRangeChange,
+    handleSelectFlight
   } = useFlights();
 
   const query = React.useCallback(async () => {
@@ -128,7 +139,14 @@ const Flights = () => {
         </MuiPickersUtilsProvider>
 
         <Grid item xs={12}>
-          {active && <FlightsTable data={flights} loading={loading} />}
+          {(flights.length > 0 || selectedFlight !== null || loading) && (
+            <FlightsTable
+              data={flights}
+              selectedFlight={selectedFlight}
+              handleSelectFlight={handleSelectFlight}
+              loading={loading}
+            />
+          )}
         </Grid>
       </Grid>
     </React.Fragment>
