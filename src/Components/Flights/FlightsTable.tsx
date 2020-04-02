@@ -12,19 +12,13 @@ import {
   Typography,
   TableSortLabel,
   Theme,
+  CircularProgress,
   makeStyles,
   createStyles
 } from "@material-ui/core";
 import { IFlight } from "../../interfaces";
 
-type Order = "asc" | "desc";
-
-interface IHeadCell {
-  id: keyof IFlight;
-  label: string;
-  numeric: boolean;
-}
-
+/* Sorting */
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -34,6 +28,8 @@ function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   }
   return 0;
 }
+
+type Order = "asc" | "desc";
 
 function getComparator<Key extends keyof any>(
   order: Order,
@@ -57,13 +53,23 @@ function stableSort<T>(array: T[], comparator: (a: T, b: T) => number) {
   return stabilizedThis.map(el => el[0]);
 }
 
+/* Table Header */
+interface IHeadCell {
+  id: keyof IFlight;
+  label: string;
+  numeric: boolean;
+}
+
 const headCells: IHeadCell[] = [
   { id: "airline", numeric: false, label: "Airline" },
+  { id: "cabin", numeric: false, label: "Cabin" },
   { id: "grade", numeric: false, label: "Grade" },
   { id: "duration", numeric: false, label: "Duration" },
   { id: "stops", numeric: true, label: "Stops" },
-  { id: "fares", numeric: true, label: "Fare" }
+  { id: "fare", numeric: true, label: "Fare" }
 ];
+
+const columns = headCells.length;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -81,12 +87,18 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const FlightsTable = ({ data }: { data: IFlight[] }) => {
+const FlightsTable = ({
+  data,
+  loading
+}: {
+  data: IFlight[];
+  loading: boolean;
+}) => {
   const classes = useStyles();
   const [order, setOrder] = useState<Order>("asc");
-  const [orderBy, setOrderBy] = useState<keyof IFlight>("fares");
+  const [orderBy, setOrderBy] = useState<keyof IFlight>("fare");
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const handleRequestSort = (property: keyof IFlight) => {
     const isAsc = orderBy === property && order === "asc";
@@ -94,29 +106,15 @@ const FlightsTable = ({ data }: { data: IFlight[] }) => {
     setOrderBy(property);
   };
 
-  const handleChangePage = (event: unknown, newPage: number) => {
+  const handleChangePage = (event: unknown, newPage: number) =>
     setPage(newPage);
-  };
 
   const handleChangeRowsPerPage = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
-  // Each available flight contains multiple fares. This creates an IFlight for each fare.
-  const flattenedFlights = new Array<any>().concat(
-    ...data.map(({ airline, grade, duration, stops, fares }) =>
-      fares.map(({ baseFare }) => ({
-        airline,
-        grade,
-        duration,
-        stops,
-        fares: baseFare
-      }))
-    )
-  );
 
   return (
     <TableContainer component={Paper}>
@@ -153,35 +151,54 @@ const FlightsTable = ({ data }: { data: IFlight[] }) => {
         </TableHead>
 
         <TableBody>
-          {stableSort(flattenedFlights, getComparator(order, orderBy))
-            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            .map(({ airline, grade, duration, stops, fares }: any) => (
-              <TableRow
-                hover
-                tabIndex={-1}
-                key={airline + grade + duration + stops + fares}
-              >
-                <TableCell>{airline}</TableCell>
-                <TableCell align="left">{grade}</TableCell>
-                <TableCell align="left">{`${Math.floor(
-                  duration / 60
-                )}h ${duration % 60}m`}</TableCell>
-                <TableCell align="right">{stops}</TableCell>
-                <TableCell align="right">
-                  {fares.toLocaleString("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                    minimumFractionDigits: 2
-                  })}
-                </TableCell>
-              </TableRow>
-            ))}
+          {data.length === 0 && !loading && (
+            <TableRow tabIndex={-1}>
+              <TableCell colSpan={columns}>
+                There are no flights available at this time.
+              </TableCell>
+            </TableRow>
+          )}
+
+          {loading ? (
+            <TableRow>
+              <TableCell colSpan={columns} style={{ textAlign: "center" }}>
+                <CircularProgress size={36} />
+              </TableCell>
+            </TableRow>
+          ) : (
+            stableSort(data, getComparator(order, orderBy))
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map(
+                ({ airline, grade, duration, stops, fare, cabin }: IFlight) => (
+                  <TableRow
+                    hover
+                    tabIndex={-1}
+                    key={airline + grade + duration + stops + fare + cabin}
+                  >
+                    <TableCell>{airline}</TableCell>
+                    <TableCell align="left">{cabin}</TableCell>
+                    <TableCell align="left">{grade}</TableCell>
+                    <TableCell align="left">{`${Math.floor(
+                      duration / 60
+                    )}h ${duration % 60}m`}</TableCell>
+                    <TableCell align="right">{stops}</TableCell>
+                    <TableCell align="right">
+                      {fare.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                        minimumFractionDigits: 2
+                      })}
+                    </TableCell>
+                  </TableRow>
+                )
+              )
+          )}
         </TableBody>
         <TableFooter>
           <TableRow>
             <TablePagination
-              component="td"
-              count={flattenedFlights.length}
+              colSpan={columns}
+              count={data.length}
               rowsPerPage={rowsPerPage}
               page={page}
               onChangePage={handleChangePage}

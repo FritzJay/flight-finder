@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button, CircularProgress } from "@material-ui/core";
+import { Grid, Button } from "@material-ui/core";
 import {
   KeyboardDatePicker,
   KeyboardTimePicker,
@@ -19,6 +19,7 @@ const Flights = () => {
   const [timeStart, setTimeStart] = React.useState<Date | null>(null);
   const [timeEnd, setTimeEnd] = React.useState<Date | null>(null);
   const [flights, setFlights] = React.useState<IFlight[]>([]);
+  const [active, setActive] = React.useState(false);
 
   const query = React.useCallback(async () => {
     if (from === undefined || to === undefined || date === null) return;
@@ -80,6 +81,7 @@ const Flights = () => {
               color="secondary"
               disabled={loading}
               onClick={() => {
+                setActive(true);
                 query();
               }}
             >
@@ -89,15 +91,9 @@ const Flights = () => {
         </MuiPickersUtilsProvider>
 
         <Grid item xs={12}>
-          {flights.length > 0 && <FlightsTable data={flights} />}
+          {active && <FlightsTable data={flights} loading={loading} />}
         </Grid>
       </Grid>
-
-      {loading && (
-        <Grid container item xs={12} justify="center">
-          <CircularProgress size={36} />
-        </Grid>
-      )}
     </React.Fragment>
   );
 };

@@ -171,7 +171,7 @@ interface IMedium {
   route: string;
 }
 
-interface IFareResponse {
+interface IFare {
   baseFare: number;
   tax: number;
   totalFare: number;
@@ -218,7 +218,7 @@ interface IFlightResponse {
   duration: number;
   numStops: number;
   segments: ISegment[];
-  fares: IFareResponse[];
+  fares: IFare[];
   isPreferred: boolean;
 }
 
@@ -269,21 +269,25 @@ export const queryFlights = async (
   );
   const json: IResponse = await response.json();
 
-  return json.flights.map(f => ({
-    airline: f.airlineName,
-    grade: f.flightGrade,
-    duration: f.duration,
-    stops: f.numStops,
-    fares: f.fares.map(
-      ({ baseFare, tax, totalFare, refundable, wifi }: IFareResponse) => ({
-        baseFare,
-        tax,
-        totalFare,
-        refundable,
-        wifi
-      })
-    )
-  }));
+  console.log(json);
+
+  const list: IFlight[] = [];
+
+  json.flights.forEach(
+    ({ airlineName, flightGrade, duration, numStops, fares }) =>
+      fares.forEach(({ totalFare, cabinClassCode }: IFare) =>
+        list.push({
+          airline: airlineName,
+          grade: flightGrade,
+          duration,
+          stops: numStops,
+          fare: totalFare,
+          cabin: cabinClassCode
+        })
+      )
+  );
+
+  return list;
 };
 
 export const formatFlightQueryParameters = (
