@@ -62,7 +62,13 @@ const useApp = () => {
   }));
 };
 
-const steps = ["Information", "Flights", "Lodging", "Car Rentals"];
+const steps = [
+  "Information",
+  "Flights",
+  "Lodging",
+  "Car Rentals",
+  "Confirmation"
+];
 
 const getStepContent = (step: number) => {
   switch (step) {
@@ -74,6 +80,8 @@ const getStepContent = (step: number) => {
       return <div>Lodging</div>;
     case 3:
       return <div>Car Rentals</div>;
+    case 4:
+      return <div>Confirmation</div>;
     default:
       throw new Error("Unknown step");
   }
@@ -116,6 +124,11 @@ const App = () => {
                   confirmation, and will send you an update when your order has
                   shipped.
                 </Typography>
+                <div className={classes.buttons}>
+                  <Button onClick={handleBack} className={classes.button}>
+                    Back
+                  </Button>
+                </div>
               </React.Fragment>
             ) : (
               <React.Fragment>
@@ -132,7 +145,7 @@ const App = () => {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {step === steps.length - 1 ? "Place order" : "Next"}
+                    {step === steps.length - 1 ? "Send Estimate" : "Next"}
                   </Button>
                 </div>
               </React.Fragment>
