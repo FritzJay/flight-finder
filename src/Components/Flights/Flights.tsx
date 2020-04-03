@@ -146,7 +146,13 @@ const Flights = () => {
             <Button
               variant="contained"
               color="secondary"
-              disabled={loading}
+              disabled={
+                loading ||
+                from === null ||
+                  to === null ||
+                  date === null ||
+                  timeRange === null
+              }
               onClick={() => query()}
             >
               Search
