@@ -3,8 +3,6 @@
 See it in action [here](https://FritzJay.github.io/flight-finder).
 Note: The API is hosted on heroku, for free, so it may take some time to make requests.
 
----
-
 ## Architecture
 
 Flight Finder consists of a [Node](https://nodejs.org/en/) server that serves a [React](https://reactjs.org/) app, written in [typescript](https://www.typescriptlang.org/), and a [Node](https://nodejs.org/en/) api server that routes requests through Certify's api.
@@ -17,8 +15,6 @@ Flight Finder consists of a [Node](https://nodejs.org/en/) server that serves a 
 4. The API server routes the JSON requests to Certify's API server
 5. Certify's API server responds with JSON
 6. The API server routes the JSON response back to the user
-
----
 
 ## Directory Structure
 
@@ -49,8 +45,6 @@ Holds images used in README.md
   - [Webpack](https://webpack.js.org/) injects html, css and javascript at compile time before serving index.html to the user.
 - manifest.json
   - Specifies metadata about the app. See [Mozilla's docs](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json) to learn more.
-
----
 
 ## Source Code Structure
 
