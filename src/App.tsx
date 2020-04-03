@@ -100,6 +100,11 @@ const App = () => {
           <Typography variant="h6" color="inherit" noWrap>
             Flight Finder
           </Typography>
+          {process.env.NODE_ENV === "development" && (
+            <Button onClick={() => localStorage.clear()}>
+              Clear Local Storage
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
       <main className={classes.layout}>

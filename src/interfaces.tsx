@@ -13,7 +13,8 @@ export interface IFlight {
   stops: number;
   fare: number;
   cabin: string;
-  segmentCodes: string[][];
+  fromAirportCode: string;
+  toAirportCode: string;
 }
 
 /* Redux */

@@ -23,11 +23,6 @@ interface IResponse {
   ];
 }
 
-interface ICity {
-  name: string;
-  airports: IAirport[];
-}
-
 const AirportSearchInput = ({
   value,
   handleChange,

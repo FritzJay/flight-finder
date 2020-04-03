@@ -8,7 +8,8 @@ import {
   TableCell,
   TableRow,
   Typography,
-  Link
+  Link,
+  Tooltip
 } from "@material-ui/core";
 import { AirplanemodeActive } from "@material-ui/icons";
 import { useSelector, useDispatch } from "react-redux";
@@ -19,6 +20,7 @@ interface IChip {
   id: string;
   label: string;
   icon: any;
+  tooltip: string;
 }
 
 interface IRow {
@@ -28,45 +30,38 @@ interface IRow {
   step: number;
 }
 
-const formatSegmentCodes = (segmentCodes: string[][]) =>
-  segmentCodes.reduce((str, codes) => {
-    let combined = str;
-    // Ignore the first code if it is already present
-    combined +=
-      str.length === 0 ? `${codes[0]} → ${codes[1]}` : ` → ${codes[1]}`;
-    if (combined.length > 12) return combined.slice(0, 12) + "...";
-    return combined;
-  }, "");
-
 const useConfirmation = (): {
   rows: IRow[];
   setStep: (step: number) => void;
 } => {
   const dispatch = useDispatch();
-  return useSelector((state: RootState) => ({
-    rows: [
-      {
-        label: "Flights",
-        items:
-          state.flights.selectedFlight !== null
-            ? [
-                {
-                  label: formatSegmentCodes(
-                    state.flights.selectedFlight.segmentCodes
-                  ),
-                  icon: <AirplanemodeActive />,
-                  id: state.flights.selectedFlight.id
-                }
-              ]
-            : [],
-        total: state.flights.selectedFlight?.fare,
-        step: 1
-      },
-      { label: "Lodging", items: [], total: undefined, step: 2 },
-      { label: "Vehicles", items: [], total: undefined, step: 3 }
-    ],
-    setStep: (step: number) => dispatch(setStep(step))
-  }));
+  return useSelector((state: RootState) => {
+    const selectedFlight = state.flights.selectedFlight;
+
+    return {
+      rows: [
+        {
+          label: "Flights",
+          items:
+            selectedFlight !== null
+              ? [
+                  {
+                    label: `${selectedFlight.fromAirportCode} → ${selectedFlight.toAirportCode}`,
+                    icon: <AirplanemodeActive />,
+                    id: selectedFlight.id,
+                    tooltip: `${selectedFlight.stops} stop(s)`
+                  }
+                ]
+              : [],
+          total: selectedFlight?.fare,
+          step: 1
+        },
+        { label: "Lodging", items: [], total: undefined, step: 2 },
+        { label: "Vehicles", items: [], total: undefined, step: 3 }
+      ],
+      setStep: (step: number) => dispatch(setStep(step))
+    };
+  });
 };
 
 const formatTotal = (total: number | undefined) =>
@@ -100,13 +95,15 @@ const Confirmation = () => {
               </TableCell>
               <TableCell>
                 {items.map(item => (
-                  <Chip
-                    key={item.id}
-                    label={item.label}
-                    icon={item.icon}
-                    clickable
-                    color="primary"
-                  />
+                  <Tooltip title={item.tooltip}>
+                    <Chip
+                      key={item.id}
+                      label={item.label}
+                      icon={item.icon}
+                      clickable
+                      color="primary"
+                    />
+                  </Tooltip>
                 ))}
               </TableCell>
               <TableCell padding="checkbox" align="right">

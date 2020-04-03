@@ -284,10 +284,8 @@ export const queryFlights = async (
           cabin: seatsBySegment
             .reduce((acc, cur) => `${acc}/${cur.cabin}`, "")
             .substring(1),
-          segmentCodes: segments.map(({ fromCode, toCode }) => [
-            fromCode,
-            toCode
-          ])
+          fromAirportCode: segments[0].fromCode,
+          toAirportCode: segments[segments.length - 1].toCode
         })
       )
   );
