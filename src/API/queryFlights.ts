@@ -269,12 +269,10 @@ export const queryFlights = async (
   );
   const json: IResponse = await response.json();
 
-  console.log(json);
-
   const list: IFlight[] = [];
 
   json.flights.forEach(
-    ({ airlineName, flightGrade, duration, numStops, fares }) =>
+    ({ airlineName, flightGrade, duration, numStops, fares, segments }) =>
       fares.forEach(({ totalFare, seatsBySegment, itineraryFlights }: IFare) =>
         list.push({
           id: itineraryFlights[0],
@@ -285,7 +283,11 @@ export const queryFlights = async (
           fare: totalFare,
           cabin: seatsBySegment
             .reduce((acc, cur) => `${acc}/${cur.cabin}`, "")
-            .substring(1)
+            .substring(1),
+          segmentCodes: segments.map(({ fromCode, toCode }) => [
+            fromCode,
+            toCode
+          ])
         })
       )
   );

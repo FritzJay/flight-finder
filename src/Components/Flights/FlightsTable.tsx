@@ -34,8 +34,8 @@ function getComparator<Key extends keyof any>(
   order: Order,
   orderBy: Key
 ): (
-  a: { [key in Key]: number | string },
-  b: { [key in Key]: number | string }
+  a: { [key in Key]: number | string | string[][] },
+  b: { [key in Key]: number | string | string[][] }
 ) => number {
   return order === "desc"
     ? (a, b) => descendingComparator(a, b, orderBy)
@@ -107,9 +107,6 @@ const FlightsTable = ({
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const displayData =
-    data.length === 0 && selectedFlight !== null ? [selectedFlight] : data;
-
   const handleRequestSort = (property: keyof IFlight) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
@@ -161,7 +158,7 @@ const FlightsTable = ({
         </TableHead>
 
         <TableBody>
-          {displayData.length === 0 && !loading && (
+          {data.length === 0 && !loading && (
             <TableRow tabIndex={-1}>
               <TableCell colSpan={columns}>
                 There are no flights available at this time.
@@ -176,7 +173,7 @@ const FlightsTable = ({
               </TableCell>
             </TableRow>
           ) : (
-            stableSort(displayData, getComparator(order, orderBy))
+            stableSort(data, getComparator(order, orderBy))
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((flight: IFlight) => (
                 <TableRow
@@ -214,7 +211,7 @@ const FlightsTable = ({
           <TableRow>
             <TablePagination
               colSpan={columns}
-              count={displayData.length}
+              count={data.length}
               rowsPerPage={rowsPerPage}
               page={page}
               onChangePage={handleChangePage}

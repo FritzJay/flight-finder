@@ -16,6 +16,7 @@ import { RootState } from "../../Redux";
 import { setStep } from "../../Redux/system";
 
 interface IChip {
+  id: string;
   label: string;
   icon: any;
 }
@@ -26,6 +27,16 @@ interface IRow {
   total: number | undefined;
   step: number;
 }
+
+const formatSegmentCodes = (segmentCodes: string[][]) =>
+  segmentCodes.reduce((str, codes) => {
+    let combined = str;
+    // Ignore the first code if it is already present
+    combined +=
+      str.length === 0 ? `${codes[0]} → ${codes[1]}` : ` → ${codes[1]}`;
+    if (combined.length > 12) return combined.slice(0, 12) + "...";
+    return combined;
+  }, "");
 
 const useConfirmation = (): {
   rows: IRow[];
@@ -40,8 +51,11 @@ const useConfirmation = (): {
           state.flights.selectedFlight !== null
             ? [
                 {
-                  label: `${state.flights.selectedFlight.airline}`,
-                  icon: <AirplanemodeActive />
+                  label: formatSegmentCodes(
+                    state.flights.selectedFlight.segmentCodes
+                  ),
+                  icon: <AirplanemodeActive />,
+                  id: state.flights.selectedFlight.id
                 }
               ]
             : [],
@@ -74,7 +88,7 @@ const Confirmation = () => {
       <Table>
         <TableBody>
           {rows.map(({ label, items, total, step }) => (
-            <TableRow>
+            <TableRow key={label}>
               <TableCell padding="checkbox">
                 <Link
                   component="button"
@@ -87,6 +101,7 @@ const Confirmation = () => {
               <TableCell>
                 {items.map(item => (
                   <Chip
+                    key={item.id}
                     label={item.label}
                     icon={item.icon}
                     clickable
