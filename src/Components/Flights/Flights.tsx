@@ -17,7 +17,8 @@ import {
   setFrom,
   setDate,
   setTimeRange,
-  setSelectedFlight
+  setSelectedFlight,
+  setFlights
 } from "../../Redux/flights";
 
 const formatTime = (time: number) => {
@@ -34,30 +35,33 @@ const useFlights = () => {
     date: state.flights.date,
     timeRange: state.flights.timeRange,
     selectedFlight: state.flights.selectedFlight,
+    flights: state.flights.flights,
     handleToChange: (airport: IAirport | null) => dispatch(setTo(airport)),
     handleFromChange: (airport: IAirport | null) => dispatch(setFrom(airport)),
     handleDateChange: (date: Date | null) => dispatch(setDate(date)),
     handleTimeRangeChange: (timeRange: number[]) =>
       dispatch(setTimeRange(timeRange)),
     handleSelectFlight: (flight: IFlight | null) =>
-      dispatch(setSelectedFlight(flight))
+      dispatch(setSelectedFlight(flight)),
+    setFlights: (flights: IFlight[]) => dispatch(setFlights(flights))
   }));
 };
 
 const Flights = () => {
   const [loading, setLoading] = React.useState<boolean>(false);
-  const [flights, setFlights] = React.useState<IFlight[]>([]);
   const {
     from,
     to,
     date,
     timeRange,
     selectedFlight,
+    flights,
     handleToChange,
     handleFromChange,
     handleDateChange,
     handleTimeRangeChange,
-    handleSelectFlight
+    handleSelectFlight,
+    setFlights
   } = useFlights();
 
   const query = React.useCallback(async () => {
@@ -66,7 +70,7 @@ const Flights = () => {
     setLoading(true);
     setFlights(await queryFlights(from, to, date, timeRange[0], timeRange[1]));
     setLoading(false);
-  }, [from, to, date, timeRange]);
+  }, [from, to, date, timeRange, setFlights]);
 
   return (
     <React.Fragment>
@@ -109,17 +113,17 @@ const Flights = () => {
             alignItems="center"
           >
             <Grid item xs={2}>
-              <Typography variant="h6" align="center">
+              <Typography variant="body2" align="center">
                 {formatTime(timeRange[0])}
               </Typography>
             </Grid>
 
             <Grid item xs={2} style={{ textAlign: "center" }}>
-              <AccessTimeIcon fontSize="large" />
+              <AccessTimeIcon fontSize="small" />
             </Grid>
 
             <Grid item xs={2}>
-              <Typography variant="h6" align="center">
+              <Typography variant="body2" align="center">
                 {formatTime(timeRange[1])}
               </Typography>
             </Grid>
@@ -149,9 +153,9 @@ const Flights = () => {
               disabled={
                 loading ||
                 from === null ||
-                  to === null ||
-                  date === null ||
-                  timeRange === null
+                to === null ||
+                date === null ||
+                timeRange === null
               }
               onClick={() => query()}
             >

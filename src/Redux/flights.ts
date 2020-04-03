@@ -6,6 +6,7 @@ export const SET_FROM = "SET_FROM";
 export const SET_TO = "SET_TO";
 export const SET_DATE = "SET_DATE";
 export const SET_TIME_RANGE = "SET_TIME_RANGE";
+export const SET_FLIGHTS = "SET_FLIGHTS";
 export const SET_SELECTED_FLIGHT = "SET_SELECTED_FLIGHT";
 
 interface SetFromAction {
@@ -28,6 +29,11 @@ interface SetTimeRangeAction {
   payload: number[];
 }
 
+interface SetFlights {
+  type: typeof SET_FLIGHTS;
+  payload: IFlight[];
+}
+
 interface SetSelectedFlightAction {
   type: typeof SET_SELECTED_FLIGHT;
   payload: IFlight;
@@ -38,6 +44,7 @@ export type FlightsActionType =
   | SetToAction
   | SetDateAction
   | SetTimeRangeAction
+  | SetFlights
   | SetSelectedFlightAction;
 
 /* Actions */
@@ -62,6 +69,11 @@ export const setTimeRange = (timeRange: number[]) => ({
   payload: timeRange
 });
 
+export const setFlights = (flights: IFlight[]) => ({
+  type: SET_FLIGHTS,
+  payload: flights
+});
+
 export const setSelectedFlight = (flight: IFlight | null) => ({
   type: SET_SELECTED_FLIGHT,
   payload: flight
@@ -74,7 +86,8 @@ export const initialFlightsState: IFlightsState = {
   to: null,
   date: new Date(Date.now()),
   timeRange: [0, 2400],
-  selectedFlight: null
+  selectedFlight: null,
+  flights: []
 };
 
 export const flightsReducer = (
@@ -106,6 +119,11 @@ export const flightsReducer = (
       return {
         ...state,
         selectedFlight: action.payload
+      };
+    case SET_FLIGHTS:
+      return {
+        ...state,
+        flights: action.payload
       };
     default:
       return state;

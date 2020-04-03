@@ -12,9 +12,10 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "@material-ui/core";
 import { RootState } from "./Redux/index";
+import { setStep } from "./Redux/system";
 import Flights from "./Components/Flights/Flights";
 import Information from "./Components/Information/Information";
-import { setStep } from "./Redux/system";
+import Confirmation from "./Components/Confirmation/Confirmation";
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -81,7 +82,7 @@ const getStepContent = (step: number) => {
     case 3:
       return <div>Car Rentals</div>;
     case 4:
-      return <div>Confirmation</div>;
+      return <Confirmation />;
     default:
       throw new Error("Unknown step");
   }
