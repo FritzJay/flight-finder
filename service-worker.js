@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/flight-finder/precache-manifest.3715c0668b868c08f8f55c3405b8b986.js"
+  "/flight-finder/precache-manifest.39d48e048163ff1db6db07b60e93a80b.js"
 );
 
 self.addEventListener('message', (event) => {
