@@ -100,3 +100,34 @@ Holds React components. Each sub-directory represents a "page" of the app.
   - Contains the root reducer (a Redux thing) and a type that describes the shape of the state used throughout the app.
 - flights.ts/information.ts/system.ts
   - Provides abstractions for managing the state of the app.
+
+## Packages
+
+Node projects are notorious for including a ton of axillary packages. You can see for yourself by opening /node_modules. These are all the packages that this application, and the packages this app uses depend on. It's a lot. You can see a list of the dependencies this project directly depends on in /package.json.
+
+In this section, I'll go through the dependencies I've added and briefly describe each one in an attempt to demystify them.
+
+- [@material-ui](https://material-ui.com/)/(core/icons/lab/pickers)
+  - Material-UI is React UI framework that provides basic UI components. This includes things like layout grids, tables, buttons, sliders and more. Material-UI also makes it easy to integrate themes. For example instead of manually assigning colors for all your buttons and text, you can use specify "primary" and "secondary" colors for elements to use and have Material-UI select the correct colors depending on the theme. I use Material-UI components on every custom component in this app.
+- [@date-io/date-fns & date-fns](https://github.com/dmtrKovalenko/date-io)
+  - These are here because of a quark in Material-UI. For some reason, you need to provide date/time related utility functions to Material-UI's DatePicker component.
+- [@testing-library/(jest-dom/react/user-event)](https://testing-library.com/)
+  - create-react-app provides an awesome testing framework that requires these packages.
+- [gh-pages](https://pages.github.com/)
+  - This package allows me to deploy the app to github pages. github hosts single page apps for free. <3
+- [react/react-dom](https://reactjs.org/)
+  - These packages are added by create-react-app. react and react-dom are what makes this a React app.
+- [react-scripts](https://github.com/facebook/create-react-app)
+  - Used by create-react-app to start, build, test and do a bunch of other nice things like customize the app beyond the scope of create-react-app.
+- [redux](https://redux.js.org/)
+  - As mentioned before, redux is a state management package. It provides abstractions that allow you to save and update state in a way that works very well with React.
+- [redux-devtools-extension](https://github.com/reduxjs/redux-devtools)
+  - This is an amazing tool that allows [this browser extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) to access the redux store during development.
+- [redux-localstorage](https://github.com/elgerlambert/redux-localstorage)
+  - After setting it up, this package automatically saves the redux store to local storage as well as loads the saved data when the page is opened.
+- [typeface-roboto](https://github.com/KyleAMathews/typefaces/tree/master/packages/roboto)
+  - Provides the robot font.
+- [typescript](https://www.typescriptlang.org/)
+  - Provides the compiler which allows us to write this app in TypeScript, instead of plain ol JavaScript.
+- devDependencies
+  - package.json also contains a section for dependencies that are only used during development and won't be served to the user. Currently, the only dev dependencies being used are types. Types are used be TypeScript to type check code. Check out the TypeScript link for more info.
