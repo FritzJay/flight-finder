@@ -1,6 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Grid, Button, Slider, Typography } from "@material-ui/core";
+import {
+  Grid,
+  Button,
+  Slider,
+  Typography,
+  FormControlLabel,
+  Checkbox
+} from "@material-ui/core";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import {
   KeyboardDatePicker,
@@ -16,6 +23,7 @@ import {
   setTo,
   setFrom,
   setDate,
+  setIsRoundTrip,
   setTimeRange,
   setSelectedFlight,
   setFlights
@@ -33,12 +41,15 @@ const useFlights = () => {
     from: state.flights.from,
     to: state.flights.to,
     date: state.flights.date,
+    isRoundTrip: state.flights.isRoundTrip,
     timeRange: state.flights.timeRange,
     selectedFlight: state.flights.selectedFlight,
     flights: state.flights.flights,
     handleToChange: (airport: IAirport | null) => dispatch(setTo(airport)),
     handleFromChange: (airport: IAirport | null) => dispatch(setFrom(airport)),
     handleDateChange: (date: Date | null) => dispatch(setDate(date)),
+    handleIsRoundTripChange: (event: React.ChangeEvent<HTMLInputElement>) =>
+      dispatch(setIsRoundTrip(event.target.checked)),
     handleTimeRangeChange: (timeRange: number[]) =>
       dispatch(setTimeRange(timeRange)),
     handleSelectFlight: (flight: IFlight | null) =>
@@ -53,12 +64,14 @@ const Flights = () => {
     from,
     to,
     date,
+    isRoundTrip,
     timeRange,
     selectedFlight,
     flights,
     handleToChange,
     handleFromChange,
     handleDateChange,
+    handleIsRoundTripChange,
     handleTimeRangeChange,
     handleSelectFlight,
     setFlights
@@ -92,7 +105,7 @@ const Flights = () => {
         </Grid>
 
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={6}>
             <KeyboardDatePicker
               required
               label="Departing Date"
@@ -101,6 +114,27 @@ const Flights = () => {
               onChange={handleDateChange}
               showTodayButton
               style={{ width: "100%" }}
+            />
+          </Grid>
+
+          <Grid
+            item
+            container
+            xs={12}
+            sm={6}
+            justify="flex-start"
+            alignContent="center"
+          >
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={isRoundTrip}
+                  onChange={handleIsRoundTripChange}
+                  name="isRoundTrip"
+                  color="primary"
+                />
+              }
+              label="Round Trip"
             />
           </Grid>
 

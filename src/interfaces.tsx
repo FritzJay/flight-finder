@@ -33,6 +33,7 @@ export interface IFlightsState {
   from: IAirport | null;
   to: IAirport | null;
   date: Date | null;
+  isRoundTrip: boolean;
   timeRange: number[];
   selectedFlight: IFlight | null;
   flights: IFlight[];

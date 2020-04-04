@@ -5,6 +5,7 @@ import { IFlightsState, IAirport, IFlight } from "../interfaces";
 export const SET_FROM = "SET_FROM";
 export const SET_TO = "SET_TO";
 export const SET_DATE = "SET_DATE";
+export const SET_IS_ROUND_TRIP = "SET_IS_ROUND_TRIP";
 export const SET_TIME_RANGE = "SET_TIME_RANGE";
 export const SET_FLIGHTS = "SET_FLIGHTS";
 export const SET_SELECTED_FLIGHT = "SET_SELECTED_FLIGHT";
@@ -22,6 +23,11 @@ interface SetToAction {
 interface SetDateAction {
   type: typeof SET_DATE;
   payload: Date;
+}
+
+interface SetIsRoundTripAction {
+  type: typeof SET_IS_ROUND_TRIP;
+  payload: boolean;
 }
 
 interface SetTimeRangeAction {
@@ -43,6 +49,7 @@ export type FlightsActionType =
   | SetFromAction
   | SetToAction
   | SetDateAction
+  | SetIsRoundTripAction
   | SetTimeRangeAction
   | SetFlights
   | SetSelectedFlightAction;
@@ -62,6 +69,11 @@ export const setTo = (airport: IAirport | null) => ({
 export const setDate = (date: Date | null) => ({
   type: SET_DATE,
   payload: date
+});
+
+export const setIsRoundTrip = (isRoundTrip: boolean) => ({
+  type: SET_IS_ROUND_TRIP,
+  payload: isRoundTrip
 });
 
 export const setTimeRange = (timeRange: number[]) => ({
@@ -85,6 +97,7 @@ export const initialFlightsState: IFlightsState = {
   from: null,
   to: null,
   date: new Date(Date.now()),
+  isRoundTrip: false,
   timeRange: [0, 2400],
   selectedFlight: null,
   flights: []
@@ -109,6 +122,11 @@ export const flightsReducer = (
       return {
         ...state,
         date: action.payload
+      };
+    case SET_IS_ROUND_TRIP:
+      return {
+        ...state,
+        isRoundTrip: action.payload
       };
     case SET_TIME_RANGE:
       return {
