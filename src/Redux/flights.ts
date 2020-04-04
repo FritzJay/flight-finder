@@ -8,7 +8,8 @@ export const SET_DATE = "SET_DATE";
 export const SET_IS_ROUND_TRIP = "SET_IS_ROUND_TRIP";
 export const SET_TIME_RANGE = "SET_TIME_RANGE";
 export const SET_FLIGHTS = "SET_FLIGHTS";
-export const SET_SELECTED_FLIGHT = "SET_SELECTED_FLIGHT";
+export const SELECT_FLIGHT = "SELECT_FLIGHT";
+export const UNSELECT_FLIGHT = "UNSELECT_FLIGHT";
 
 interface SetFromAction {
   type: typeof SET_FROM;
@@ -40,8 +41,13 @@ interface SetFlights {
   payload: IFlight[];
 }
 
-interface SetSelectedFlightAction {
-  type: typeof SET_SELECTED_FLIGHT;
+interface SelectFlightAction {
+  type: typeof SELECT_FLIGHT;
+  payload: IFlight;
+}
+
+interface UnselectFlightAction {
+  type: typeof UNSELECT_FLIGHT;
   payload: IFlight;
 }
 
@@ -52,7 +58,8 @@ export type FlightsActionType =
   | SetIsRoundTripAction
   | SetTimeRangeAction
   | SetFlights
-  | SetSelectedFlightAction;
+  | SelectFlightAction
+  | UnselectFlightAction;
 
 /* Actions */
 
@@ -86,8 +93,13 @@ export const setFlights = (flights: IFlight[]) => ({
   payload: flights
 });
 
-export const setSelectedFlight = (flight: IFlight | null) => ({
-  type: SET_SELECTED_FLIGHT,
+export const selectFlight = (flight: IFlight) => ({
+  type: SELECT_FLIGHT,
+  payload: flight
+});
+
+export const unselectFlight = (flight: IFlight) => ({
+  type: UNSELECT_FLIGHT,
   payload: flight
 });
 
@@ -99,7 +111,7 @@ export const initialFlightsState: IFlightsState = {
   date: new Date(Date.now()),
   isRoundTrip: false,
   timeRange: [0, 2400],
-  selectedFlight: null,
+  selectedFlights: [],
   flights: []
 };
 
@@ -133,10 +145,17 @@ export const flightsReducer = (
         ...state,
         timeRange: action.payload
       };
-    case SET_SELECTED_FLIGHT:
+    case SELECT_FLIGHT:
       return {
         ...state,
-        selectedFlight: action.payload
+        selectedFlights: state.selectedFlights.concat([action.payload])
+      };
+    case UNSELECT_FLIGHT:
+      return {
+        ...state,
+        selectedFlights: state.selectedFlights.filter(
+          (flight: IFlight) => flight.id !== action.payload.id
+        )
       };
     case SET_FLIGHTS:
       return {

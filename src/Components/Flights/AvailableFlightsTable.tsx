@@ -10,54 +10,16 @@ import {
   TableRow,
   Typography,
   TableSortLabel,
-  Theme,
-  CircularProgress,
-  makeStyles,
-  createStyles
+  CircularProgress
 } from "@material-ui/core";
+import {
+  getComparator,
+  stableSort,
+  IHeadCell,
+  useStyles,
+  Order
+} from "./TableUtility";
 import { IFlight } from "../../interfaces";
-
-/* Sorting */
-function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
-  if (b[orderBy] < a[orderBy]) {
-    return -1;
-  }
-  if (b[orderBy] > a[orderBy]) {
-    return 1;
-  }
-  return 0;
-}
-
-type Order = "asc" | "desc";
-
-function getComparator<Key extends keyof any>(
-  order: Order,
-  orderBy: Key
-): (
-  a: { [key in Key]: number | string },
-  b: { [key in Key]: number | string }
-) => number {
-  return order === "desc"
-    ? (a, b) => descendingComparator(a, b, orderBy)
-    : (a, b) => -descendingComparator(a, b, orderBy);
-}
-
-function stableSort<T>(array: T[], comparator: (a: T, b: T) => number) {
-  const stabilizedThis = array.map((el, index) => [el, index] as [T, number]);
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0]);
-    if (order !== 0) return order;
-    return a[1] - b[1];
-  });
-  return stabilizedThis.map(el => el[0]);
-}
-
-/* Table Header */
-interface IHeadCell {
-  id: keyof IFlight;
-  label: string;
-  numeric: boolean;
-}
 
 const headCells: IHeadCell[] = [
   { id: "airline", numeric: false, label: "Airline" },
@@ -70,36 +32,16 @@ const headCells: IHeadCell[] = [
 
 const columns = headCells.length;
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    visuallyHidden: {
-      border: 0,
-      clip: "rect(0 0 0 0)",
-      height: 1,
-      margin: -1,
-      overflow: "hidden",
-      padding: 0,
-      position: "absolute",
-      top: 20,
-      width: 1
-    },
-    selected: {
-      backgroundColor: theme.palette.primary.light,
-      color: theme.palette.primary.contrastText
-    }
-  })
-);
-
-const FlightsTable = ({
+const AvailableFlightsTable = ({
   data,
   loading,
-  selectedFlight,
+  selectedFlights,
   handleSelectFlight
 }: {
   data: IFlight[];
   loading: boolean;
-  selectedFlight: IFlight | null;
-  handleSelectFlight: (flight: IFlight | null) => void;
+  selectedFlights: IFlight[];
+  handleSelectFlight: (flight: IFlight, isSelected: boolean) => void;
 }) => {
   const classes = useStyles();
   const [order, setOrder] = useState<Order>("asc");
@@ -175,36 +117,36 @@ const FlightsTable = ({
           ) : (
             stableSort(data, getComparator(order, orderBy))
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((flight: IFlight) => (
-                <TableRow
-                  hover={selectedFlight?.id !== flight.id}
-                  className={
-                    selectedFlight?.id === flight.id ? classes.selected : ""
-                  }
-                  onClick={() =>
-                    selectedFlight?.id === flight.id
-                      ? handleSelectFlight(null)
-                      : handleSelectFlight(flight)
-                  }
-                  tabIndex={-1}
-                  key={flight.id}
-                >
-                  <TableCell>{flight.airline}</TableCell>
-                  <TableCell align="left">{flight.cabin}</TableCell>
-                  <TableCell align="left">{flight.grade}</TableCell>
-                  <TableCell align="left">{`${Math.floor(
-                    flight.duration / 60
-                  )}h ${flight.duration % 60}m`}</TableCell>
-                  <TableCell align="right">{flight.stops}</TableCell>
-                  <TableCell align="right">
-                    {flight.fare.toLocaleString("en-US", {
-                      style: "currency",
-                      currency: "USD",
-                      minimumFractionDigits: 2
-                    })}
-                  </TableCell>
-                </TableRow>
-              ))
+              .map((flight: IFlight) => {
+                const isSelected = selectedFlights.some(
+                  f => f.id === flight.id
+                );
+
+                return (
+                  <TableRow
+                    hover={!isSelected}
+                    className={isSelected ? classes.selected : ""}
+                    onClick={() => handleSelectFlight(flight, isSelected)}
+                    tabIndex={-1}
+                    key={flight.id}
+                  >
+                    <TableCell>{flight.airline}</TableCell>
+                    <TableCell align="left">{flight.cabin}</TableCell>
+                    <TableCell align="left">{flight.grade}</TableCell>
+                    <TableCell align="left">{`${Math.floor(
+                      flight.duration / 60
+                    )}h ${flight.duration % 60}m`}</TableCell>
+                    <TableCell align="right">{flight.stops}</TableCell>
+                    <TableCell align="right">
+                      {flight.fare.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                        minimumFractionDigits: 2
+                      })}
+                    </TableCell>
+                  </TableRow>
+                );
+              })
           )}
         </TableBody>
         <TableFooter>
@@ -224,4 +166,4 @@ const FlightsTable = ({
   );
 };
 
-export default FlightsTable;
+export default AvailableFlightsTable;

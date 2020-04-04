@@ -15,6 +15,7 @@ import { AirplanemodeActive } from "@material-ui/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../Redux";
 import { setStep } from "../../Redux/system";
+import { formatTotal } from "../../utility";
 
 interface IChip {
   id: string;
@@ -36,24 +37,22 @@ const useConfirmation = (): {
 } => {
   const dispatch = useDispatch();
   return useSelector((state: RootState) => {
-    const selectedFlight = state.flights.selectedFlight;
-
     return {
       rows: [
         {
           label: "Flights",
-          items:
-            selectedFlight !== null
-              ? [
-                  {
-                    label: `${selectedFlight.fromAirportCode} → ${selectedFlight.toAirportCode}`,
-                    icon: <AirplanemodeActive />,
-                    id: selectedFlight.id,
-                    tooltip: `${selectedFlight.stops} stop(s)`
-                  }
-                ]
-              : [],
-          total: selectedFlight?.fare,
+          items: state.flights.selectedFlights.map(
+            ({ fromAirportCode, toAirportCode, id, stops }) => ({
+              label: `${fromAirportCode} → ${toAirportCode}`,
+              icon: <AirplanemodeActive />,
+              id: id,
+              tooltip: `${stops} stop(s)`
+            })
+          ),
+          total: state.flights.selectedFlights.reduce(
+            (total, { fare }) => total + fare,
+            0
+          ),
           step: 1
         },
         { label: "Lodging", items: [], total: undefined, step: 2 },
@@ -63,13 +62,6 @@ const useConfirmation = (): {
     };
   });
 };
-
-const formatTotal = (total: number | undefined) =>
-  total?.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2
-  }) || "N/A";
 
 const Confirmation = () => {
   const { rows, setStep } = useConfirmation();

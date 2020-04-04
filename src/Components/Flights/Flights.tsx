@@ -16,7 +16,8 @@ import {
 import DateFnsUtils from "@date-io/date-fns";
 import { IAirport, IFlight } from "../../interfaces";
 import AirportSearchInput from "./AirportSearchInput";
-import FlightsTable from "./FlightsTable";
+import AvailableFlightsTable from "./AvailableFlightsTable";
+import SelectedFlightsTable from "./SelectedFlightsTable";
 import queryFlights from "../../API/queryFlights";
 import { RootState } from "../../Redux";
 import {
@@ -25,7 +26,8 @@ import {
   setDate,
   setIsRoundTrip,
   setTimeRange,
-  setSelectedFlight,
+  unselectFlight,
+  selectFlight,
   setFlights
 } from "../../Redux/flights";
 
@@ -43,7 +45,7 @@ const useFlights = () => {
     date: state.flights.date,
     isRoundTrip: state.flights.isRoundTrip,
     timeRange: state.flights.timeRange,
-    selectedFlight: state.flights.selectedFlight,
+    selectedFlights: state.flights.selectedFlights,
     flights: state.flights.flights,
     handleToChange: (airport: IAirport | null) => dispatch(setTo(airport)),
     handleFromChange: (airport: IAirport | null) => dispatch(setFrom(airport)),
@@ -52,8 +54,10 @@ const useFlights = () => {
       dispatch(setIsRoundTrip(event.target.checked)),
     handleTimeRangeChange: (timeRange: number[]) =>
       dispatch(setTimeRange(timeRange)),
-    handleSelectFlight: (flight: IFlight | null) =>
-      dispatch(setSelectedFlight(flight)),
+    handleSelectFlight: (flight: IFlight, isSelected: boolean) =>
+      isSelected
+        ? dispatch(unselectFlight(flight))
+        : dispatch(selectFlight(flight)),
     setFlights: (flights: IFlight[]) => dispatch(setFlights(flights))
   }));
 };
@@ -66,7 +70,7 @@ const Flights = () => {
     date,
     isRoundTrip,
     timeRange,
-    selectedFlight,
+    selectedFlights,
     flights,
     handleToChange,
     handleFromChange,
@@ -199,10 +203,21 @@ const Flights = () => {
         </MuiPickersUtilsProvider>
 
         <Grid item xs={12}>
-          {(flights.length > 0 || selectedFlight !== null || loading) && (
-            <FlightsTable
+          {
+            <SelectedFlightsTable
+              flights={selectedFlights}
+              handleUnselectFlight={(flight: IFlight) =>
+                handleSelectFlight(flight, true)
+              }
+            />
+          }
+        </Grid>
+
+        <Grid item xs={12}>
+          {(flights.length > 0 || loading) && (
+            <AvailableFlightsTable
               data={flights}
-              selectedFlight={selectedFlight}
+              selectedFlights={selectedFlights}
               handleSelectFlight={handleSelectFlight}
               loading={loading}
             />

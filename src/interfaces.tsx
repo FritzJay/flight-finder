@@ -35,7 +35,7 @@ export interface IFlightsState {
   date: Date | null;
   isRoundTrip: boolean;
   timeRange: number[];
-  selectedFlight: IFlight | null;
+  selectedFlights: IFlight[];
   flights: IFlight[];
 }
 
