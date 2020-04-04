@@ -107,7 +107,7 @@ Node projects are notorious for including a ton of axillary packages. You can se
 
 In this section, I'll go through the dependencies I've added and briefly describe each one in an attempt to demystify them.
 
-- [@material-ui](https://material-ui.com/)/(core/icons/lab/pickers)
+- [@material-ui/(core/icons/lab/pickers)](https://material-ui.com/)
   - Material-UI is React UI framework that provides basic UI components. This includes things like layout grids, tables, buttons, sliders and more. Material-UI also makes it easy to integrate themes. For example instead of manually assigning colors for all your buttons and text, you can use specify "primary" and "secondary" colors for elements to use and have Material-UI select the correct colors depending on the theme. I use Material-UI components on every custom component in this app.
 - [@date-io/date-fns & date-fns](https://github.com/dmtrKovalenko/date-io)
   - These are here because of a quark in Material-UI. For some reason, you need to provide date/time related utility functions to Material-UI's DatePicker component.
