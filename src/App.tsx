@@ -1,177 +1,173 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { makeStyles } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Paper from "@material-ui/core/Paper";
-import Stepper from "@material-ui/core/Stepper";
-import Step from "@material-ui/core/Step";
-import StepLabel from "@material-ui/core/StepLabel";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import { Link } from "@material-ui/core";
-import { RootState } from "./Redux/index";
-import { setStep } from "./Redux/system";
-import Settings from "./Components/Settings/Settings";
-import Information from "./Components/Information/Information";
-import Flights from "./Components/Flights/Flights";
-import Confirmation from "./Components/Confirmation/Confirmation";
+import React from 'react';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Drawer from '@material-ui/core/Drawer';
+import Box from '@material-ui/core/Box';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Link from '@material-ui/core/Link';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import NavbarList, { Links } from './Components/NavbarList/NavbarList';
 
-const useStyles = makeStyles(theme => ({
-  appBar: {
-    position: "relative"
+const drawerWidth = 240;
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
   },
-  layout: {
-    width: "auto",
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
-      width: 800,
-      marginLeft: "auto",
-      marginRight: "auto"
-    }
+  toolbar: {
+    paddingRight: 24, // keep right padding when drawer closed
+  },
+  toolbarIcon: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar,
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginRight: 36,
+  },
+  menuButtonHidden: {
+    display: 'none',
+  },
+  title: {
+    flexGrow: 1,
+  },
+  drawerPaper: {
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  drawerPaperClose: {
+    overflowX: 'hidden',
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    width: theme.spacing(7),
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing(9),
+    },
+  },
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    height: '100vh',
+    overflow: 'auto',
+  },
+  container: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
   },
   paper: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(3),
     padding: theme.spacing(2),
-    [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginTop: theme.spacing(6),
-      marginBottom: theme.spacing(6),
-      padding: theme.spacing(3)
-    }
+    display: 'flex',
+    overflow: 'auto',
+    flexDirection: 'column',
   },
-  stepper: {
-    padding: theme.spacing(3, 0, 5)
+  fixedHeight: {
+    height: 240,
   },
-  buttons: {
-    display: "flex",
-    justifyContent: "flex-end"
-  },
-  button: {
-    marginTop: theme.spacing(3),
-    marginLeft: theme.spacing(1)
-  }
 }));
 
-const useApp = () => {
-  const dispatch = useDispatch();
-  return useSelector((state: RootState) => ({
-    step: state.system.step,
-    handleNext: () => dispatch(setStep(state.system.step + 1)),
-    handleBack: () => dispatch(setStep(state.system.step - 1))
-  }));
-};
-
-const steps = [
-  "Settings",
-  "Information",
-  "Flights",
-  "Lodging",
-  "Car Rentals",
-  "Confirmation"
-];
-
-const getStepContent = (step: number) => {
-  switch (step) {
-    case 0:
-      return <Settings />;
-    case 1:
-      return <Information />;
-    case 2:
-      return <Flights />;
-    case 3:
-      return <div>Lodging</div>;
-    case 4:
-      return <div>Car Rentals</div>;
-    case 5:
-      return <Confirmation />;
-    default:
-      throw new Error("Unknown step");
-  }
-};
-
-const App = () => {
+export default function Dashboard() {
   const classes = useStyles();
-  const { step, handleBack, handleNext } = useApp();
+  const [open, setOpen] = React.useState(true);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
-    <React.Fragment>
+    <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="absolute" color="default" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h5" color="inherit" noWrap>
-            Flight Finder
+      <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+            Dashboard
           </Typography>
-          {process.env.NODE_ENV === "development" && (
-            <Button onClick={() => localStorage.clear()}>
-              Clear Local Storage
-            </Button>
-          )}
         </Toolbar>
       </AppBar>
-      <main className={classes.layout}>
-        <Paper className={classes.paper}>
-          <Typography component="h1" variant="h4" align="center">
-            Book Flights
-          </Typography>
-          <Stepper activeStep={step} className={classes.stepper}>
-            {steps.map(label => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          <React.Fragment>
-            {step === steps.length ? (
-              <React.Fragment>
-                <Typography variant="h5" gutterBottom>
-                  Thank you for your order.
-                </Typography>
-                <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order
-                  confirmation, and will send you an update when your order has
-                  shipped.
-                </Typography>
-                <div className={classes.buttons}>
-                  <Button onClick={handleBack} className={classes.button}>
-                    Back
-                  </Button>
-                </div>
-              </React.Fragment>
-            ) : (
-              <React.Fragment>
-                {getStepContent(step)}
-                <div className={classes.buttons}>
-                  {step !== 0 && (
-                    <Button onClick={handleBack} className={classes.button}>
-                      Back
-                    </Button>
-                  )}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {step === steps.length - 1 ? "Send Estimate" : "Next"}
-                  </Button>
-                </div>
-              </React.Fragment>
-            )}
-          </React.Fragment>
-        </Paper>
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+        }}
+        open={open}
+      >
+        <div className={classes.toolbarIcon}>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <Divider />
+        <NavbarList selectedLink={Links.CreateEstimate} loadingLink={Links.Lodging} activeLinks={[Links.CreateEstimate, Links.Flights, Links.Lodging]} />
+      </Drawer>
+      <main className={classes.content}>
+        <div className={classes.appBarSpacer} />
+        <Container maxWidth="lg" className={classes.container}>
+          <Grid container spacing={3}>
 
-        <Typography variant="body2" color="textSecondary" align="center">
-          {"Powered By "}
-          <Link color="inherit" href="https://www.certify.com/">
-            Certify Travel
-          </Link>
-        </Typography>
+            
+            <Grid item xs={12}>
+              <Paper className={fixedHeightPaper}>
+                <div>Content</div>
+              </Paper>
+            </Grid>
+
+
+          </Grid>
+          <Box pt={4}>
+            <Typography variant="body2" color="textSecondary" align="center">
+              {'Created By '}
+              <Link color="inherit" href="https://github.com/FritzJay">
+                Fritz Jay
+              </Link>
+              {' 2020.'}
+            </Typography>
+          </Box>
+        </Container>
       </main>
-    </React.Fragment>
+    </div>
   );
-};
-
-export default App;
+}

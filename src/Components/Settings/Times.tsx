@@ -45,7 +45,7 @@ const Times = ({ classes }: { classes: any }) => {
                 name={t.toString()}
               />
             }
-            label={`${t} days`}
+            label={`${t} days from now`}
           />
         ))}
       </FormGroup>
