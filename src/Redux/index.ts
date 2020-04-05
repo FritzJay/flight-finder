@@ -3,11 +3,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import persistState from "redux-localstorage";
 import { systemReducer } from "./system";
 import { settingsReducer } from "./settings";
+import { createEstimateReducer } from "./createEstimate";
 import { flightsReducer } from "./flights";
 
 const rootReducer = combineReducers({
   system: systemReducer,
   settings: settingsReducer,
+  createEstimate: createEstimateReducer,
   flights: flightsReducer,
 });
 

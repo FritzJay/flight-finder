@@ -14,11 +14,13 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
+import Tooltip from "@material-ui/core/Tooltip";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import SettingsIcon from "@material-ui/icons/Settings";
 import NavbarList from "./Components/NavbarList/NavbarList";
 import Settings from "./Components/Settings/Settings";
+import CreateEstimate from "./Components/CreateEstimate/CreateEstimate";
 import { RootState } from "./Redux";
 import { setDrawerOpen, setSettingsOpen } from "./Redux/system";
 import { Links } from "./types";
@@ -78,9 +80,9 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    width: theme.spacing(7),
+    width: theme.spacing(6),
     [theme.breakpoints.up("sm")]: {
-      width: theme.spacing(9),
+      width: theme.spacing(8),
     },
   },
   appBarSpacer: theme.mixins.toolbar,
@@ -94,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(4),
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
     display: "flex",
     overflow: "auto",
     flexDirection: "column",
@@ -107,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
 const getContent = (selectedLink: Links) => {
   switch (selectedLink) {
     case Links.CreateEstimate:
-      return <div>Create Estimate</div>;
+      return <CreateEstimate />;
     case Links.Flights:
       return <div>Flights</div>;
     case Links.Lodging:
@@ -126,6 +128,7 @@ const useDashboard = () => {
     classes,
     open: state.system.isDrawerOpen,
     selectedLink: state.system.selectedLink,
+    isCalculating: state.system.isCalculating,
     handleDrawerOpen: () => dispatch(setDrawerOpen(true)),
     handleDrawerClose: () => dispatch(setDrawerOpen(false)),
     handleToggleSettings: () =>
@@ -138,6 +141,7 @@ export default function Dashboard() {
     classes,
     open,
     selectedLink,
+    isCalculating,
     handleDrawerOpen,
     handleDrawerClose,
     handleToggleSettings,
@@ -172,8 +176,14 @@ export default function Dashboard() {
           >
             Dashboard
           </Typography>
-          <IconButton onClick={handleToggleSettings} color="inherit">
-            <SettingsIcon />
+          <IconButton
+            disabled={isCalculating}
+            onClick={handleToggleSettings}
+            color="inherit"
+          >
+            <Tooltip title="Adjust settings" aria-label="Adjust settings">
+              <SettingsIcon />
+            </Tooltip>
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -194,7 +204,7 @@ export default function Dashboard() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
+        <Container className={classes.container}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Paper className={clsx(classes.paper, classes.fixedHeight)}>

@@ -32,6 +32,7 @@ export interface ISystemState {
   loadingLinks: Links[];
   isDrawerOpen: boolean;
   isSettingsOpen: boolean;
+  isCalculating: boolean;
 }
 
 export interface ISettingsState {
@@ -41,6 +42,10 @@ export interface ISettingsState {
     vehicles: boolean;
   };
   times: number[];
+}
+
+export interface ICreateEstimateState {
+  destination: IAirport | null;
 }
 
 export interface IFlightsState {

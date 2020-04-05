@@ -9,6 +9,7 @@ export const ADD_LOADING_LINK = "ADD_ACTIVE_LINK";
 export const REMOVE_LOADING_LINK = "REMOVE_ACTIVE_LINK";
 export const SET_DRAWER_OPEN = "SET_DRAWER_OPEN";
 export const SET_SETTINGS_OPEN = "SET_SETTINGS_OPEN";
+export const SET_CALCULATING = "SET_CALCULATING";
 
 interface SetSelectedLinkAction {
   type: typeof SET_SELECTED_LINK;
@@ -45,6 +46,11 @@ interface SetSettingsOpenAction {
   payload: boolean;
 }
 
+interface SetCalculatingAction {
+  type: typeof SET_CALCULATING;
+  payload: boolean;
+}
+
 export type SystemActionTypes =
   | SetSelectedLinkAction
   | SetDrawerOpenAction
@@ -52,7 +58,8 @@ export type SystemActionTypes =
   | RemoveActiveLinkAction
   | AddLoadingLinkAction
   | RemoveLoadingLinkAction
-  | SetSettingsOpenAction;
+  | SetSettingsOpenAction
+  | SetCalculatingAction;
 
 /* Actions */
 
@@ -91,6 +98,11 @@ export const setSettingsOpen = (isOpen: boolean) => ({
   payload: isOpen,
 });
 
+export const setCalculating = (isCalculating: boolean) => ({
+  type: SET_CALCULATING,
+  payload: isCalculating,
+});
+
 /* Reducer */
 
 const initialState: ISystemState = {
@@ -99,6 +111,7 @@ const initialState: ISystemState = {
   loadingLinks: [Links.Flights],
   isDrawerOpen: true,
   isSettingsOpen: false,
+  isCalculating: false,
 };
 
 export const systemReducer = (
@@ -144,6 +157,11 @@ export const systemReducer = (
       return {
         ...state,
         isSettingsOpen: action.payload,
+      };
+    case SET_CALCULATING:
+      return {
+        ...state,
+        isCalculating: action.payload,
       };
     default:
       return state;

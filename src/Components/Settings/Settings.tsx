@@ -43,7 +43,7 @@ const Settings = () => {
   return (
     <Dialog
       open={open}
-      onClick={handleClose}
+      onClose={handleClose}
       aria-labelledby="Settings"
       aria-describedby="Specify the types and methods of calculations."
     >
@@ -55,7 +55,7 @@ const Settings = () => {
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color="primary">
-          Cancel
+          Save
         </Button>
       </DialogActions>
     </Dialog>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -14,17 +14,15 @@ import { Links } from "../../types";
 import { RootState } from "../../Redux/index";
 import { setSelectedLink } from "../../Redux/system";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     icon: {
       position: "absolute",
-      justifySelf: "center",
       alignSelf: "center",
       marginLeft: "2px",
     },
     iconProgress: {
       position: "absolute",
-      justifySelf: "center",
       alignSelf: "center",
     },
   })
