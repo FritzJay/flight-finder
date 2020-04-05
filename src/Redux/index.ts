@@ -1,4 +1,4 @@
-import { combineReducers, createStore, compose } from "redux";
+import { combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import persistState from "redux-localstorage";
 import { systemReducer } from "./system";
@@ -13,9 +13,7 @@ const rootReducer = combineReducers({
   flights: flightsReducer
 });
 
-const enhancer: any = compose(composeWithDevTools(), persistState());
-
-export const store = createStore(rootReducer, undefined, enhancer);
+export const store = createStore(rootReducer, undefined, composeWithDevTools(persistState() as any));
 
 export type RootState = ReturnType<typeof rootReducer>;
 
