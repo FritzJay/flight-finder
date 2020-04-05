@@ -30,6 +30,7 @@ export interface ISystemState {
   selectedLink: number;
   activeLinks: Links[];
   isDrawerOpen: boolean;
+  isSettingsOpen: boolean;
 }
 
 export interface ISettingsState {

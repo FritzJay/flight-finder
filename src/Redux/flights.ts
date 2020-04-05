@@ -1,4 +1,4 @@
-import { IFlightsState, IAirport, IFlight } from "../types";
+import { IFlightsState, IFlight } from "../types";
 
 /* Types */
 

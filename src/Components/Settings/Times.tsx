@@ -5,8 +5,8 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
-  Typography,
-  FormHelperText
+  FormLabel,
+  FormHelperText,
 } from "@material-ui/core";
 import { RootState } from "../../Redux";
 import { addTime, removeTime } from "../../Redux/settings";
@@ -18,7 +18,7 @@ const useTimes = () => {
     handleAddTime: (t: number | undefined) =>
       t !== undefined && dispatch(addTime(t)),
     handleRemoveTime: (t: number | undefined) =>
-      t !== undefined && dispatch(removeTime(t))
+      t !== undefined && dispatch(removeTime(t)),
   }));
 };
 
@@ -32,9 +32,11 @@ const Times = ({ classes }: { classes: any }) => {
       error={error}
       className={classes.formControl}
     >
-      <Typography variant="body1">Calculate Average Prices At</Typography>
+      <FormLabel required component="legend">
+        Calculate Averages At
+      </FormLabel>
       <FormGroup>
-        {[0, 7, 14, 30, 60].map(t => (
+        {[0, 7, 14, 30, 60].map((t) => (
           <FormControlLabel
             control={
               <Checkbox

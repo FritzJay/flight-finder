@@ -16,11 +16,12 @@ import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import SettingsIcon from "@material-ui/icons/Settings";
 import NavbarList from "./Components/NavbarList/NavbarList";
 import Settings from "./Components/Settings/Settings";
 import { Links } from "./types";
 import { RootState } from "./Redux";
-import { setDrawerOpen } from "./Redux/system";
+import { setDrawerOpen, setSettingsOpen } from "./Redux/system";
 
 const drawerWidth = 240;
 
@@ -111,11 +112,19 @@ const useDashboard = () => {
     open: state.system.isDrawerOpen,
     handleDrawerOpen: () => dispatch(setDrawerOpen(true)),
     handleDrawerClose: () => dispatch(setDrawerOpen(false)),
+    handleToggleSettings: () =>
+      dispatch(setSettingsOpen(!state.system.isSettingsOpen)),
   }));
 };
 
 export default function Dashboard() {
-  const { classes, open, handleDrawerOpen, handleDrawerClose } = useDashboard();
+  const {
+    classes,
+    open,
+    handleDrawerOpen,
+    handleDrawerClose,
+    handleToggleSettings,
+  } = useDashboard();
 
   return (
     <div className={classes.root}>
@@ -146,6 +155,9 @@ export default function Dashboard() {
           >
             Dashboard
           </Typography>
+          <IconButton onClick={handleToggleSettings} color="inherit">
+            <SettingsIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -169,7 +181,7 @@ export default function Dashboard() {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Paper className={clsx(classes.paper, classes.fixedHeight)}>
-                <Settings />
+                <div>Content</div>
               </Paper>
             </Grid>
           </Grid>
@@ -184,6 +196,7 @@ export default function Dashboard() {
           </Box>
         </Container>
       </main>
+      <Settings />
     </div>
   );
 }

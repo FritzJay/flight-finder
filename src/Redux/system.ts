@@ -6,6 +6,7 @@ export const SET_SELECTED_LINK = "SET_SELECTED_LINK";
 export const ADD_ACTIVE_LINK = "ADD_ACTIVE_LINK";
 export const REMOVE_ACTIVE_LINK = "REMOVE_ACTIVE_LINK";
 export const SET_DRAWER_OPEN = "SET_DRAWER_OPEN";
+export const SET_SETTINGS_OPEN = "SET_SETTINGS_OPEN";
 
 interface SetSelectedLinkAction {
   type: typeof SET_SELECTED_LINK;
@@ -27,11 +28,17 @@ interface SetDrawerOpenAction {
   payload: boolean;
 }
 
+interface SetSettingsOpenAction {
+  type: typeof SET_SETTINGS_OPEN;
+  payload: boolean;
+}
+
 export type SystemActionTypes =
   | SetSelectedLinkAction
   | SetDrawerOpenAction
   | AddActiveLinkAction
-  | RemoveActiveLinkAction;
+  | RemoveActiveLinkAction
+  | SetSettingsOpenAction;
 
 /* Actions */
 
@@ -55,12 +62,18 @@ export const setDrawerOpen = (isOpen: boolean) => ({
   payload: isOpen,
 });
 
+export const setSettingsOpen = (isOpen: boolean) => ({
+  type: SET_SETTINGS_OPEN,
+  payload: isOpen,
+});
+
 /* Reducer */
 
 const initialState: ISystemState = {
   selectedLink: Links.CreateEstimate,
   activeLinks: [Links.CreateEstimate],
   isDrawerOpen: true,
+  isSettingsOpen: false,
 };
 
 export const systemReducer = (
@@ -89,6 +102,11 @@ export const systemReducer = (
       return {
         ...state,
         isDrawerOpen: action.payload,
+      };
+    case SET_SETTINGS_OPEN:
+      return {
+        ...state,
+        isSettingsOpen: action.payload,
       };
     default:
       return state;

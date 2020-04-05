@@ -5,14 +5,14 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
-  Typography,
-  FormHelperText
+  FormLabel,
+  FormHelperText,
 } from "@material-ui/core";
 import { RootState } from "../../Redux";
 import {
   setAveragesFlights,
   setAveragesLodging,
-  setAveragesVehicles
+  setAveragesVehicles,
 } from "../../Redux/settings";
 
 const useAverages = () => {
@@ -20,8 +20,8 @@ const useAverages = () => {
   return useSelector(
     ({
       settings: {
-        averages: { flights, lodging, vehicles }
-      }
+        averages: { flights, lodging, vehicles },
+      },
     }: RootState) => ({
       flights,
       lodging,
@@ -37,7 +37,7 @@ const useAverages = () => {
           default:
             throw new Error("Invalid checkbox name.");
         }
-      }
+      },
     })
   );
 };
@@ -52,7 +52,9 @@ const Averages = ({ classes }: { classes: any }) => {
       error={error}
       className={classes.formControl}
     >
-      <Typography variant="body1">Calculate Average Prices For</Typography>
+      <FormLabel required component="legend">
+        Calculate Averages For
+      </FormLabel>
       <FormGroup>
         <FormControlLabel
           control={
