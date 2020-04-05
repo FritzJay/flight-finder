@@ -29,6 +29,7 @@ export interface IFlight {
 export interface ISystemState {
   selectedLink: number;
   activeLinks: Links[];
+  loadingLinks: Links[];
   isDrawerOpen: boolean;
   isSettingsOpen: boolean;
 }

@@ -19,9 +19,9 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import SettingsIcon from "@material-ui/icons/Settings";
 import NavbarList from "./Components/NavbarList/NavbarList";
 import Settings from "./Components/Settings/Settings";
-import { Links } from "./types";
 import { RootState } from "./Redux";
 import { setDrawerOpen, setSettingsOpen } from "./Redux/system";
+import { Links } from "./types";
 
 const drawerWidth = 240;
 
@@ -104,12 +104,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const getContent = (selectedLink: Links) => {
+  switch (selectedLink) {
+    case Links.CreateEstimate:
+      return <div>Create Estimate</div>;
+    case Links.Flights:
+      return <div>Flights</div>;
+    case Links.Lodging:
+      return <div>Lodging</div>;
+    case Links.Vehicles:
+      return <div>Vehicles</div>;
+    default:
+      throw new Error("Invalid Link");
+  }
+};
+
 const useDashboard = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   return useSelector((state: RootState) => ({
     classes,
     open: state.system.isDrawerOpen,
+    selectedLink: state.system.selectedLink,
     handleDrawerOpen: () => dispatch(setDrawerOpen(true)),
     handleDrawerClose: () => dispatch(setDrawerOpen(false)),
     handleToggleSettings: () =>
@@ -121,6 +137,7 @@ export default function Dashboard() {
   const {
     classes,
     open,
+    selectedLink,
     handleDrawerOpen,
     handleDrawerClose,
     handleToggleSettings,
@@ -181,7 +198,7 @@ export default function Dashboard() {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Paper className={clsx(classes.paper, classes.fixedHeight)}>
-                <div>Content</div>
+                {getContent(selectedLink)}
               </Paper>
             </Grid>
           </Grid>

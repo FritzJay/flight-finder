@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Grid from "@material-ui/core/Grid";
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
-import LinearProgress from "@material-ui/core/LinearProgress";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import BusinessIcon from "@material-ui/icons/Business";
 import FlightsIcon from "@material-ui/icons/Flight";
 import LodgingIcon from "@material-ui/icons/Hotel";
@@ -13,6 +13,22 @@ import VehiclesIcon from "@material-ui/icons/DriveEta";
 import { Links } from "../../types";
 import { RootState } from "../../Redux/index";
 import { setSelectedLink } from "../../Redux/system";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    icon: {
+      position: "absolute",
+      justifySelf: "center",
+      alignSelf: "center",
+      marginLeft: "2px",
+    },
+    iconProgress: {
+      position: "absolute",
+      justifySelf: "center",
+      alignSelf: "center",
+    },
+  })
+);
 
 interface IListItem {
   Icon: any;
@@ -28,15 +44,24 @@ const listItems: IListItem[] = [
 
 const useNavbarList = () => {
   const dispatch = useDispatch();
+  const classes = useStyles();
   return useSelector((state: RootState) => ({
+    classes,
     selectedLink: state.system.selectedLink,
     activeLinks: state.system.activeLinks,
+    loadingLinks: state.system.loadingLinks,
     handleSelectLink: (link: Links) => dispatch(setSelectedLink(link)),
   }));
 };
 
 const NavbarList = () => {
-  const { selectedLink, activeLinks, handleSelectLink } = useNavbarList();
+  const {
+    classes,
+    selectedLink,
+    activeLinks,
+    loadingLinks,
+    handleSelectLink,
+  } = useNavbarList();
 
   return (
     <List>
@@ -47,7 +72,7 @@ const NavbarList = () => {
         onClick={() => handleSelectLink(Links.CreateEstimate)}
       >
         <ListItemIcon>
-          <BusinessIcon />
+          <BusinessIcon className={classes.icon} />
         </ListItemIcon>
         <ListItemText primary="Create Estimate" />
       </ListItem>
@@ -56,26 +81,19 @@ const NavbarList = () => {
         <ListItem
           key={label}
           button
+          selected={selectedLink === link}
           disabled={!activeLinks.includes(link)}
           onClick={() => handleSelectLink(link)}
         >
-          <Grid container>
-            <Grid item container alignItems="center" xs={12}>
-              <ListItemIcon>
-                <Icon />
-              </ListItemIcon>
-              <ListItemText primary={label} />
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              style={{
-                display: undefined === link ? "block" : "none",
-              }}
-            >
-              <LinearProgress variant="query" color="primary" />
-            </Grid>
-          </Grid>
+          <ListItemIcon>
+            <React.Fragment>
+              <Icon className={classes.icon} />
+              {loadingLinks.includes(link) && (
+                <CircularProgress size={28} className={classes.iconProgress} />
+              )}
+            </React.Fragment>
+          </ListItemIcon>
+          <ListItemText primary={label} />
         </ListItem>
       ))}
     </List>
