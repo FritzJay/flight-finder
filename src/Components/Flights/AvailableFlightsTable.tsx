@@ -67,7 +67,7 @@ const AvailableFlightsTable = ({
 
   return (
     <TableContainer>
-      <Typography variant="h6" style={{ margin: "1rem 1rem 1rem 2rem" }}>
+      <Typography variant="h5" style={{ margin: "1rem 1rem 1rem 2rem" }}>
         Available Flights
       </Typography>
 

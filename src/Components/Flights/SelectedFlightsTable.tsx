@@ -3,7 +3,6 @@ import {
   TableContainer,
   Table,
   TableBody,
-  TableFooter,
   TableCell,
   TableHead,
   TableRow,
@@ -52,7 +51,7 @@ const SelectedFlightsTable = ({
 
   return (
     <TableContainer>
-      <Typography variant="h6" style={{ margin: "1rem 1rem 1rem 2rem" }}>
+      <Typography variant="h5" style={{ margin: "1rem 1rem 1rem 2rem" }}>
         Selected Flights
       </Typography>
 

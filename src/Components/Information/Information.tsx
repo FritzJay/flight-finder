@@ -36,7 +36,7 @@ const Information = () => {
   } = useInformationPage();
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Your Information
       </Typography>
       <Grid container spacing={3}>

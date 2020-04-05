@@ -53,10 +53,10 @@ const useConfirmation = (): {
             (total, { fare }) => total + fare,
             0
           ),
-          step: 1
+          step: 2
         },
-        { label: "Lodging", items: [], total: undefined, step: 2 },
-        { label: "Vehicles", items: [], total: undefined, step: 3 }
+        { label: "Lodging", items: [], total: undefined, step: 3 },
+        { label: "Vehicles", items: [], total: undefined, step: 4 }
       ],
       setStep: (step: number) => dispatch(setStep(step))
     };
@@ -68,7 +68,7 @@ const Confirmation = () => {
 
   return (
     <TableContainer>
-      <Typography variant="h6" style={{ margin: "1rem 1rem 1rem 2rem" }}>
+      <Typography variant="h5" style={{ margin: "1rem 1rem 1rem 2rem" }}>
         Totals
       </Typography>
 

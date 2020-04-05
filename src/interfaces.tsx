@@ -23,6 +23,15 @@ export interface ISystemState {
   step: number;
 }
 
+export interface ISettingsState {
+  averages: {
+    flights: boolean;
+    lodging: boolean;
+    vehicles: boolean;
+  };
+  times: number[];
+}
+
 export interface IInformationState {
   fName: string | null;
   lName: string | null;

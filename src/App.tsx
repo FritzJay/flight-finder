@@ -13,8 +13,9 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from "@material-ui/core";
 import { RootState } from "./Redux/index";
 import { setStep } from "./Redux/system";
-import Flights from "./Components/Flights/Flights";
+import Settings from "./Components/Settings/Settings";
 import Information from "./Components/Information/Information";
+import Flights from "./Components/Flights/Flights";
 import Confirmation from "./Components/Confirmation/Confirmation";
 
 const useStyles = makeStyles(theme => ({
@@ -64,6 +65,7 @@ const useApp = () => {
 };
 
 const steps = [
+  "Settings",
   "Information",
   "Flights",
   "Lodging",
@@ -74,14 +76,16 @@ const steps = [
 const getStepContent = (step: number) => {
   switch (step) {
     case 0:
-      return <Information />;
+      return <Settings />;
     case 1:
-      return <Flights />;
+      return <Information />;
     case 2:
-      return <div>Lodging</div>;
+      return <Flights />;
     case 3:
-      return <div>Car Rentals</div>;
+      return <div>Lodging</div>;
     case 4:
+      return <div>Car Rentals</div>;
+    case 5:
       return <Confirmation />;
     default:
       throw new Error("Unknown step");
@@ -97,7 +101,7 @@ const App = () => {
       <CssBaseline />
       <AppBar position="absolute" color="default" className={classes.appBar}>
         <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
+          <Typography variant="h5" color="inherit" noWrap>
             Flight Finder
           </Typography>
           {process.env.NODE_ENV === "development" && (
