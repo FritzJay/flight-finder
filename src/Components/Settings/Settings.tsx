@@ -4,7 +4,7 @@ import {
   Typography,
   Theme,
   createStyles,
-  makeStyles
+  makeStyles,
 } from "@material-ui/core";
 import Averages from "./Averages";
 import Times from "./Times";
@@ -12,15 +12,15 @@ import Times from "./Times";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      display: "flex"
+      display: "flex",
     },
     formControl: {
       margin: theme.spacing(3),
-      background: theme.palette.background.paper
+      background: theme.palette.background.paper,
     },
     button: {
-      height: "100%"
-    }
+      height: "100%",
+    },
   })
 );
 
@@ -29,12 +29,6 @@ const Settings = () => {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <Typography variant="h5" style={{ margin: "1rem 1rem 1rem 2rem" }}>
-          Settings
-        </Typography>
-      </Grid>
-
       <Grid item xs={12} sm={6}>
         <Averages classes={classes} />
       </Grid>

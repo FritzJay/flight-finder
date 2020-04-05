@@ -1,22 +1,22 @@
 import {
   formatFlightQueryParameters,
   formatFlightLegs,
-  formatTimeFilters
+  formatTimeFilters,
 } from "./queryFlights";
-import { IAirport } from "../interfaces";
+import { IAirport } from "../types";
 
 const from: IAirport = {
   name: "From Airport",
   code: "ABC",
   city: "Los Angeles",
-  locID: "AABC"
+  locID: "AABC",
 };
 
 const to: IAirport = {
   name: "To Airport",
   code: "CBA",
   city: "Las Vegas",
-  locID: "ACBA"
+  locID: "ACBA",
 };
 
 const date = new Date(2020, 3, 1, 0, 0, 0, 0);

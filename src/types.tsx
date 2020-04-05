@@ -1,3 +1,10 @@
+export enum Links {
+  CreateEstimate,
+  Flights,
+  Lodging,
+  Vehicles,
+}
+
 export interface IAirport {
   name: string;
   code: string;
@@ -20,7 +27,9 @@ export interface IFlight {
 /* Redux */
 
 export interface ISystemState {
-  step: number;
+  selectedLink: number;
+  activeLinks: Links[];
+  isDrawerOpen: boolean;
 }
 
 export interface ISettingsState {
@@ -32,22 +41,6 @@ export interface ISettingsState {
   times: number[];
 }
 
-export interface IInformationState {
-  fName: string | null;
-  lName: string | null;
-  so: string | null;
-}
-
 export interface IFlightsState {
-  from: IAirport | null;
-  to: IAirport | null;
-  date: Date | null;
-  isRoundTrip: boolean;
-  timeRange: number[];
-  selectedFlights: IFlight[];
   flights: IFlight[];
 }
-
-export interface ILodgingPage {}
-
-export interface ICarRentalsPage {}

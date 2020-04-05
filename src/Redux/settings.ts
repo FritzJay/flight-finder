@@ -1,4 +1,4 @@
-import { ISettingsState } from "../interfaces";
+import { ISettingsState } from "../types";
 
 /* Types */
 
@@ -44,27 +44,27 @@ export type SettingsActionType =
 
 export const setAveragesFlights = (flight: boolean) => ({
   type: SET_AVERAGES_FLIGHTS,
-  payload: flight
+  payload: flight,
 });
 
 export const setAveragesLodging = (lodging: boolean) => ({
   type: SET_AVERAGES_LODGING,
-  payload: lodging
+  payload: lodging,
 });
 
 export const setAveragesVehicles = (vehicles: boolean) => ({
   type: SET_AVERAGES_VEHICLES,
-  payload: vehicles
+  payload: vehicles,
 });
 
 export const addTime = (time: number) => ({
   type: ADD_TIME,
-  payload: time
+  payload: time,
 });
 
 export const removeTime = (time: number) => ({
   type: REMOVE_TIME,
-  payload: time
+  payload: time,
 });
 
 /* Reducer */
@@ -73,9 +73,9 @@ export const initialSettingsState: ISettingsState = {
   averages: {
     flights: true,
     lodging: true,
-    vehicles: true
+    vehicles: true,
   },
-  times: [0, 7, 14]
+  times: [0, 7, 14],
 };
 
 export const settingsReducer = (
@@ -88,36 +88,36 @@ export const settingsReducer = (
         ...state,
         averages: {
           ...state.averages,
-          flights: action.payload
-        }
+          flights: action.payload,
+        },
       };
     case SET_AVERAGES_LODGING:
       return {
         ...state,
         averages: {
           ...state.averages,
-          lodging: action.payload
-        }
+          lodging: action.payload,
+        },
       };
     case SET_AVERAGES_VEHICLES:
       return {
         ...state,
         averages: {
           ...state.averages,
-          vehicles: action.payload
-        }
+          vehicles: action.payload,
+        },
       };
     case ADD_TIME:
       return {
         ...state,
         times: state.times.includes(action.payload)
           ? state.times
-          : state.times.concat([action.payload])
+          : state.times.concat([action.payload]),
       };
     case REMOVE_TIME:
       return {
         ...state,
-        times: state.times.filter(t => t !== action.payload)
+        times: state.times.filter((t) => t !== action.payload),
       };
     default:
       return state;

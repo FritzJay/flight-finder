@@ -1,4 +1,4 @@
-import { IAirport, IFlight } from "../interfaces";
+import { IAirport, IFlight } from "../types";
 
 interface ILocation {
   city?: any;
@@ -285,7 +285,7 @@ export const queryFlights = async (
             .reduce((acc, cur) => `${acc}/${cur.cabin}`, "")
             .substring(1),
           fromAirportCode: segments[0].fromCode,
-          toAirportCode: segments[segments.length - 1].toCode
+          toAirportCode: segments[segments.length - 1].toCode,
         })
       )
   );
