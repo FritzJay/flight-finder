@@ -11,9 +11,8 @@ const rootReducer = combineReducers({
   information: informationReducer
 });
 
-const enhancer: any = compose(composeWithDevTools(), persistState());
 
-export const store = createStore(rootReducer, undefined, enhancer);
+export const store = createStore(rootReducer, undefined, composeWithDevTools(persistState() as any));
 
 export type RootState = ReturnType<typeof rootReducer>;
 
