@@ -1,23 +1,22 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { RootState } from "../../Redux";
-import { setCalculating } from "../../Redux/system";
-import AirportAutocomplete from "./AirportAutocomplete";
 import { setDestination, setDeparture } from "../../Redux/createEstimate";
+import AirportAutocomplete from "./AirportAutocomplete";
+import useCalculateEstimate from "../../hooks/useCalculateEstimate";
 
 const useCreateEstimate = () => {
-  const dispatch = useDispatch();
+  const calculateEstimate = useCalculateEstimate();
   return useSelector((state: RootState) => ({
     isCalculating: state.system.isCalculating,
     destination: state.createEstimate.destination,
     departure: state.createEstimate.departure,
-    handleExecute: () => dispatch(setCalculating(true)),
-    handleCancel: () => dispatch(setCalculating(false)),
+    handleExecute: () => calculateEstimate(),
   }));
 };
 
@@ -27,7 +26,6 @@ const CreateEstimate = () => {
     destination,
     departure,
     handleExecute,
-    handleCancel,
   } = useCreateEstimate();
 
   return (
@@ -50,9 +48,6 @@ const CreateEstimate = () => {
         />
       </Grid>
       <Grid container spacing={1} justify="flex-end" item xs={12}>
-        <Grid item>
-          <Button onClick={handleCancel}>Cancel</Button>
-        </Grid>
         <Grid item>
           <Button
             disabled={isCalculating}

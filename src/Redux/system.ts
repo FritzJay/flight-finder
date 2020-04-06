@@ -5,8 +5,8 @@ import { ISystemState, Links } from "../types";
 export const SET_SELECTED_LINK = "SET_SELECTED_LINK";
 export const ADD_ACTIVE_LINK = "ADD_ACTIVE_LINK";
 export const REMOVE_ACTIVE_LINK = "REMOVE_ACTIVE_LINK";
-export const ADD_LOADING_LINK = "ADD_ACTIVE_LINK";
-export const REMOVE_LOADING_LINK = "REMOVE_ACTIVE_LINK";
+export const ADD_LOADING_LINK = "ADD_LOADING_LINK";
+export const REMOVE_LOADING_LINK = "REMOVE_LOADING_LINK";
 export const SET_DRAWER_OPEN = "SET_DRAWER_OPEN";
 export const SET_SETTINGS_OPEN = "SET_SETTINGS_OPEN";
 export const SET_CALCULATING = "SET_CALCULATING";
@@ -107,8 +107,8 @@ export const setCalculating = (isCalculating: boolean) => ({
 
 const initialState: ISystemState = {
   selectedLink: Links.CreateEstimate,
-  activeLinks: [Links.CreateEstimate, Links.Flights],
-  loadingLinks: [Links.Flights],
+  activeLinks: [Links.CreateEstimate],
+  loadingLinks: [],
   isDrawerOpen: true,
   isSettingsOpen: false,
   isCalculating: false,
@@ -139,7 +139,7 @@ export const systemReducer = (
     case ADD_LOADING_LINK:
       return {
         ...state,
-        activeLinks: state.loadingLinks.includes(action.payload)
+        loadingLinks: state.loadingLinks.includes(action.payload)
           ? state.loadingLinks
           : state.loadingLinks.concat([action.payload]),
       };

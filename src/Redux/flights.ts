@@ -1,15 +1,21 @@
-import { IFlightsState, IFlight } from "../types";
+import { IFlightsState, IFlight, IStep } from "../types";
 
 /* Types */
 
 export const SET_FLIGHTS = "SET_FLIGHTS";
+export const ADD_STEP = "ADD_STEP";
 
-interface SetFlights {
+interface SetFlightsAction {
   type: typeof SET_FLIGHTS;
   payload: IFlight[];
 }
 
-export type FlightsActionType = SetFlights;
+interface AddStepAction {
+  type: typeof ADD_STEP;
+  payload: IStep;
+}
+
+export type FlightsActionType = SetFlightsAction | AddStepAction;
 
 /* Actions */
 
@@ -18,10 +24,16 @@ export const setFlights = (flights: IFlight[]) => ({
   payload: flights,
 });
 
+export const addStep = (step: IStep) => ({
+  type: ADD_STEP,
+  payload: step,
+});
+
 /* Reducer */
 
 export const initialFlightsState: IFlightsState = {
   flights: [],
+  steps: [],
 };
 
 export const flightsReducer = (
@@ -33,6 +45,11 @@ export const flightsReducer = (
       return {
         ...state,
         flights: action.payload,
+      };
+    case ADD_STEP:
+      return {
+        ...state,
+        steps: state.steps.concat([action.payload]),
       };
     default:
       return state;

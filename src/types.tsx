@@ -24,6 +24,10 @@ export interface IFlight {
   toAirportCode: string;
 }
 
+export interface IStep {
+  description: string;
+}
+
 /* Redux */
 
 export interface ISystemState {
@@ -35,12 +39,14 @@ export interface ISystemState {
   isCalculating: boolean;
 }
 
+export interface IAverages {
+  flights: boolean;
+  lodging: boolean;
+  vehicles: boolean;
+}
+
 export interface ISettingsState {
-  averages: {
-    flights: boolean;
-    lodging: boolean;
-    vehicles: boolean;
-  };
+  averages: IAverages;
   times: number[];
 }
 
@@ -50,5 +56,6 @@ export interface ICreateEstimateState {
 }
 
 export interface IFlightsState {
+  steps: IStep[];
   flights: IFlight[];
 }
