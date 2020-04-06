@@ -8,18 +8,27 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { RootState } from "../../Redux";
 import { setCalculating } from "../../Redux/system";
 import AirportAutocomplete from "./AirportAutocomplete";
+import { setDestination, setDeparture } from "../../Redux/createEstimate";
 
 const useCreateEstimate = () => {
   const dispatch = useDispatch();
   return useSelector((state: RootState) => ({
     isCalculating: state.system.isCalculating,
+    destination: state.createEstimate.destination,
+    departure: state.createEstimate.departure,
     handleExecute: () => dispatch(setCalculating(true)),
     handleCancel: () => dispatch(setCalculating(false)),
   }));
 };
 
 const CreateEstimate = () => {
-  const { isCalculating, handleExecute, handleCancel } = useCreateEstimate();
+  const {
+    isCalculating,
+    destination,
+    departure,
+    handleExecute,
+    handleCancel,
+  } = useCreateEstimate();
 
   return (
     <Grid container spacing={3}>
@@ -27,7 +36,18 @@ const CreateEstimate = () => {
         <Typography variant="h4">Create Estimate</Typography>
       </Grid>
       <Grid item xs={12}>
-        <AirportAutocomplete />
+        <AirportAutocomplete
+          label="Select Departure Airport"
+          value={departure}
+          setAirport={setDeparture}
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <AirportAutocomplete
+          label="Select Destination Airport"
+          value={destination}
+          setAirport={setDestination}
+        />
       </Grid>
       <Grid container spacing={1} justify="flex-end" item xs={12}>
         <Grid item>

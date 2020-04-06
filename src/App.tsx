@@ -207,7 +207,7 @@ export default function Dashboard() {
         <Container className={classes.container}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <Paper className={clsx(classes.paper, classes.fixedHeight)}>
+              <Paper className={classes.paper}>
                 {getContent(selectedLink)}
               </Paper>
             </Grid>

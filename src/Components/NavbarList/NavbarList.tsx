@@ -19,7 +19,7 @@ const useStyles = makeStyles(() =>
     icon: {
       position: "absolute",
       alignSelf: "center",
-      marginLeft: "2px",
+      marginLeft: "3px",
     },
     iconProgress: {
       position: "absolute",
@@ -87,7 +87,7 @@ const NavbarList = () => {
             <React.Fragment>
               <Icon className={classes.icon} />
               {loadingLinks.includes(link) && (
-                <CircularProgress size={28} className={classes.iconProgress} />
+                <CircularProgress size={29} className={classes.iconProgress} />
               )}
             </React.Fragment>
           </ListItemIcon>

@@ -46,6 +46,7 @@ export interface ISettingsState {
 
 export interface ICreateEstimateState {
   destination: IAirport | null;
+  departure: IAirport | null;
 }
 
 export interface IFlightsState {

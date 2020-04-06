@@ -5,15 +5,16 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { IAirport } from "../../types";
 import { RootState } from "../../Redux";
-import { setDestination } from "../../Redux/createEstimate";
 import { queryAirports } from "../../API/queryAirports";
 
-const useAirportAutoComplete = () => {
+const useAirportAutoComplete = (
+  setDestination: (airport: IAirport | null) => any,
+  value: IAirport | null
+) => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [options, setOptions] = useState<IAirport[]>([]);
   return useSelector((state: RootState) => ({
-    value: state.createEstimate.destination,
     options,
     loading,
     handleChange: (_: any, newValue: IAirport | null) => {
@@ -28,14 +29,21 @@ const useAirportAutoComplete = () => {
   }));
 };
 
-export const AirportAutocomplete = () => {
+export const AirportAutocomplete = ({
+  label,
+  setAirport,
+  value,
+}: {
+  label: string;
+  setAirport: (airport: IAirport | null) => any;
+  value: IAirport | null;
+}) => {
   const {
-    value,
     loading,
     options,
     handleChange,
     queryForOptions,
-  } = useAirportAutoComplete();
+  } = useAirportAutoComplete(setAirport, value);
 
   return (
     <Autocomplete
@@ -53,7 +61,7 @@ export const AirportAutocomplete = () => {
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Select Destination"
+          label={label}
           required
           variant="outlined"
           onChange={queryForOptions}
