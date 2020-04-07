@@ -1,39 +1,45 @@
-import { IFlightsState, IFlight, IStep } from "../types";
+import { IFlightsState, IFlight, IUpdate } from "../types";
 
 /* Types */
 
-export const SET_FLIGHTS = "SET_FLIGHTS";
-export const ADD_STEP = "ADD_STEP";
+export const SET_FLIGHTS_BATCH = "SET_FLIGHTS_BATCH";
+export const ADD_FLIGHTS_UPDATE = "ADD_FLIGHTS_UPDATE";
 
-interface SetFlightsAction {
-  type: typeof SET_FLIGHTS;
-  payload: IFlight[];
+interface SetFlightsBatchAction {
+  type: typeof SET_FLIGHTS_BATCH;
+  payload: {
+    time: number;
+    flights: IFlight[];
+  };
 }
 
-interface AddStepAction {
-  type: typeof ADD_STEP;
-  payload: IStep;
+interface AddFlightsUpdateAction {
+  type: typeof ADD_FLIGHTS_UPDATE;
+  payload: IUpdate;
 }
 
-export type FlightsActionType = SetFlightsAction | AddStepAction;
+export type FlightsActionType = SetFlightsBatchAction | AddFlightsUpdateAction;
 
 /* Actions */
 
-export const setFlights = (flights: IFlight[]) => ({
-  type: SET_FLIGHTS,
-  payload: flights,
+export const setFlightsBatch = (time: number, flights: IFlight[]) => ({
+  type: SET_FLIGHTS_BATCH,
+  payload: {
+    time: time.toString(),
+    flights,
+  },
 });
 
-export const addStep = (step: IStep) => ({
-  type: ADD_STEP,
-  payload: step,
+export const addFlightsUpdate = (update: IUpdate) => ({
+  type: ADD_FLIGHTS_UPDATE,
+  payload: update,
 });
 
 /* Reducer */
 
 export const initialFlightsState: IFlightsState = {
-  flights: [],
-  steps: [],
+  batches: {},
+  updates: [],
 };
 
 export const flightsReducer = (
@@ -41,15 +47,18 @@ export const flightsReducer = (
   action: FlightsActionType
 ) => {
   switch (action.type) {
-    case SET_FLIGHTS:
+    case SET_FLIGHTS_BATCH:
       return {
         ...state,
-        flights: action.payload,
+        batches: {
+          ...state.batches,
+          [action.payload.time]: action.payload.flights,
+        },
       };
-    case ADD_STEP:
+    case ADD_FLIGHTS_UPDATE:
       return {
         ...state,
-        steps: state.steps.concat([action.payload]),
+        updates: state.updates.concat([action.payload]),
       };
     default:
       return state;

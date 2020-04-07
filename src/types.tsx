@@ -12,6 +12,10 @@ export interface IAirport {
   locID: string;
 }
 
+export interface IFlightsBatches {
+  [time: string]: IFlight[];
+}
+
 export interface IFlight {
   id: string;
   airline: string;
@@ -24,7 +28,7 @@ export interface IFlight {
   toAirportCode: string;
 }
 
-export interface IStep {
+export interface IUpdate {
   description: string;
 }
 
@@ -56,6 +60,6 @@ export interface ICreateEstimateState {
 }
 
 export interface IFlightsState {
-  steps: IStep[];
-  flights: IFlight[];
+  updates: IUpdate[];
+  batches: IFlightsBatches;
 }

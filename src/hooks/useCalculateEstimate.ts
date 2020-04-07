@@ -4,14 +4,8 @@ import { calculateFlights } from "./flights";
 import { calculateLodging } from "./lodging";
 import { calculateVehicles } from "./vehicles";
 import { RootState } from "../Redux";
-import { setFlights } from "../Redux/flights";
-import {
-  addLoadingLink,
-  removeLoadingLink,
-  setCalculating,
-  addActiveLink,
-} from "../Redux/system";
-import { Links, IAirport, IAverages } from "../types";
+import { setCalculating } from "../Redux/system";
+import { IAirport, IAverages } from "../types";
 import { Dispatch } from "redux";
 
 const useCalculateEstimate = () => {
@@ -26,8 +20,7 @@ const useCalculateEstimate = () => {
   );
 
   return useCallback(() => {
-    if (departure === null || destination === null)
-      throw new Error("Invalid departure or destination airport.");
+    if (departure === null || destination === null) return;
 
     calculateEstimate(dispatch, departure, destination, times, averages);
   }, [dispatch, departure, destination, times, averages]);
@@ -41,29 +34,18 @@ const calculateEstimate = async (
   averages: IAverages
 ) => {
   console.log("calculating estimate");
-  dispatch(setCalculating(true) as any);
+  dispatch(setCalculating(true));
 
   for (const t of times) {
-    if (
-      averages.flights === true &&
-      departure !== null &&
-      destination !== null
-    ) {
-      console.log("Calculating flight averages for " + t);
-      dispatch(addActiveLink(Links.Flights));
-      dispatch(addLoadingLink(Links.Flights));
-      const flights = await calculateFlights(t, departure, destination);
-      dispatch(setFlights(flights));
-      dispatch(removeLoadingLink(Links.Flights));
-      console.log("Finished calculating flight averages for " + t);
-    }
+    if (averages.flights === true)
+      await calculateFlights(dispatch, departure, destination, t);
 
     if (averages.lodging === true) await calculateLodging(dispatch, t);
 
     if (averages.vehicles === true) await calculateVehicles(dispatch, t);
   }
 
-  dispatch(setCalculating(false) as any);
+  dispatch(setCalculating(false));
   console.log("finished calculating estimate");
 };
 

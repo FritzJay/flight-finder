@@ -21,6 +21,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import NavbarList from "./Components/NavbarList/NavbarList";
 import Settings from "./Components/Settings/Settings";
 import CreateEstimate from "./Components/CreateEstimate/CreateEstimate";
+import Flights from "./Components/Flights/Flights";
 import { RootState } from "./Redux";
 import { setDrawerOpen, setSettingsOpen } from "./Redux/system";
 import { Links } from "./types";
@@ -95,12 +96,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
-  paper: {
-    padding: theme.spacing(3),
-    display: "flex",
-    overflow: "auto",
-    flexDirection: "column",
-  },
   fixedHeight: {
     height: 240,
   },
@@ -111,7 +106,7 @@ const getContent = (selectedLink: Links) => {
     case Links.CreateEstimate:
       return <CreateEstimate />;
     case Links.Flights:
-      return <div>Flights</div>;
+      return <Flights />;
     case Links.Lodging:
       return <div>Lodging</div>;
     case Links.Vehicles:
@@ -206,11 +201,7 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container className={classes.container}>
           <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                {getContent(selectedLink)}
-              </Paper>
-            </Grid>
+            {getContent(selectedLink)}
           </Grid>
           <Box pt={4}>
             <Typography variant="body2" color="textSecondary" align="center">

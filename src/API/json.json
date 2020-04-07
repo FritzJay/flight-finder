@@ -1,0 +1,5118 @@
+{
+  "fareDisplayType": "OneWay",
+  "brandDisplayType": "MultiToggle",
+  "showShelves": false,
+  "allFlightsFilteredOut": false,
+  "searchId": 199481438,
+  "statsId": -1,
+  "locations": [
+    {
+      "city": null,
+      "country": null,
+      "lat": 0,
+      "lon": 0,
+      "postalCode": null,
+      "region": null,
+      "street": null,
+      "code": null,
+      "isValid": false,
+      "name": null,
+      "rgn": null,
+      "locId": "CATL",
+      "shortDisplay": "Atlanta, GA",
+      "cityCode": "ATL"
+    },
+    {
+      "city": null,
+      "country": null,
+      "lat": 0,
+      "lon": 0,
+      "postalCode": null,
+      "region": null,
+      "street": null,
+      "code": null,
+      "isValid": false,
+      "name": null,
+      "rgn": null,
+      "locId": "CDFW",
+      "shortDisplay": "Dallas, TX",
+      "cityCode": "DFW"
+    }
+  ],
+  "airlines": [
+    {
+      "code": "YY",
+      "name": "Mix & Match",
+      "fare": 25,
+      "isPreferred": false,
+      "hasNonStop": false
+    },
+    {
+      "code": "NK",
+      "name": "Spirit",
+      "fare": 25,
+      "isPreferred": false,
+      "hasNonStop": false
+    },
+    {
+      "code": "WN",
+      "name": "Southwest",
+      "fare": 136,
+      "isPreferred": false,
+      "hasNonStop": true
+    },
+    {
+      "code": "AA",
+      "name": "American",
+      "fare": 136,
+      "isPreferred": false,
+      "hasNonStop": true
+    },
+    {
+      "code": "DL",
+      "name": "Delta",
+      "fare": 350,
+      "isPreferred": false,
+      "hasNonStop": true
+    },
+    {
+      "code": "UA",
+      "name": "United",
+      "fare": 433,
+      "isPreferred": false,
+      "hasNonStop": false
+    }
+  ],
+  "flights": [
+    {
+      "airportOnly": false,
+      "airlineCode": "AA",
+      "airlineName": "American",
+      "flightGrade": "A",
+      "duration": 148,
+      "numStops": 0,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "AA",
+          "airlineName": "American",
+          "allianceCode": "O",
+          "flightNumber": 2770,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "DFW",
+          "toName": "Dallas/Ft. Worth Airport, TX",
+          "toLocId": null,
+          "departs": "2020-04-07 06:00:00",
+          "arrives": "2020-04-07 07:28:00",
+          "dayChange": 0,
+          "opAirlineCode": "AA",
+          "opAirlineName": null,
+          "miles": 729,
+          "duration": 148,
+          "aircraftTypeCode": "738",
+          "aircraftTypeName": "Boeing 737-800",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "fromTerminal": "N",
+          "toTerminal": "0",
+          "onTimePercent": 90,
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "stopPoints": [],
+          "seats": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Economy (Extra Legroom)",
+              "cabinCode": null,
+              "config": "3x3",
+              "num": 30,
+              "type": "Standard",
+              "pitchRate": "GG",
+              "seatWidth": null,
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 33,
+              "seatPitch": null
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "availability": [
+            { "bic": "C", "count": 0, "cabin": "C" },
+            { "bic": "J", "count": 0, "cabin": "F" },
+            { "bic": "R", "count": 0, "cabin": "F" },
+            { "bic": "D", "count": 0, "cabin": "F" },
+            { "bic": "I", "count": 0, "cabin": "F" },
+            { "bic": "U", "count": 0, "cabin": "Y" },
+            { "bic": "Y", "count": 7, "cabin": "Y" },
+            { "bic": "B", "count": 7, "cabin": "Y" },
+            { "bic": "H", "count": 7, "cabin": "Y" },
+            { "bic": "K", "count": 7, "cabin": "Y" },
+            { "bic": "M", "count": 7, "cabin": "Y" },
+            { "bic": "L", "count": 7, "cabin": "Y" },
+            { "bic": "G", "count": 7, "cabin": "Y" },
+            { "bic": "V", "count": 7, "cabin": "Y" },
+            { "bic": "S", "count": 7, "cabin": "Y" },
+            { "bic": "N", "count": 7, "cabin": "Y" },
+            { "bic": "Q", "count": 7, "cabin": "Y" },
+            { "bic": "O", "count": 7, "cabin": "Y" },
+            { "bic": "T", "count": 0, "cabin": "Y" }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Main Cabin",
+          "cabinText": "Main Cabin",
+          "seatBookingLevel": "P",
+          "brandNum": 11,
+          "brandId": 24
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 135.1,
+          "tax": 0,
+          "totalFare": 135.1,
+          "totalItinerary": 135.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "B",
+          "fbc": "S0AUZNB3",
+          "brandColumn": 0,
+          "brandIndex": 1,
+          "shelf": 1,
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["AA277007APR20ATLDFW060007280738AA0|10"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "16.6 in.",
+          "seatPitch": "30 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 162.1,
+          "tax": 0,
+          "totalFare": 162.1,
+          "totalItinerary": 162.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": "",
+          "specialRateText": "AmTrav Discount",
+          "bic": "S",
+          "fbc": "S0AUZNM3 [AADOM2]",
+          "brandColumn": 1,
+          "brandIndex": 2,
+          "shelf": 0,
+          "cabinClassCode": "Y",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "AV",
+          "itineraryFlights": ["AA277007APR20ATLDFW060007280738AA0|11"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 4,
+          "seatType": 1,
+          "seatWidth": "16.6 in.",
+          "seatPitch": "30 in.",
+          "boardingPriority": "N/A",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 0,
+          "tax": 0,
+          "totalFare": 0,
+          "totalItinerary": 0,
+          "downgradeRequired": false,
+          "notOfferedReason": "",
+          "soldOut": true,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "brandColumn": 4,
+          "brandIndex": 3,
+          "shelf": 0,
+          "cabinClassCode": "F",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 148,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": null,
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 0,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": null,
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "WN",
+      "airlineName": "Southwest",
+      "flightGrade": "A",
+      "duration": 135,
+      "numStops": 0,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "WN",
+          "airlineName": "Southwest",
+          "allianceCode": "",
+          "flightNumber": 2718,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "DAL",
+          "toName": "Dallas/Love Field , TX",
+          "toLocId": null,
+          "departs": "2020-04-07 06:15:00",
+          "arrives": "2020-04-07 07:30:00",
+          "dayChange": 0,
+          "opAirlineCode": "WN",
+          "opAirlineName": null,
+          "miles": 719,
+          "duration": 135,
+          "aircraftTypeCode": "73W",
+          "aircraftTypeName": "Boeing 737-700",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "seats": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Business Select",
+          "cabinText": "Business Select",
+          "seatBookingLevel": "P",
+          "brandNum": 21,
+          "brandId": 17
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 135.98,
+          "tax": 0,
+          "totalFare": 135.98,
+          "totalItinerary": 135.98,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "P",
+          "fbc": "PLM0TNF",
+          "brandColumn": 1,
+          "brandIndex": 4,
+          "shelf": 2,
+          "cabinClassCode": "Y",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            },
+            {
+              "code": 11,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "SW",
+          "itineraryFlights": ["WN271807APR20ATLDAL06150730073WWN0|11"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 3,
+          "power": 1,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "standard",
+          "seatPitch": "31 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 428.98,
+          "tax": 0,
+          "totalFare": 428.98,
+          "totalItinerary": 428.98,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "Y",
+          "fbc": "YLNEV",
+          "brandColumn": 2,
+          "brandIndex": 5,
+          "shelf": 2,
+          "cabinClassCode": "Y",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            },
+            {
+              "code": 11,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "SW",
+          "itineraryFlights": ["WN271807APR20ATLDAL06150730073WWN0|15"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": true,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 3,
+          "power": 1,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "standard",
+          "seatPitch": "31 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 452.98,
+          "tax": 0,
+          "totalFare": 452.98,
+          "totalItinerary": 452.98,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "K",
+          "fbc": "KLNEV",
+          "brandColumn": 3,
+          "brandIndex": 6,
+          "shelf": 2,
+          "cabinClassCode": "W",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            },
+            {
+              "code": 11,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "SW",
+          "itineraryFlights": ["WN271807APR20ATLDAL06150730073WWN0|21"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": true,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 3,
+          "power": 1,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority (A1-A15)",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "AA",
+      "airlineName": "American",
+      "flightGrade": "A",
+      "duration": 151,
+      "numStops": 0,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "AA",
+          "airlineName": "American",
+          "allianceCode": "O",
+          "flightNumber": 2778,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "DFW",
+          "toName": "Dallas/Ft. Worth Airport, TX",
+          "toLocId": null,
+          "departs": "2020-04-07 10:00:00",
+          "arrives": "2020-04-07 11:31:00",
+          "dayChange": 0,
+          "opAirlineCode": "AA",
+          "opAirlineName": null,
+          "miles": 729,
+          "duration": 151,
+          "aircraftTypeCode": "738",
+          "aircraftTypeName": "Boeing 737-800",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "fromTerminal": "N",
+          "toTerminal": "0",
+          "onTimePercent": 80,
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "stopPoints": [],
+          "seats": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Economy (Extra Legroom)",
+              "cabinCode": null,
+              "config": "3x3",
+              "num": 30,
+              "type": "Standard",
+              "pitchRate": "GG",
+              "seatWidth": null,
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 33,
+              "seatPitch": null
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "availability": [
+            { "bic": "C", "count": 7, "cabin": "C" },
+            { "bic": "J", "count": 7, "cabin": "F" },
+            { "bic": "R", "count": 7, "cabin": "F" },
+            { "bic": "D", "count": 7, "cabin": "F" },
+            { "bic": "I", "count": 7, "cabin": "F" },
+            { "bic": "U", "count": 0, "cabin": "Y" },
+            { "bic": "Y", "count": 7, "cabin": "Y" },
+            { "bic": "B", "count": 7, "cabin": "Y" },
+            { "bic": "H", "count": 7, "cabin": "Y" },
+            { "bic": "K", "count": 7, "cabin": "Y" },
+            { "bic": "M", "count": 7, "cabin": "Y" },
+            { "bic": "L", "count": 7, "cabin": "Y" },
+            { "bic": "G", "count": 7, "cabin": "Y" },
+            { "bic": "V", "count": 7, "cabin": "Y" },
+            { "bic": "S", "count": 7, "cabin": "Y" },
+            { "bic": "N", "count": 7, "cabin": "Y" },
+            { "bic": "Q", "count": 7, "cabin": "Y" },
+            { "bic": "O", "count": 7, "cabin": "Y" },
+            { "bic": "T", "count": 0, "cabin": "Y" }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "First",
+          "cabinText": "First",
+          "seatBookingLevel": "P",
+          "brandNum": 31,
+          "brandId": 25
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 135.1,
+          "tax": 0,
+          "totalFare": 135.1,
+          "totalItinerary": 135.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "B",
+          "fbc": "S0AUZNB3",
+          "brandColumn": 0,
+          "brandIndex": 1,
+          "shelf": 1,
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["AA277807APR20ATLDFW100011310738AA0|10"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "16.6 in.",
+          "seatPitch": "30 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 162.1,
+          "tax": 0,
+          "totalFare": 162.1,
+          "totalItinerary": 162.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": "",
+          "specialRateText": "AmTrav Discount",
+          "bic": "S",
+          "fbc": "S0AUZNM3 [AADOM2]",
+          "brandColumn": 1,
+          "brandIndex": 2,
+          "shelf": 0,
+          "cabinClassCode": "Y",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "AV",
+          "itineraryFlights": ["AA277807APR20ATLDFW100011310738AA0|11"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 4,
+          "seatType": 1,
+          "seatWidth": "16.6 in.",
+          "seatPitch": "30 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 405.95,
+          "tax": 0,
+          "totalFare": 405.95,
+          "totalItinerary": 405.95,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": "",
+          "specialRateText": "AmTrav Discount",
+          "bic": "R",
+          "fbc": "M0AIZSR1 [AADOM2]",
+          "brandColumn": 4,
+          "brandIndex": 3,
+          "shelf": 0,
+          "cabinClassCode": "F",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 151,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "AV",
+          "itineraryFlights": ["AA277807APR20ATLDFW100011310738AA0|31"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "DL",
+      "airlineName": "Delta",
+      "flightGrade": "A+",
+      "duration": 136,
+      "numStops": 0,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "DL",
+          "airlineName": "Delta",
+          "allianceCode": "S",
+          "flightNumber": 2269,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "DFW",
+          "toName": "Dallas/Ft. Worth Airport, TX",
+          "toLocId": null,
+          "departs": "2020-04-07 11:20:00",
+          "arrives": "2020-04-07 12:36:00",
+          "dayChange": 0,
+          "opAirlineCode": "DL",
+          "opAirlineName": null,
+          "miles": 729,
+          "duration": 136,
+          "aircraftTypeCode": "321",
+          "aircraftTypeName": "Airbus A321",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "fromTerminal": "S",
+          "toTerminal": "E",
+          "onTimePercent": 80,
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "stopPoints": [],
+          "seats": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 144,
+              "type": "Standard",
+              "pitchRate": "A",
+              "seatWidth": "18 in.",
+              "width": 18,
+              "widthRate": "GG",
+              "pitch": 31,
+              "seatPitch": "31 in."
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Premium Select",
+              "cabinCode": "W",
+              "config": "3x3",
+              "num": 29,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "18 in.",
+              "width": 18,
+              "widthRate": "",
+              "pitch": 34,
+              "seatPitch": "34 in."
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "First/Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 20,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 36,
+              "seatPitch": "36 in."
+            }
+          ],
+          "availability": [
+            { "bic": "J", "count": 9, "cabin": "F" },
+            { "bic": "C", "count": 9, "cabin": "F" },
+            { "bic": "D", "count": 9, "cabin": "F" },
+            { "bic": "I", "count": 9, "cabin": "F" },
+            { "bic": "Z", "count": 9, "cabin": "F" },
+            { "bic": "W", "count": 9, "cabin": "W" },
+            { "bic": "S", "count": 9, "cabin": "W" },
+            { "bic": "Y", "count": 9, "cabin": "Y" },
+            { "bic": "B", "count": 9, "cabin": "Y" },
+            { "bic": "M", "count": 9, "cabin": "Y" },
+            { "bic": "H", "count": 9, "cabin": "Y" },
+            { "bic": "Q", "count": 9, "cabin": "Y" },
+            { "bic": "K", "count": 9, "cabin": "Y" },
+            { "bic": "L", "count": 9, "cabin": "Y" },
+            { "bic": "U", "count": 9, "cabin": "Y" },
+            { "bic": "T", "count": 9, "cabin": "Y" },
+            { "bic": "X", "count": 9, "cabin": "Y" },
+            { "bic": "V", "count": 9, "cabin": "Y" },
+            { "bic": "E", "count": 9, "cabin": "Y" }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Delta First",
+          "cabinText": "Delta First",
+          "seatBookingLevel": "P",
+          "brandNum": 31,
+          "brandId": 4
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 349.1,
+          "tax": 0,
+          "totalFare": 349.1,
+          "totalItinerary": 349.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "H",
+          "fbc": "HA0UA0MC",
+          "brandColumn": 1,
+          "brandIndex": 7,
+          "shelf": 2,
+          "cabinClassCode": "Y",
+          "grade": "A+",
+          "amenities": [
+            {
+              "code": 26,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Delta's A321's now have super-fast 2Ku WiFi which provides speed comparable to what you might have at home -- fast enough to stream video. WiFi works from pushback to park, so you don't have to wait until takeoff. Fees apply for full access, but messaging is available for free with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 10,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "On this plane you get a personal seat back video screen that lets you choose from 300 movies, HBO, ShowTime, TV shows, podcasts, TED talks, songs, and games, all for no extra charge!"
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL226907APR20ATLDFW112012360321DL0|11"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 5,
+          "ife": 7,
+          "liveTV": 1,
+          "power": 4,
+          "seatAssignments": 4,
+          "seatType": 1,
+          "seatWidth": "18 in.",
+          "seatPitch": "31 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 144,
+              "type": "Standard",
+              "pitchRate": "A",
+              "seatWidth": "18 in.",
+              "width": 18,
+              "widthRate": "GG",
+              "pitch": 31,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 383.1,
+          "tax": 0,
+          "totalFare": 383.1,
+          "totalItinerary": 383.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "S",
+          "fbc": "HA0UA0IE",
+          "brandColumn": 3,
+          "brandIndex": 8,
+          "shelf": 3,
+          "cabinClassCode": "W",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 26,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Delta's A321's now have super-fast 2Ku WiFi which provides speed comparable to what you might have at home -- fast enough to stream video. WiFi works from pushback to park, so you don't have to wait until takeoff. Fees apply for full access, but messaging is available for free with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 10,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "On this plane you get a personal seat back video screen that lets you choose from 300 movies, HBO, ShowTime, TV shows, podcasts, TED talks, songs, and games, all for no extra charge!"
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL226907APR20ATLDFW112012360321DL0|21"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 5,
+          "ife": 7,
+          "liveTV": 1,
+          "power": 4,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "18 in.",
+          "seatPitch": "34 in.",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Premium Select",
+              "cabinCode": "W",
+              "config": "3x3",
+              "num": 29,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "18 in.",
+              "width": 18,
+              "widthRate": "",
+              "pitch": 34,
+              "seatPitch": "34 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 448.1,
+          "tax": 0,
+          "totalFare": 448.1,
+          "totalItinerary": 448.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "D",
+          "fbc": "HA0UA0FE",
+          "brandColumn": 4,
+          "brandIndex": 9,
+          "shelf": 0,
+          "cabinClassCode": "F",
+          "grade": "A+",
+          "amenities": [
+            {
+              "code": 26,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Delta's A321's now have super-fast 2Ku WiFi which provides speed comparable to what you might have at home -- fast enough to stream video. WiFi works from pushback to park, so you don't have to wait until takeoff. Fees apply for full access, but messaging is available for free with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 10,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "On this plane you get a personal seat back video screen that lets you choose from 300 movies, HBO, ShowTime, TV shows, podcasts, TED talks, songs, and games, all for no extra charge!"
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL226907APR20ATLDFW112012360321DL0|31"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 5,
+          "ife": 7,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "First/Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 20,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 36,
+              "seatPitch": "36 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "AA",
+      "airlineName": "American",
+      "flightGrade": "A",
+      "duration": 150,
+      "numStops": 0,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "AA",
+          "airlineName": "American",
+          "allianceCode": "O",
+          "flightNumber": 1309,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "DFW",
+          "toName": "Dallas/Ft. Worth Airport, TX",
+          "toLocId": null,
+          "departs": "2020-04-07 14:12:00",
+          "arrives": "2020-04-07 15:42:00",
+          "dayChange": 0,
+          "opAirlineCode": "AA",
+          "opAirlineName": null,
+          "miles": 729,
+          "duration": 150,
+          "aircraftTypeCode": "738",
+          "aircraftTypeName": "Boeing 737-800",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "fromTerminal": "N",
+          "toTerminal": "0",
+          "onTimePercent": 60,
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "stopPoints": [],
+          "seats": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Economy (Extra Legroom)",
+              "cabinCode": null,
+              "config": "3x3",
+              "num": 30,
+              "type": "Standard",
+              "pitchRate": "GG",
+              "seatWidth": null,
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 33,
+              "seatPitch": null
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "availability": [
+            { "bic": "C", "count": 7, "cabin": "C" },
+            { "bic": "J", "count": 7, "cabin": "F" },
+            { "bic": "R", "count": 7, "cabin": "F" },
+            { "bic": "D", "count": 7, "cabin": "F" },
+            { "bic": "I", "count": 7, "cabin": "F" },
+            { "bic": "U", "count": 0, "cabin": "Y" },
+            { "bic": "Y", "count": 7, "cabin": "Y" },
+            { "bic": "B", "count": 7, "cabin": "Y" },
+            { "bic": "H", "count": 7, "cabin": "Y" },
+            { "bic": "K", "count": 7, "cabin": "Y" },
+            { "bic": "M", "count": 7, "cabin": "Y" },
+            { "bic": "L", "count": 7, "cabin": "Y" },
+            { "bic": "G", "count": 7, "cabin": "Y" },
+            { "bic": "V", "count": 7, "cabin": "Y" },
+            { "bic": "S", "count": 7, "cabin": "Y" },
+            { "bic": "N", "count": 7, "cabin": "Y" },
+            { "bic": "Q", "count": 7, "cabin": "Y" },
+            { "bic": "O", "count": 7, "cabin": "Y" },
+            { "bic": "T", "count": 0, "cabin": "Y" }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "First",
+          "cabinText": "First",
+          "seatBookingLevel": "P",
+          "brandNum": 31,
+          "brandId": 25
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 135.1,
+          "tax": 0,
+          "totalFare": 135.1,
+          "totalItinerary": 135.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "B",
+          "fbc": "S0AUZNB3",
+          "brandColumn": 0,
+          "brandIndex": 1,
+          "shelf": 1,
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["AA130907APR20ATLDFW141215420738AA0|10"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "16.6 in.",
+          "seatPitch": "30 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 162.1,
+          "tax": 0,
+          "totalFare": 162.1,
+          "totalItinerary": 162.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": "",
+          "specialRateText": "AmTrav Discount",
+          "bic": "S",
+          "fbc": "S0AUZNM3 [AADOM2]",
+          "brandColumn": 1,
+          "brandIndex": 2,
+          "shelf": 0,
+          "cabinClassCode": "Y",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "AV",
+          "itineraryFlights": ["AA130907APR20ATLDFW141215420738AA0|11"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 4,
+          "seatType": 1,
+          "seatWidth": "16.6 in.",
+          "seatPitch": "30 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 405.95,
+          "tax": 0,
+          "totalFare": 405.95,
+          "totalItinerary": 405.95,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": "",
+          "specialRateText": "AmTrav Discount",
+          "bic": "R",
+          "fbc": "M0AIZSR1 [AADOM2]",
+          "brandColumn": 4,
+          "brandIndex": 3,
+          "shelf": 0,
+          "cabinClassCode": "F",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 150,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "AV",
+          "itineraryFlights": ["AA130907APR20ATLDFW141215420738AA0|31"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "DL",
+      "airlineName": "Delta",
+      "flightGrade": "A+",
+      "duration": 135,
+      "numStops": 0,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "DL",
+          "airlineName": "Delta",
+          "allianceCode": "S",
+          "flightNumber": 420,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "DFW",
+          "toName": "Dallas/Ft. Worth Airport, TX",
+          "toLocId": null,
+          "departs": "2020-04-07 15:20:00",
+          "arrives": "2020-04-07 16:35:00",
+          "dayChange": 0,
+          "opAirlineCode": "DL",
+          "opAirlineName": null,
+          "miles": 729,
+          "duration": 135,
+          "aircraftTypeCode": "321",
+          "aircraftTypeName": "Airbus A321",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "fromTerminal": "S",
+          "toTerminal": "E",
+          "onTimePercent": 80,
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "stopPoints": [],
+          "seats": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 144,
+              "type": "Standard",
+              "pitchRate": "A",
+              "seatWidth": "18 in.",
+              "width": 18,
+              "widthRate": "GG",
+              "pitch": 31,
+              "seatPitch": "31 in."
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Premium Select",
+              "cabinCode": "W",
+              "config": "3x3",
+              "num": 29,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "18 in.",
+              "width": 18,
+              "widthRate": "",
+              "pitch": 34,
+              "seatPitch": "34 in."
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "First/Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 20,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 36,
+              "seatPitch": "36 in."
+            }
+          ],
+          "availability": [
+            { "bic": "J", "count": 9, "cabin": "F" },
+            { "bic": "C", "count": 9, "cabin": "F" },
+            { "bic": "D", "count": 9, "cabin": "F" },
+            { "bic": "I", "count": 9, "cabin": "F" },
+            { "bic": "Z", "count": 9, "cabin": "F" },
+            { "bic": "W", "count": 9, "cabin": "W" },
+            { "bic": "S", "count": 9, "cabin": "W" },
+            { "bic": "Y", "count": 9, "cabin": "Y" },
+            { "bic": "B", "count": 9, "cabin": "Y" },
+            { "bic": "M", "count": 9, "cabin": "Y" },
+            { "bic": "H", "count": 9, "cabin": "Y" },
+            { "bic": "Q", "count": 9, "cabin": "Y" },
+            { "bic": "K", "count": 9, "cabin": "Y" },
+            { "bic": "L", "count": 9, "cabin": "Y" },
+            { "bic": "U", "count": 9, "cabin": "Y" },
+            { "bic": "T", "count": 9, "cabin": "Y" },
+            { "bic": "X", "count": 9, "cabin": "Y" },
+            { "bic": "V", "count": 9, "cabin": "Y" },
+            { "bic": "E", "count": 9, "cabin": "Y" }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Delta First",
+          "cabinText": "Delta First",
+          "seatBookingLevel": "P",
+          "brandNum": 31,
+          "brandId": 4
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 349.1,
+          "tax": 0,
+          "totalFare": 349.1,
+          "totalItinerary": 349.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "H",
+          "fbc": "HA0UA0MC",
+          "brandColumn": 1,
+          "brandIndex": 7,
+          "shelf": 2,
+          "cabinClassCode": "Y",
+          "grade": "A+",
+          "amenities": [
+            {
+              "code": 26,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Delta's A321's now have super-fast 2Ku WiFi which provides speed comparable to what you might have at home -- fast enough to stream video. WiFi works from pushback to park, so you don't have to wait until takeoff. Fees apply for full access, but messaging is available for free with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 10,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "On this plane you get a personal seat back video screen that lets you choose from 300 movies, HBO, ShowTime, TV shows, podcasts, TED talks, songs, and games, all for no extra charge!"
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL042007APR20ATLDFW152016350321DL0|11"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 5,
+          "ife": 7,
+          "liveTV": 1,
+          "power": 4,
+          "seatAssignments": 4,
+          "seatType": 1,
+          "seatWidth": "18 in.",
+          "seatPitch": "31 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 144,
+              "type": "Standard",
+              "pitchRate": "A",
+              "seatWidth": "18 in.",
+              "width": 18,
+              "widthRate": "GG",
+              "pitch": 31,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 383.1,
+          "tax": 0,
+          "totalFare": 383.1,
+          "totalItinerary": 383.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "S",
+          "fbc": "HA0UA0IE",
+          "brandColumn": 3,
+          "brandIndex": 8,
+          "shelf": 3,
+          "cabinClassCode": "W",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 26,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Delta's A321's now have super-fast 2Ku WiFi which provides speed comparable to what you might have at home -- fast enough to stream video. WiFi works from pushback to park, so you don't have to wait until takeoff. Fees apply for full access, but messaging is available for free with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 10,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "On this plane you get a personal seat back video screen that lets you choose from 300 movies, HBO, ShowTime, TV shows, podcasts, TED talks, songs, and games, all for no extra charge!"
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL042007APR20ATLDFW152016350321DL0|21"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 5,
+          "ife": 7,
+          "liveTV": 1,
+          "power": 4,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "18 in.",
+          "seatPitch": "34 in.",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Premium Select",
+              "cabinCode": "W",
+              "config": "3x3",
+              "num": 29,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "18 in.",
+              "width": 18,
+              "widthRate": "",
+              "pitch": 34,
+              "seatPitch": "34 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 448.1,
+          "tax": 0,
+          "totalFare": 448.1,
+          "totalItinerary": 448.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "D",
+          "fbc": "HA0UA0FE",
+          "brandColumn": 4,
+          "brandIndex": 9,
+          "shelf": 0,
+          "cabinClassCode": "F",
+          "grade": "A+",
+          "amenities": [
+            {
+              "code": 26,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Delta's A321's now have super-fast 2Ku WiFi which provides speed comparable to what you might have at home -- fast enough to stream video. WiFi works from pushback to park, so you don't have to wait until takeoff. Fees apply for full access, but messaging is available for free with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 10,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "On this plane you get a personal seat back video screen that lets you choose from 300 movies, HBO, ShowTime, TV shows, podcasts, TED talks, songs, and games, all for no extra charge!"
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL042007APR20ATLDFW152016350321DL0|31"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 5,
+          "ife": 7,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "First/Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 20,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 36,
+              "seatPitch": "36 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "AA",
+      "airlineName": "American",
+      "flightGrade": "A",
+      "duration": 149,
+      "numStops": 0,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "AA",
+          "airlineName": "American",
+          "allianceCode": "O",
+          "flightNumber": 242,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "DFW",
+          "toName": "Dallas/Ft. Worth Airport, TX",
+          "toLocId": null,
+          "departs": "2020-04-07 18:21:00",
+          "arrives": "2020-04-07 19:50:00",
+          "dayChange": 0,
+          "opAirlineCode": "AA",
+          "opAirlineName": null,
+          "miles": 729,
+          "duration": 149,
+          "aircraftTypeCode": "738",
+          "aircraftTypeName": "Boeing 737-800",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "fromTerminal": "N",
+          "toTerminal": "0",
+          "onTimePercent": 80,
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "stopPoints": [],
+          "seats": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Economy (Extra Legroom)",
+              "cabinCode": null,
+              "config": "3x3",
+              "num": 30,
+              "type": "Standard",
+              "pitchRate": "GG",
+              "seatWidth": null,
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 33,
+              "seatPitch": null
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "availability": [
+            { "bic": "C", "count": 7, "cabin": "C" },
+            { "bic": "J", "count": 7, "cabin": "F" },
+            { "bic": "R", "count": 7, "cabin": "F" },
+            { "bic": "D", "count": 7, "cabin": "F" },
+            { "bic": "I", "count": 7, "cabin": "F" },
+            { "bic": "U", "count": 0, "cabin": "Y" },
+            { "bic": "Y", "count": 7, "cabin": "Y" },
+            { "bic": "B", "count": 7, "cabin": "Y" },
+            { "bic": "H", "count": 7, "cabin": "Y" },
+            { "bic": "K", "count": 7, "cabin": "Y" },
+            { "bic": "M", "count": 7, "cabin": "Y" },
+            { "bic": "L", "count": 7, "cabin": "Y" },
+            { "bic": "G", "count": 7, "cabin": "Y" },
+            { "bic": "V", "count": 7, "cabin": "Y" },
+            { "bic": "S", "count": 7, "cabin": "Y" },
+            { "bic": "N", "count": 7, "cabin": "Y" },
+            { "bic": "Q", "count": 7, "cabin": "Y" },
+            { "bic": "O", "count": 7, "cabin": "Y" },
+            { "bic": "T", "count": 0, "cabin": "Y" }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "First",
+          "cabinText": "First",
+          "seatBookingLevel": "P",
+          "brandNum": 31,
+          "brandId": 25
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 135.1,
+          "tax": 0,
+          "totalFare": 135.1,
+          "totalItinerary": 135.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "B",
+          "fbc": "S0AUZNB3",
+          "brandColumn": 0,
+          "brandIndex": 1,
+          "shelf": 1,
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["AA024207APR20ATLDFW182119500738AA0|10"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "16.6 in.",
+          "seatPitch": "30 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 162.1,
+          "tax": 0,
+          "totalFare": 162.1,
+          "totalItinerary": 162.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": "",
+          "specialRateText": "AmTrav Discount",
+          "bic": "S",
+          "fbc": "S0AUZNM3 [AADOM2]",
+          "brandColumn": 1,
+          "brandIndex": 2,
+          "shelf": 0,
+          "cabinClassCode": "Y",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "AV",
+          "itineraryFlights": ["AA024207APR20ATLDFW182119500738AA0|11"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 4,
+          "seatType": 1,
+          "seatWidth": "16.6 in.",
+          "seatPitch": "30 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 405.95,
+          "tax": 0,
+          "totalFare": 405.95,
+          "totalItinerary": 405.95,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": "",
+          "specialRateText": "AmTrav Discount",
+          "bic": "R",
+          "fbc": "M0AIZSR1 [AADOM2]",
+          "brandColumn": 4,
+          "brandIndex": 3,
+          "shelf": 0,
+          "cabinClassCode": "F",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 149,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "AV",
+          "itineraryFlights": ["AA024207APR20ATLDFW182119500738AA0|31"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "DL",
+      "airlineName": "Delta",
+      "flightGrade": "A",
+      "duration": 135,
+      "numStops": 0,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "DL",
+          "airlineName": "Delta",
+          "allianceCode": "S",
+          "flightNumber": 1440,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "DAL",
+          "toName": "Dallas/Love Field , TX",
+          "toLocId": null,
+          "departs": "2020-04-07 19:40:00",
+          "arrives": "2020-04-07 20:55:00",
+          "dayChange": 0,
+          "opAirlineCode": "DL",
+          "opAirlineName": null,
+          "miles": 719,
+          "duration": 135,
+          "aircraftTypeCode": "717",
+          "aircraftTypeName": "Boeing 717",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "fromTerminal": "S",
+          "toTerminal": "1",
+          "onTimePercent": 80,
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "stopPoints": [],
+          "seats": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "2x3",
+              "num": 79,
+              "type": "Standard",
+              "pitchRate": "A",
+              "seatWidth": "18.1 in.",
+              "width": 18.1,
+              "widthRate": "GG",
+              "pitch": 31,
+              "seatPitch": "31 in."
+            },
+            {
+              "route": "ATL-DAL",
+              "cabin": "Premium Select",
+              "cabinCode": "W",
+              "config": "2x3",
+              "num": 20,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "18.1 in.",
+              "width": 18.1,
+              "widthRate": "",
+              "pitch": 34,
+              "seatPitch": "34 in."
+            },
+            {
+              "route": "ATL-DAL",
+              "cabin": "First/Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 12,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "19.6 in.",
+              "width": 19.6,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "availability": [
+            { "bic": "J", "count": 8, "cabin": "F" },
+            { "bic": "C", "count": 8, "cabin": "F" },
+            { "bic": "D", "count": 8, "cabin": "F" },
+            { "bic": "I", "count": 6, "cabin": "F" },
+            { "bic": "Z", "count": 6, "cabin": "F" },
+            { "bic": "W", "count": 9, "cabin": "W" },
+            { "bic": "S", "count": 9, "cabin": "W" },
+            { "bic": "Y", "count": 9, "cabin": "Y" },
+            { "bic": "B", "count": 9, "cabin": "Y" },
+            { "bic": "M", "count": 9, "cabin": "Y" },
+            { "bic": "H", "count": 9, "cabin": "Y" },
+            { "bic": "Q", "count": 9, "cabin": "Y" },
+            { "bic": "K", "count": 9, "cabin": "Y" },
+            { "bic": "L", "count": 9, "cabin": "Y" },
+            { "bic": "U", "count": 9, "cabin": "Y" },
+            { "bic": "T", "count": 9, "cabin": "Y" },
+            { "bic": "X", "count": 9, "cabin": "Y" },
+            { "bic": "V", "count": 9, "cabin": "Y" },
+            { "bic": "E", "count": 9, "cabin": "Y" }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Delta First",
+          "cabinText": "Delta First",
+          "seatBookingLevel": "P",
+          "brandNum": 31,
+          "brandId": 4
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 349.1,
+          "tax": 0,
+          "totalFare": 349.1,
+          "totalItinerary": 349.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "H",
+          "fbc": "HA0UA0MC",
+          "brandColumn": 1,
+          "brandIndex": 7,
+          "shelf": 2,
+          "cabinClassCode": "Y",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "This plane features air-to-ground WiFi provided by GoGo. Warning: it's not very fast. The good news is that, although fees apply for full access,??free messaging is available with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": null,
+                  "text": "Like on most Delta planes, if you bring your own WiFi-enabled device you get free access to Delta Studio, featuring over 1,000 hours of movies, TV, music, and podcasts."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "The odds are you will not have a power port on this plane. However, Delta is in the process of refurbishing their narrowbody fleet and, as part of that process, adding power ports. If you get lucky and get an updated plane, you'll have all the power you need, plus USB!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "The odds are you will not have a power port on this plane. However, Delta is in the process of refurbishing their narrowbody fleet and, as part of that process, adding power ports. If you get lucky and get an updated plane, you'll have all the power you need, plus USB!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL144007APR20ATLDAL194020550717DL0|11"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 4,
+          "seatType": 1,
+          "seatWidth": "18.1 in.",
+          "seatPitch": "31 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "2x3",
+              "num": 79,
+              "type": "Standard",
+              "pitchRate": "A",
+              "seatWidth": "18.1 in.",
+              "width": 18.1,
+              "widthRate": "GG",
+              "pitch": 31,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 383.1,
+          "tax": 0,
+          "totalFare": 383.1,
+          "totalItinerary": 383.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "S",
+          "fbc": "HA0UA0IE",
+          "brandColumn": 3,
+          "brandIndex": 8,
+          "shelf": 3,
+          "cabinClassCode": "W",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "This plane features air-to-ground WiFi provided by GoGo. Warning: it's not very fast. The good news is that, although fees apply for full access,??free messaging is available with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": null,
+                  "text": "Like on most Delta planes, if you bring your own WiFi-enabled device you get free access to Delta Studio, featuring over 1,000 hours of movies, TV, music, and podcasts."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "The odds are you will not have a power port on this plane. However, Delta is in the process of refurbishing their narrowbody fleet and, as part of that process, adding power ports. If you get lucky and get an updated plane, you'll have all the power you need, plus USB!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "The odds are you will not have a power port on this plane. However, Delta is in the process of refurbishing their narrowbody fleet and, as part of that process, adding power ports. If you get lucky and get an updated plane, you'll have all the power you need, plus USB!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL144007APR20ATLDAL194020550717DL0|21"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "18.1 in.",
+          "seatPitch": "34 in.",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Premium Select",
+              "cabinCode": "W",
+              "config": "2x3",
+              "num": 20,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "18.1 in.",
+              "width": 18.1,
+              "widthRate": "",
+              "pitch": 34,
+              "seatPitch": "34 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 448.1,
+          "tax": 0,
+          "totalFare": 448.1,
+          "totalItinerary": 448.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "D",
+          "fbc": "HA0UA0FE",
+          "brandColumn": 4,
+          "brandIndex": 9,
+          "shelf": 0,
+          "cabinClassCode": "F",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "This plane features air-to-ground WiFi provided by GoGo. Warning: it's not very fast. The good news is that, although fees apply for full access,??free messaging is available with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": null,
+                  "text": "Like on most Delta planes, if you bring your own WiFi-enabled device you get free access to Delta Studio, featuring over 1,000 hours of movies, TV, music, and podcasts."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "The odds are you will not have a power port on this plane. However, Delta is in the process of refurbishing their narrowbody fleet and, as part of that process, adding power ports. If you get lucky and get an updated plane, you'll have all the power you need, plus USB!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "The odds are you will not have a power port on this plane. However, Delta is in the process of refurbishing their narrowbody fleet and, as part of that process, adding power ports. If you get lucky and get an updated plane, you'll have all the power you need, plus USB!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL144007APR20ATLDAL194020550717DL0|31"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "First/Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 12,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "19.6 in.",
+              "width": 19.6,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "DL",
+      "airlineName": "Delta",
+      "flightGrade": "A",
+      "duration": 136,
+      "numStops": 0,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "DL",
+          "airlineName": "Delta",
+          "allianceCode": "S",
+          "flightNumber": 31,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "DFW",
+          "toName": "Dallas/Ft. Worth Airport, TX",
+          "toLocId": null,
+          "departs": "2020-04-07 19:40:00",
+          "arrives": "2020-04-07 20:56:00",
+          "dayChange": 0,
+          "opAirlineCode": "DL",
+          "opAirlineName": null,
+          "miles": 729,
+          "duration": 136,
+          "aircraftTypeCode": "320",
+          "aircraftTypeName": "Airbus A320",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "fromTerminal": "S",
+          "toTerminal": "E",
+          "onTimePercent": 80,
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "stopPoints": [],
+          "seats": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 121,
+              "type": "Standard",
+              "pitchRate": "A",
+              "seatWidth": "17.2 in.",
+              "width": 17.2,
+              "widthRate": "A",
+              "pitch": 31,
+              "seatPitch": "31 in."
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "Premium Select",
+              "cabinCode": "W",
+              "config": "3x3",
+              "num": 18,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "17.2 in.",
+              "width": 17.2,
+              "widthRate": "",
+              "pitch": 34,
+              "seatPitch": "34 in."
+            },
+            {
+              "route": "ATL-DFW",
+              "cabin": "First/Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 12,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 36,
+              "seatPitch": "36 in."
+            }
+          ],
+          "availability": [
+            { "bic": "J", "count": 9, "cabin": "F" },
+            { "bic": "C", "count": 9, "cabin": "F" },
+            { "bic": "D", "count": 9, "cabin": "F" },
+            { "bic": "I", "count": 9, "cabin": "F" },
+            { "bic": "Z", "count": 9, "cabin": "F" },
+            { "bic": "W", "count": 9, "cabin": "W" },
+            { "bic": "S", "count": 9, "cabin": "W" },
+            { "bic": "Y", "count": 9, "cabin": "Y" },
+            { "bic": "B", "count": 9, "cabin": "Y" },
+            { "bic": "M", "count": 9, "cabin": "Y" },
+            { "bic": "H", "count": 9, "cabin": "Y" },
+            { "bic": "Q", "count": 9, "cabin": "Y" },
+            { "bic": "K", "count": 9, "cabin": "Y" },
+            { "bic": "L", "count": 9, "cabin": "Y" },
+            { "bic": "U", "count": 9, "cabin": "Y" },
+            { "bic": "T", "count": 9, "cabin": "Y" },
+            { "bic": "X", "count": 9, "cabin": "Y" },
+            { "bic": "V", "count": 9, "cabin": "Y" },
+            { "bic": "E", "count": 9, "cabin": "Y" }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Delta First",
+          "cabinText": "Delta First",
+          "seatBookingLevel": "P",
+          "brandNum": 31,
+          "brandId": 4
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 349.1,
+          "tax": 0,
+          "totalFare": 349.1,
+          "totalItinerary": 349.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "H",
+          "fbc": "HA0UA0MC",
+          "brandColumn": 1,
+          "brandIndex": 7,
+          "shelf": 2,
+          "cabinClassCode": "Y",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 26,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Delta's A320's now have super-fast 2Ku WiFi which provides speed comparable to what you might have at home -- fast enough to stream video. WiFi works from pushback to park, so you don't have to wait until takeoff. Fees apply for full access, but messaging is available for free with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "Like on most Delta planes, if you bring your own WiFi-enabled device you get free access to Delta Studio, featuring over 1,000 hours of movies, TV, music, and podcasts."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL003107APR20ATLDFW194020560320DL0|11"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 5,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 1,
+          "seatAssignments": 4,
+          "seatType": 1,
+          "seatWidth": "17.2 in.",
+          "seatPitch": "31 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 121,
+              "type": "Standard",
+              "pitchRate": "A",
+              "seatWidth": "17.2 in.",
+              "width": 17.2,
+              "widthRate": "A",
+              "pitch": 31,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 383.1,
+          "tax": 0,
+          "totalFare": 383.1,
+          "totalItinerary": 383.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "S",
+          "fbc": "HA0UA0IE",
+          "brandColumn": 3,
+          "brandIndex": 8,
+          "shelf": 3,
+          "cabinClassCode": "W",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 26,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Delta's A320's now have super-fast 2Ku WiFi which provides speed comparable to what you might have at home -- fast enough to stream video. WiFi works from pushback to park, so you don't have to wait until takeoff. Fees apply for full access, but messaging is available for free with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "Like on most Delta planes, if you bring your own WiFi-enabled device you get free access to Delta Studio, featuring over 1,000 hours of movies, TV, music, and podcasts."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL003107APR20ATLDFW194020560320DL0|21"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 5,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 1,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "17.2 in.",
+          "seatPitch": "34 in.",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "Premium Select",
+              "cabinCode": "W",
+              "config": "3x3",
+              "num": 18,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "17.2 in.",
+              "width": 17.2,
+              "widthRate": "",
+              "pitch": 34,
+              "seatPitch": "34 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 448.1,
+          "tax": 0,
+          "totalFare": 448.1,
+          "totalItinerary": 448.1,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "D",
+          "fbc": "HA0UA0FE",
+          "brandColumn": 4,
+          "brandIndex": 9,
+          "shelf": 0,
+          "cabinClassCode": "F",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 26,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": "Y",
+                  "text": "Delta's A320's now have super-fast 2Ku WiFi which provides speed comparable to what you might have at home -- fast enough to stream video. WiFi works from pushback to park, so you don't have to wait until takeoff. Fees apply for full access, but messaging is available for free with iMessage, Facebook Messenger, or WhatsApp."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 136,
+                  "flight": "ATL-DFW",
+                  "status": null,
+                  "text": "Like on most Delta planes, if you bring your own WiFi-enabled device you get free access to Delta Studio, featuring over 1,000 hours of movies, TV, music, and podcasts."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": ["DL003107APR20ATLDFW194020560320DL0|31"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 5,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 1,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DFW",
+              "cabin": "First/Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 12,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 36,
+              "seatPitch": "36 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "WN",
+      "airlineName": "Southwest",
+      "flightGrade": "A",
+      "duration": 145,
+      "numStops": 0,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "WN",
+          "airlineName": "Southwest",
+          "allianceCode": "",
+          "flightNumber": 850,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "DAL",
+          "toName": "Dallas/Love Field , TX",
+          "toLocId": null,
+          "departs": "2020-04-07 19:55:00",
+          "arrives": "2020-04-07 21:20:00",
+          "dayChange": 0,
+          "opAirlineCode": "WN",
+          "opAirlineName": null,
+          "miles": 719,
+          "duration": 145,
+          "aircraftTypeCode": "73W",
+          "aircraftTypeName": "Boeing 737-700",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "seats": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Business Select",
+          "cabinText": "Business Select",
+          "seatBookingLevel": "P",
+          "brandNum": 21,
+          "brandId": 17
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 135.98,
+          "tax": 0,
+          "totalFare": 135.98,
+          "totalItinerary": 135.98,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "P",
+          "fbc": "PLM0TNF",
+          "brandColumn": 1,
+          "brandIndex": 4,
+          "shelf": 2,
+          "cabinClassCode": "Y",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 145,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 145,
+                  "flight": "ATL-DAL",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            },
+            {
+              "code": 11,
+              "segments": [
+                {
+                  "duration": 145,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "SW",
+          "itineraryFlights": ["WN085007APR20ATLDAL19552120073WWN0|11"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 3,
+          "power": 1,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "standard",
+          "seatPitch": "31 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 428.98,
+          "tax": 0,
+          "totalFare": 428.98,
+          "totalItinerary": 428.98,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "Y",
+          "fbc": "YLNEV",
+          "brandColumn": 2,
+          "brandIndex": 5,
+          "shelf": 2,
+          "cabinClassCode": "Y",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 145,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 145,
+                  "flight": "ATL-DAL",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            },
+            {
+              "code": 11,
+              "segments": [
+                {
+                  "duration": 145,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "SW",
+          "itineraryFlights": ["WN085007APR20ATLDAL19552120073WWN0|15"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": true,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 3,
+          "power": 1,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "standard",
+          "seatPitch": "31 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 452.98,
+          "tax": 0,
+          "totalFare": 452.98,
+          "totalItinerary": 452.98,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "K",
+          "fbc": "KLNEV",
+          "brandColumn": 3,
+          "brandIndex": 6,
+          "shelf": 2,
+          "cabinClassCode": "W",
+          "grade": "A",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 145,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 145,
+                  "flight": "ATL-DAL",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            },
+            {
+              "code": 11,
+              "segments": [
+                {
+                  "duration": 145,
+                  "flight": "ATL-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "SW",
+          "itineraryFlights": ["WN085007APR20ATLDAL19552120073WWN0|21"],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": true,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 3,
+          "power": 1,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority (A1-A15)",
+          "seatsBySegment": [
+            {
+              "route": "ATL-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "WN",
+      "airlineName": "Southwest",
+      "flightGrade": "C+",
+      "duration": 260,
+      "numStops": 1,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "WN",
+          "airlineName": "Southwest",
+          "allianceCode": "",
+          "flightNumber": 2071,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "HOU",
+          "toName": "Houston/Hobby , TX",
+          "toLocId": null,
+          "departs": "2020-04-07 09:50:00",
+          "arrives": "2020-04-07 11:10:00",
+          "dayChange": 0,
+          "opAirlineCode": "WN",
+          "opAirlineName": null,
+          "miles": 694,
+          "duration": 140,
+          "aircraftTypeCode": "73W",
+          "aircraftTypeName": "Boeing 737-700",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "seats": [
+            {
+              "route": "ATL-HOU",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Business Select",
+          "cabinText": "Business Select",
+          "seatBookingLevel": "P",
+          "brandNum": 21,
+          "brandId": 17
+        },
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "WN",
+          "airlineName": "Southwest",
+          "allianceCode": "",
+          "flightNumber": 24,
+          "fromCode": "HOU",
+          "fromName": "Houston/Hobby , TX",
+          "fromLocId": null,
+          "toCode": "DAL",
+          "toName": "Dallas/Love Field , TX",
+          "toLocId": null,
+          "departs": "2020-04-07 12:00:00",
+          "arrives": "2020-04-07 13:10:00",
+          "dayChange": 0,
+          "opAirlineCode": "WN",
+          "opAirlineName": null,
+          "miles": 239,
+          "duration": 70,
+          "aircraftTypeCode": "73W",
+          "aircraftTypeName": "Boeing 737-700",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": true,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "seats": [
+            {
+              "route": "HOU-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Business Select",
+          "cabinText": "Business Select",
+          "seatBookingLevel": "P",
+          "brandNum": 21,
+          "brandId": 17
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 152.98,
+          "tax": 0,
+          "totalFare": 152.98,
+          "totalItinerary": 152.98,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "EE",
+          "fbc": "ELB0NNRO ELB0NNRO",
+          "brandColumn": 1,
+          "brandIndex": 4,
+          "shelf": 2,
+          "cabinClassCode": "Y",
+          "grade": "C+",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 140,
+                  "flight": "ATL-HOU",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                },
+                {
+                  "duration": 70,
+                  "flight": "HOU-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 140,
+                  "flight": "ATL-HOU",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                },
+                {
+                  "duration": 70,
+                  "flight": "HOU-DAL",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            },
+            {
+              "code": 11,
+              "segments": [
+                {
+                  "duration": 140,
+                  "flight": "ATL-HOU",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                },
+                {
+                  "duration": 70,
+                  "flight": "HOU-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "SW",
+          "itineraryFlights": [
+            "WN207107APR20ATLHOU09501110073WWN0WN002407APR20HOUDAL12001310073WWN0|11"
+          ],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 3,
+          "power": 1,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "standard",
+          "seatPitch": "31 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-HOU",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            },
+            {
+              "route": "HOU-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 433.48,
+          "tax": 0,
+          "totalFare": 433.48,
+          "totalItinerary": 433.48,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "YY",
+          "fbc": "YLAEV YLAEV",
+          "brandColumn": 2,
+          "brandIndex": 5,
+          "shelf": 2,
+          "cabinClassCode": "Y",
+          "grade": "C+",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 140,
+                  "flight": "ATL-HOU",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                },
+                {
+                  "duration": 70,
+                  "flight": "HOU-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 140,
+                  "flight": "ATL-HOU",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                },
+                {
+                  "duration": 70,
+                  "flight": "HOU-DAL",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            },
+            {
+              "code": 11,
+              "segments": [
+                {
+                  "duration": 140,
+                  "flight": "ATL-HOU",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                },
+                {
+                  "duration": 70,
+                  "flight": "HOU-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "SW",
+          "itineraryFlights": [
+            "WN207107APR20ATLHOU09501110073WWN0WN002407APR20HOUDAL12001310073WWN0|15"
+          ],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": true,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 3,
+          "power": 1,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "standard",
+          "seatPitch": "31 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-HOU",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            },
+            {
+              "route": "HOU-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 462.48,
+          "tax": 0,
+          "totalFare": 462.48,
+          "totalItinerary": 462.48,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "KK",
+          "fbc": "KLAEV KLAEV",
+          "brandColumn": 3,
+          "brandIndex": 6,
+          "shelf": 2,
+          "cabinClassCode": "W",
+          "grade": "C+",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 140,
+                  "flight": "ATL-HOU",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                },
+                {
+                  "duration": 70,
+                  "flight": "HOU-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers free in-flight text message via iMessage or WhatsApp. It also offers full wifi capabilities for $8 per day. Their WiFi is faster than many others because it's based on satellite technology instead of air to ground. The other nice thing is that it's available gate-to-gate -- you don't have to wait until your flight is in the air!"
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 140,
+                  "flight": "ATL-HOU",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                },
+                {
+                  "duration": 70,
+                  "flight": "HOU-DAL",
+                  "status": null,
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            },
+            {
+              "code": 11,
+              "segments": [
+                {
+                  "duration": 140,
+                  "flight": "ATL-HOU",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                },
+                {
+                  "duration": 70,
+                  "flight": "HOU-DAL",
+                  "status": "Y",
+                  "text": "Southwest offers a video streaming service where you can order movies or Live TV to be streamed directly to your computer, tablet, or phone. TV is free, but movies cost $5 each."
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "SW",
+          "itineraryFlights": [
+            "WN207107APR20ATLHOU09501110073WWN0WN002407APR20HOUDAL12001310073WWN0|21"
+          ],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": true,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 3,
+          "power": 1,
+          "seatAssignments": 1,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority (A1-A15)",
+          "seatsBySegment": [
+            {
+              "route": "ATL-HOU",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            },
+            {
+              "route": "HOU-DAL",
+              "cabin": "Wanna Get Away",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "standard",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "31 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "NK",
+      "airlineName": "Spirit",
+      "flightGrade": "C+",
+      "duration": 626,
+      "numStops": 1,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "refKey": "ATL.FLL.20200407.NK.1404",
+          "airlineCode": "NK",
+          "airlineName": "Spirit",
+          "allianceCode": "",
+          "flightNumber": 1404,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "FLL",
+          "toName": "Ft. Lauderdale, FL",
+          "toLocId": null,
+          "departs": "2020-04-07 11:20:00",
+          "arrives": "2020-04-07 13:14:00",
+          "dayChange": 0,
+          "opAirlineCode": "NK",
+          "opAirlineName": null,
+          "miles": 581,
+          "duration": 114,
+          "aircraftTypeCode": "319",
+          "aircraftTypeName": "Airbus A319",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "seats": [
+            {
+              "route": "ATL-FLL",
+              "cabin": "Bare Fare",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 146,
+              "type": "Standard",
+              "pitchRate": "BB",
+              "seatWidth": "17.75 in.",
+              "width": 17.75,
+              "widthRate": "A",
+              "pitch": 28,
+              "seatPitch": "28 in."
+            }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Bare Fare",
+          "cabinText": "Bare Fare",
+          "seatBookingLevel": "P",
+          "brandNum": 11,
+          "brandId": 41
+        },
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "refKey": "FLL.DFW.20200407.NK.222",
+          "airlineCode": "NK",
+          "airlineName": "Spirit",
+          "allianceCode": "",
+          "flightNumber": 222,
+          "fromCode": "FLL",
+          "fromName": "Ft. Lauderdale, FL",
+          "fromLocId": null,
+          "toCode": "DFW",
+          "toName": "Dallas/Ft. Worth Airport, TX",
+          "toLocId": null,
+          "departs": "2020-04-07 18:24:00",
+          "arrives": "2020-04-07 20:46:00",
+          "dayChange": 0,
+          "opAirlineCode": "NK",
+          "opAirlineName": null,
+          "miles": 1117,
+          "duration": 202,
+          "aircraftTypeCode": "32N",
+          "aircraftTypeName": "Airbus A320 Neo",
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": true,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "seats": [
+            {
+              "route": "FLL-DFW",
+              "cabin": "Bare Fare",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "wider",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "28 in."
+            },
+            {
+              "route": "FLL-DFW",
+              "cabin": "Premium Economy",
+              "cabinCode": "W",
+              "config": "2x2",
+              "num": 0,
+              "type": "Recliner Seats",
+              "pitchRate": null,
+              "seatWidth": "wider",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "36 in."
+            }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Bare Fare",
+          "cabinText": "Bare Fare",
+          "seatBookingLevel": "P",
+          "brandNum": 11,
+          "brandId": 41
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 24.59,
+          "tax": 0,
+          "totalFare": 24.59,
+          "totalItinerary": 24.59,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "PP",
+          "fbc": "P",
+          "brandColumn": 1,
+          "brandIndex": 0,
+          "shelf": 1,
+          "cabinClassCode": "Y",
+          "grade": "C+",
+          "amenities": [],
+          "split": "1",
+          "source": "1N",
+          "itineraryFlights": [
+            "NK140407APR20ATLFLL112013140319NK0NK022207APR20FLLDFW18242046032NNK0|11"
+          ],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 1,
+          "ife": 1,
+          "liveTV": 1,
+          "power": 1,
+          "seatAssignments": 2,
+          "seatType": 1,
+          "seatWidth": "wider",
+          "seatPitch": "28 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-FLL",
+              "cabin": "Bare Fare",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 146,
+              "type": "Standard",
+              "pitchRate": "BB",
+              "seatWidth": "17.75 in.",
+              "width": 17.75,
+              "widthRate": "A",
+              "pitch": 28,
+              "seatPitch": "28 in."
+            },
+            {
+              "route": "FLL-DFW",
+              "cabin": "Bare Fare",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 0,
+              "type": null,
+              "pitchRate": null,
+              "seatWidth": "wider",
+              "width": 0,
+              "widthRate": null,
+              "pitch": 0,
+              "seatPitch": "28 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    },
+    {
+      "airportOnly": false,
+      "airlineCode": "AA",
+      "airlineName": "American",
+      "flightGrade": "B-",
+      "duration": 436,
+      "numStops": 1,
+      "segments": [
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "AA",
+          "airlineName": "American",
+          "allianceCode": "O",
+          "flightNumber": 1119,
+          "fromCode": "ATL",
+          "fromName": "Atlanta, GA",
+          "fromLocId": null,
+          "toCode": "ORD",
+          "toName": "Chicago/Ohare, IL",
+          "toLocId": null,
+          "departs": "2020-04-07 18:22:00",
+          "arrives": "2020-04-07 19:37:00",
+          "dayChange": 0,
+          "opAirlineCode": "AA",
+          "opAirlineName": null,
+          "miles": 605,
+          "duration": 135,
+          "aircraftTypeCode": "738",
+          "aircraftTypeName": "Boeing 737-800",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "fromTerminal": "N",
+          "toTerminal": "3",
+          "onTimePercent": 60,
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "stopPoints": [],
+          "seats": [
+            {
+              "route": "ATL-ORD",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            },
+            {
+              "route": "ATL-ORD",
+              "cabin": "Economy (Extra Legroom)",
+              "cabinCode": null,
+              "config": "3x3",
+              "num": 30,
+              "type": "Standard",
+              "pitchRate": "GG",
+              "seatWidth": null,
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 33,
+              "seatPitch": null
+            },
+            {
+              "route": "ATL-ORD",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "availability": [
+            { "bic": "C", "count": 7, "cabin": "C" },
+            { "bic": "J", "count": 7, "cabin": "F" },
+            { "bic": "R", "count": 7, "cabin": "F" },
+            { "bic": "D", "count": 7, "cabin": "F" },
+            { "bic": "I", "count": 7, "cabin": "F" },
+            { "bic": "U", "count": 0, "cabin": "Y" },
+            { "bic": "Y", "count": 7, "cabin": "Y" },
+            { "bic": "B", "count": 7, "cabin": "Y" },
+            { "bic": "H", "count": 7, "cabin": "Y" },
+            { "bic": "K", "count": 7, "cabin": "Y" },
+            { "bic": "M", "count": 7, "cabin": "Y" },
+            { "bic": "L", "count": 7, "cabin": "Y" },
+            { "bic": "G", "count": 7, "cabin": "Y" },
+            { "bic": "V", "count": 7, "cabin": "Y" },
+            { "bic": "S", "count": 7, "cabin": "Y" },
+            { "bic": "N", "count": 7, "cabin": "Y" },
+            { "bic": "Q", "count": 7, "cabin": "Y" },
+            { "bic": "O", "count": 7, "cabin": "Y" },
+            { "bic": "T", "count": 0, "cabin": "Y" }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Main Cabin",
+          "cabinText": "Main Cabin",
+          "seatBookingLevel": "P",
+          "brandNum": 11,
+          "brandId": 24
+        },
+        {
+          "segNum": 0,
+          "fullSegNum": 0,
+          "sectorNum": 0,
+          "airlineCode": "AA",
+          "airlineName": "American",
+          "allianceCode": "O",
+          "flightNumber": 2738,
+          "fromCode": "ORD",
+          "fromName": "Chicago/Ohare, IL",
+          "fromLocId": null,
+          "toCode": "DFW",
+          "toName": "Dallas/Ft. Worth Airport, TX",
+          "toLocId": null,
+          "departs": "2020-04-07 22:10:00",
+          "arrives": "2020-04-08 00:38:00",
+          "dayChange": 1,
+          "opAirlineCode": "AA",
+          "opAirlineName": null,
+          "miles": 801,
+          "duration": 148,
+          "aircraftTypeCode": "738",
+          "aircraftTypeName": "Boeing 737-800",
+          "aircraftTypeCategory": "Narrowbody Jet",
+          "fromTerminal": "3",
+          "toTerminal": "0",
+          "onTimePercent": 80,
+          "numStops": 0,
+          "planeChange": false,
+          "isConnection": false,
+          "isDelphiConnection": false,
+          "connectionType": null,
+          "stopPoints": [],
+          "seats": [
+            {
+              "route": "ORD-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            },
+            {
+              "route": "ORD-DFW",
+              "cabin": "Economy (Extra Legroom)",
+              "cabinCode": null,
+              "config": "3x3",
+              "num": 30,
+              "type": "Standard",
+              "pitchRate": "GG",
+              "seatWidth": null,
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 33,
+              "seatPitch": null
+            },
+            {
+              "route": "ORD-DFW",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "availability": [
+            { "bic": "C", "count": 7, "cabin": "C" },
+            { "bic": "J", "count": 7, "cabin": "F" },
+            { "bic": "R", "count": 7, "cabin": "F" },
+            { "bic": "D", "count": 7, "cabin": "F" },
+            { "bic": "I", "count": 7, "cabin": "F" },
+            { "bic": "U", "count": 0, "cabin": "Y" },
+            { "bic": "Y", "count": 7, "cabin": "Y" },
+            { "bic": "B", "count": 7, "cabin": "Y" },
+            { "bic": "H", "count": 7, "cabin": "Y" },
+            { "bic": "K", "count": 7, "cabin": "Y" },
+            { "bic": "M", "count": 7, "cabin": "Y" },
+            { "bic": "L", "count": 7, "cabin": "Y" },
+            { "bic": "G", "count": 7, "cabin": "Y" },
+            { "bic": "V", "count": 7, "cabin": "Y" },
+            { "bic": "S", "count": 7, "cabin": "Y" },
+            { "bic": "N", "count": 7, "cabin": "Y" },
+            { "bic": "Q", "count": 7, "cabin": "Y" },
+            { "bic": "O", "count": 7, "cabin": "Y" },
+            { "bic": "T", "count": 0, "cabin": "Y" }
+          ],
+          "seatText": "Unassigned",
+          "cabinSeatString": "Main Cabin",
+          "cabinText": "Main Cabin",
+          "seatBookingLevel": "P",
+          "brandNum": 11,
+          "brandId": 24
+        }
+      ],
+      "fares": [
+        {
+          "baseFare": 499.6,
+          "tax": 0,
+          "totalFare": 499.6,
+          "totalItinerary": 499.6,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "SK",
+          "fbc": "S0AZZNM3.K0AZZNN1",
+          "brandColumn": 1,
+          "brandIndex": 2,
+          "shelf": 0,
+          "cabinClassCode": "Y",
+          "grade": "B-",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-ORD",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                },
+                {
+                  "duration": 148,
+                  "flight": "ORD-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-ORD",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                },
+                {
+                  "duration": 148,
+                  "flight": "ORD-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-ORD",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                },
+                {
+                  "duration": 148,
+                  "flight": "ORD-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-ORD",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                },
+                {
+                  "duration": 148,
+                  "flight": "ORD-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": [
+            "AA111907APR20ATLORD182219370738AA0AA273807APR20ORDDFW221000381738AA0|11"
+          ],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 4,
+          "seatType": 1,
+          "seatWidth": "16.6 in.",
+          "seatPitch": "30 in.",
+          "boardingPriority": "Standard",
+          "seatsBySegment": [
+            {
+              "route": "ATL-ORD",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            },
+            {
+              "route": "ORD-DFW",
+              "cabin": "Main Cabin",
+              "cabinCode": "Y",
+              "config": "3x3",
+              "num": 126,
+              "type": "Standard",
+              "pitchRate": "B",
+              "seatWidth": "16.6 in.",
+              "width": 16.6,
+              "widthRate": "B",
+              "pitch": 30,
+              "seatPitch": "30 in."
+            }
+          ],
+          "media": null
+        },
+        {
+          "baseFare": 670.6,
+          "tax": 0,
+          "totalFare": 670.6,
+          "totalItinerary": 670.6,
+          "downgradeRequired": false,
+          "notOfferedReason": null,
+          "soldOut": false,
+          "specialRatePopup": null,
+          "specialRateText": null,
+          "bic": "IR",
+          "fbc": "S0AZZNI3.M0AIZSR1",
+          "brandColumn": 4,
+          "brandIndex": 3,
+          "shelf": 0,
+          "cabinClassCode": "F",
+          "grade": "B-",
+          "amenities": [
+            {
+              "code": 1,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-ORD",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                },
+                {
+                  "duration": 148,
+                  "flight": "ORD-DFW",
+                  "status": "Y",
+                  "text": "Keep your fingers crossed if you're flying this plane. American is in the process of upgrading their WiFi speeds across their entire fleet. On the 737-800's, there is about a 60% chance you'll have an upgraded plane with satellite WiFi from ViaSat, which is super fast, fast enough to stream video. It also works from gate to gate which is awesome! On the other hand, there is a 40% change you'll get the old, slow air-to-ground WiFi provided by GoGo which only works while you're at cruising altitude."
+                }
+              ]
+            },
+            {
+              "code": 7,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-ORD",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                },
+                {
+                  "duration": 148,
+                  "flight": "ORD-DFW",
+                  "status": null,
+                  "text": "All of the American 737-800's provide a nice selection of movies, music, and TV shows but only some of the planes have in-seat video screens. For the others, you'll be able to stream the content to your phone, tablet, or laptop. It is actually the more updated planes that don't have the screens. American is removing them, believing that their travelers' personal devices are usually better quality. As they remove the video screens, they are installing instead a tablet holder where you can mount your tablet or phone. The good news is that no matter which plane you get, there is no charge to access the content."
+                }
+              ]
+            },
+            {
+              "code": 15,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-ORD",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                },
+                {
+                  "duration": 148,
+                  "flight": "ORD-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            },
+            {
+              "code": 17,
+              "segments": [
+                {
+                  "duration": 135,
+                  "flight": "ATL-ORD",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                },
+                {
+                  "duration": 148,
+                  "flight": "ORD-DFW",
+                  "status": "Y",
+                  "text": "This plane has 110V power ports so you can charge your devices while you fly. There are also USB ports!"
+                }
+              ]
+            }
+          ],
+          "split": "1",
+          "source": "1V",
+          "itineraryFlights": [
+            "AA111907APR20ATLORD182219370738AA0AA273807APR20ORDDFW221000381738AA0|31"
+          ],
+          "outOfPolicy": false,
+          "policyBreakDetails": null,
+          "rateType": null,
+          "refundable": false,
+          "changeFee": "FREE",
+          "wifi": 3,
+          "ife": 5,
+          "liveTV": 1,
+          "power": 5,
+          "seatAssignments": 3,
+          "seatType": 1,
+          "seatWidth": "",
+          "seatPitch": "",
+          "boardingPriority": "Priority",
+          "seatsBySegment": [
+            {
+              "route": "ATL-ORD",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            },
+            {
+              "route": "ORD-DFW",
+              "cabin": "Business",
+              "cabinCode": "P",
+              "config": "2x2",
+              "num": 16,
+              "type": "Standard",
+              "pitchRate": "",
+              "seatWidth": "21 in.",
+              "width": 21,
+              "widthRate": "",
+              "pitch": 37,
+              "seatPitch": "37 in."
+            }
+          ],
+          "media": null
+        }
+      ],
+      "isPreferred": false
+    }
+  ],
+  "itineraries": null,
+  "selectedFlights": null,
+  "stopOptions": ["0", "1", "2+"],
+  "airportOptions": [
+    {
+      "locId": "CATL",
+      "locIdName": "Atlanta, GA",
+      "airports": [{ "code": "ATL", "name": "Atlanta, GA" }]
+    },
+    {
+      "locId": "CDFW",
+      "locIdName": "Dallas, TX",
+      "airports": [
+        { "code": "DAL", "name": "Dallas/Love Field , TX" },
+        { "code": "DFW", "name": "Dallas/Ft. Worth Airport, TX" }
+      ]
+    }
+  ],
+  "unwantedAirports": null,
+  "policyApplied": -1,
+  "haveCustomerEmail": false
+}

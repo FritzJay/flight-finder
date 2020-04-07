@@ -273,9 +273,11 @@ export const queryFlights = async (
 
   json.flights.forEach(
     ({ airlineName, flightGrade, duration, numStops, fares, segments }) =>
-      fares.forEach(({ totalFare, seatsBySegment, itineraryFlights }: IFare) =>
+      fares.forEach(({ totalFare, seatsBySegment }: IFare, i) =>
         list.push({
-          id: itineraryFlights[0],
+          id:
+            segments.reduce((id, { flightNumber }) => id + flightNumber, "") +
+            i.toString(),
           airline: airlineName,
           grade: flightGrade,
           duration,
