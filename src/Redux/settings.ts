@@ -1,4 +1,4 @@
-import { ISettingsState } from "../types";
+import { ISettingsState, IBase } from "../types";
 
 /* Types */
 
@@ -7,38 +7,45 @@ export const SET_AVERAGES_LODGING = "SET_AVERAGES_LODGING";
 export const SET_AVERAGES_VEHICLES = "SET_AVERAGES_VEHICLES";
 export const ADD_TIME = "ADD_TIME";
 export const REMOVE_TIME = "REMOVE_TIME";
+export const SET_DEPARTURE = "SET_DEPARTURE";
 
-interface SetAveragesFlights {
+interface SetAveragesFlightsAction {
   type: typeof SET_AVERAGES_FLIGHTS;
   payload: boolean;
 }
 
-interface SetAveragesLodging {
+interface SetAveragesLodgingAction {
   type: typeof SET_AVERAGES_LODGING;
   payload: boolean;
 }
 
-interface SetAveragesVehicles {
+interface SetAveragesVehiclesAction {
   type: typeof SET_AVERAGES_VEHICLES;
   payload: boolean;
 }
 
-interface AddTime {
+interface AddTimeAction {
   type: typeof ADD_TIME;
   payload: number;
 }
 
-interface RemoveTime {
+interface RemoveTimeAction {
   type: typeof REMOVE_TIME;
   payload: number;
 }
 
+interface SetDepartureAction {
+  type: typeof SET_DEPARTURE;
+  payload: IBase | null;
+}
+
 export type SettingsActionType =
-  | SetAveragesFlights
-  | SetAveragesLodging
-  | SetAveragesVehicles
-  | AddTime
-  | RemoveTime;
+  | SetAveragesFlightsAction
+  | SetAveragesLodgingAction
+  | SetAveragesVehiclesAction
+  | AddTimeAction
+  | RemoveTimeAction
+  | SetDepartureAction;
 
 /* Actions */
 
@@ -67,9 +74,15 @@ export const removeTime = (time: number) => ({
   payload: time,
 });
 
+export const setDeparture = (base: IBase | null) => ({
+  type: SET_DEPARTURE,
+  payload: base,
+});
+
 /* Reducer */
 
 export const initialSettingsState: ISettingsState = {
+  departure: null,
   averages: {
     flights: true,
     lodging: true,
@@ -118,6 +131,11 @@ export const settingsReducer = (
       return {
         ...state,
         times: state.times.filter((t) => t !== action.payload),
+      };
+    case SET_DEPARTURE:
+      return {
+        ...state,
+        departure: action.payload,
       };
     default:
       return state;

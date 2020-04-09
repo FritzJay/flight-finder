@@ -10,10 +10,13 @@ import {
   createStyles,
   makeStyles,
 } from "@material-ui/core";
-import Averages from "./Averages";
-import Times from "./Times";
+import { IBase } from "../../types";
 import { RootState } from "../../Redux";
 import { setSettingsOpen } from "../../Redux/system";
+import { setDeparture } from "../../Redux/settings";
+import Averages from "./Averages";
+import Times from "./Times";
+import BaseAutocomplete from "../CreateEstimate/BaseAutoComplete";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,12 +36,20 @@ const useSettings = () => {
   return useSelector((state: RootState) => ({
     classes,
     open: state.system.isSettingsOpen,
+    departure: state.settings.departure,
     handleClose: () => dispatch(setSettingsOpen(false)),
+    handleBaseChange: (base: IBase | null) => dispatch(setDeparture(base)),
   }));
 };
 
 const Settings = () => {
-  const { classes, open, handleClose } = useSettings();
+  const {
+    classes,
+    open,
+    departure,
+    handleClose,
+    handleBaseChange,
+  } = useSettings();
 
   return (
     <Dialog
@@ -49,6 +60,12 @@ const Settings = () => {
     >
       <DialogTitle>Settings</DialogTitle>
       <DialogContent>
+        <BaseAutocomplete
+          label="Default Departure"
+          value={departure}
+          onChange={handleBaseChange}
+        />
+
         <Averages classes={classes} />
 
         <Times classes={classes} />

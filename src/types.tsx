@@ -5,6 +5,15 @@ export enum Links {
   Vehicles,
 }
 
+export interface IBase {
+  id: number;
+  name: string;
+  airport: string;
+  airportCode: string;
+  distance: number | null;
+  notes: string | null;
+}
+
 export interface IAirport {
   name: string;
   code: string;
@@ -50,13 +59,14 @@ export interface IAverages {
 }
 
 export interface ISettingsState {
+  departure: IBase | null;
   averages: IAverages;
   times: number[];
 }
 
 export interface ICreateEstimateState {
-  destination: IAirport | null;
-  departure: IAirport | null;
+  destination: IBase | null;
+  email: string | null;
 }
 
 export interface IFlightsState {

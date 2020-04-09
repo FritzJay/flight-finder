@@ -1,1 +1,8 @@
-export const calculateLodging = async (dispatch: any, time: number) => {};
+import { IBase } from "../types";
+
+export const calculateLodging = async (
+  dispatch: any,
+  departure: IBase,
+  destination: IBase,
+  time: number
+) => {};

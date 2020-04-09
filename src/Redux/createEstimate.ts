@@ -1,39 +1,39 @@
-import { IAirport, ICreateEstimateState } from "../types";
+import { IBase, ICreateEstimateState } from "../types";
 
 /* Types */
 
 export const SET_DESTINATION = "SET_DESTINATION";
-export const SET_DEPARTURE = "SET_DEPARTURE";
+export const SET_EMAIL = "SET_EMAIL";
 
-interface SetDestination {
+interface SetDestinationAction {
   type: typeof SET_DESTINATION;
-  payload: IAirport | null;
+  payload: IBase | null;
 }
 
-interface SetDeparture {
-  type: typeof SET_DEPARTURE;
-  payload: IAirport | null;
+interface SetEmailAction {
+  type: typeof SET_EMAIL;
+  payload: string | null;
 }
 
-export type CreateEstimateActionTypes = SetDestination | SetDeparture;
+export type CreateEstimateActionTypes = SetDestinationAction | SetEmailAction;
 
 /* Actions */
 
-export const setDestination = (airport: IAirport | null) => ({
+export const setDestination = (destination: IBase | null) => ({
   type: SET_DESTINATION,
-  payload: airport,
+  payload: destination,
 });
 
-export const setDeparture = (airport: IAirport | null) => ({
-  type: SET_DEPARTURE,
-  payload: airport,
+export const setEmail = (email: string | null) => ({
+  type: SET_EMAIL,
+  payload: email,
 });
 
 /* Reducer */
 
 export const initialCreateEstimateState: ICreateEstimateState = {
   destination: null,
-  departure: null,
+  email: null,
 };
 
 export const createEstimateReducer = (
@@ -46,10 +46,10 @@ export const createEstimateReducer = (
         ...state,
         destination: action.payload,
       };
-    case SET_DEPARTURE:
+    case SET_EMAIL:
       return {
         ...state,
-        departure: action.payload,
+        email: action.payload,
       };
     default:
       return state;

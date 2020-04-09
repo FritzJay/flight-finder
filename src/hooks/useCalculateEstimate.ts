@@ -5,14 +5,14 @@ import { calculateLodging } from "./lodging";
 import { calculateVehicles } from "./vehicles";
 import { RootState } from "../Redux";
 import { setCalculating } from "../Redux/system";
-import { IAirport, IAverages } from "../types";
+import { IAverages, IBase } from "../types";
 import { Dispatch } from "redux";
 
 const useCalculateEstimate = () => {
   const dispatch = useDispatch();
   const { departure, destination, times, averages } = useSelector(
     (state: RootState) => ({
-      departure: state.createEstimate.departure,
+      departure: state.settings.departure,
       destination: state.createEstimate.destination,
       times: state.settings.times,
       averages: state.settings.averages,
@@ -20,7 +20,7 @@ const useCalculateEstimate = () => {
   );
 
   return useCallback(() => {
-    if (departure === null || destination === null) return;
+    if (destination === null || departure === null) return;
 
     calculateEstimate(dispatch, departure, destination, times, averages);
   }, [dispatch, departure, destination, times, averages]);
@@ -28,8 +28,8 @@ const useCalculateEstimate = () => {
 
 const calculateEstimate = async (
   dispatch: Dispatch<any>,
-  departure: IAirport,
-  destination: IAirport,
+  departure: IBase,
+  destination: IBase,
   times: number[],
   averages: IAverages
 ) => {
@@ -40,9 +40,11 @@ const calculateEstimate = async (
     if (averages.flights === true)
       await calculateFlights(dispatch, departure, destination, t);
 
-    if (averages.lodging === true) await calculateLodging(dispatch, t);
+    if (averages.lodging === true)
+      await calculateLodging(dispatch, departure, destination, t);
 
-    if (averages.vehicles === true) await calculateVehicles(dispatch, t);
+    if (averages.vehicles === true)
+      await calculateVehicles(dispatch, departure, destination, t);
   }
 
   dispatch(setCalculating(false));
