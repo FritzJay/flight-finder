@@ -16,7 +16,7 @@ import { setSettingsOpen } from "../../Redux/system";
 import { setDeparture } from "../../Redux/settings";
 import Averages from "./Averages";
 import Times from "./Times";
-import BaseAutocomplete from "../CreateEstimate/BaseAutoComplete";
+import BaseAutocomplete from "../CreateEstimate/BaseAutocomplete";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
