@@ -163,6 +163,10 @@ In this section, I'll go through the dependencies I've added and briefly describ
 3. Run `git clone https://github.com/FritzJay/flight-finder.git` to clone this repo into the current directory.
 4. `cd ./flight-finder` to change directory into the new project.
 5. Run `npm install` to install all the node packages. This might take a while.
-6. Finally, run `npm run watch` to start the server in development mode with hot reload. See package.json lines 10 - 21 to see the scripts that you can run with `npm run ${script name}`.
+6. Run `npm run watch` to start the server in development mode with hot reload. See package.json lines 10 - 21 to see the scripts that you can run with `npm run ${script name}`.
+7. Now that you have the server up and running, navigate to localhost:3000 in your browser to interact with the app.
+8. Back in the command line, run `git checkout -b ${pick a name. Any name will do.}` to create a new branch and switch to it in git. This will allow you to make changes without fear of messing with the master branch. See [the git docs](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) for more information on branching.
+9. Remember to commit your changes often using `git add ${name of file OR "-A" to add everything}` and then `git commit -m "${concise description of changes goes here}`. Commits are not pushed up to the repository until you explicitly push your changes to github so don't worry about that. To me, git is the most important tool I have learned when it comes to development. Use it!
+10. When you are happy with your changes and have tested them out in the browser, use `git push` to "push" your new branch up to github. We can discuss merging branches into master together.
 
 See the [project issues](https://github.com/FritzJay/flight-finder/issues) for contribution ideas.
