@@ -30,8 +30,6 @@ Flight Finder consists of a [Node](https://nodejs.org/en/) server that serves a 
   - The document you are currently reading.
 - tsconfig.json
   - Configuring for the TypeScript compiler. Learn more at [https://www.typescriptlang.org/docs/handbook/tsconfig-json.html](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
-- yarn.lock/yarn-error.log
-  - Keeps track of currently installed packages, as specified in package.json dependency list. Learn more about [Yarn](https://classic.yarnpkg.com/lang/en/) and [yarn.lock](https://classic.yarnpkg.com/en/docs/yarn-lock/).
 
 ### /diagrams
 
@@ -137,3 +135,14 @@ In this section, I'll go through the dependencies I've added and briefly describ
   - Provides the compiler which allows us to write this app in TypeScript, instead of plain ol JavaScript.
 - devDependencies
   - package.json also contains a section for dependencies that are only used during development and won't be served to the user. Currently, the only dev dependencies being used are types. Types are used be TypeScript to type check code. Check out the TypeScript link for more info.
+
+## Contributing
+
+1. Install Node/npm. [Download](https://nodejs.org/en/). Alternatively, you can use the awesome package [nvm-windows](https://github.com/coreybutler/nvm-windows) to manage your node environment. If you are planning on doing javascript development in the future I would highly recommend using this.
+2. Install [git](https://git-scm.com/).
+3. Run `git clone https://github.com/FritzJay/flight-finder.git` to clone this repo into the current directory.
+4. `cd ./flight-finder` to change directory into the new project.
+5. Run `npm install` to install all the node packages. This might take a while.
+6. Finally, run `npm run watch` to start the server in development mode with hot reload. See package.json lines 10 - 21 to see the scripts that you can run with `npm run ${script name}`.
+
+See the [project issues](https://github.com/FritzJay/flight-finder/issues) for contribution ideas.
