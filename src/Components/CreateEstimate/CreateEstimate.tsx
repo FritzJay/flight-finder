@@ -11,8 +11,9 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { IBase } from "../../types";
 import { RootState } from "../../Redux";
 import { setDestination, setEmail } from "../../Redux/createEstimate";
-import BaseAutoComplete from "./BaseAutocomplete";
 import { useCalculateFlights } from "../../hooks/flights";
+import BaseAutoComplete from "./BaseAutocomplete";
+import Updates from "../Updates/Updates";
 
 const useStyles = makeStyles((theme: Theme) => ({
   paper: {
@@ -34,8 +35,9 @@ const useCreateEstimate = () => {
     classes,
     isCalculating: state.system.isCalculating,
     base: state.createEstimate.destination,
-    handleBaseChange: (base: IBase | null) => dispatch(setDestination(base)),
     email: state.createEstimate.email,
+    updates: state.flights.updates,
+    handleBaseChange: (base: IBase | null) => dispatch(setDestination(base)),
     handleExecute: calculateEstimate,
     handleEmailChange: (e: any) =>
       dispatch(setEmail(e.target.value === "" ? null : e.target.value)),
@@ -48,57 +50,62 @@ const CreateEstimate = () => {
     isCalculating,
     base,
     email,
+    updates,
     handleBaseChange,
     handleExecute,
     handleEmailChange,
   } = useCreateEstimate();
 
   return (
-    <Grid item xs={12}>
-      <Paper className={classes.paper}>
-        <Grid container item xs={12} spacing={3}>
-          <Grid item xs={12}>
-            <Typography variant="h4">Create Estimate</Typography>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <BaseAutoComplete
-              label="Select Base"
-              value={base}
-              onChange={handleBaseChange}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              className={classes.textField}
-              id="email"
-              label="Email"
-              variant="outlined"
-              value={email || ""}
-              onChange={handleEmailChange}
-            />
-          </Grid>
-          <Grid container spacing={1} justify="flex-end" item xs={12}>
-            <Grid item>
-              <Button
-                disabled={isCalculating}
-                variant="contained"
-                color="primary"
-                onClick={handleExecute}
-                startIcon={
-                  isCalculating ? (
-                    <CircularProgress size={20} />
-                  ) : (
-                    <PlayArrowIcon />
-                  )
-                }
-              >
-                Create Estimate
-              </Button>
+    <React.Fragment>
+      <Grid item xs={12}>
+        <Paper className={classes.paper}>
+          <Grid container item xs={12} spacing={3}>
+            <Grid item xs={12}>
+              <Typography variant="h4">Create Estimate</Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <BaseAutoComplete
+                label="Select Base"
+                value={base}
+                onChange={handleBaseChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                className={classes.textField}
+                id="email"
+                label="Email"
+                variant="outlined"
+                value={email || ""}
+                onChange={handleEmailChange}
+              />
+            </Grid>
+            <Grid container spacing={1} justify="flex-end" item xs={12}>
+              <Grid item>
+                <Button
+                  disabled={isCalculating}
+                  variant="contained"
+                  color="primary"
+                  onClick={handleExecute}
+                  startIcon={
+                    isCalculating ? (
+                      <CircularProgress size={20} />
+                    ) : (
+                      <PlayArrowIcon />
+                    )
+                  }
+                >
+                  Create Estimate
+                </Button>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </Paper>
-    </Grid>
+        </Paper>
+      </Grid>
+
+      <Updates updates={updates} />
+    </React.Fragment>
   );
 };
 

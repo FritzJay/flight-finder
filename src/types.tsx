@@ -38,6 +38,7 @@ export interface IFlight {
 }
 
 export interface IUpdate {
+  date: string;
   description: string;
 }
 

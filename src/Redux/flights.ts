@@ -38,10 +38,16 @@ export const setFlightsBatch = (time: number, flights: IFlight[]) => ({
   },
 });
 
-export const addFlightsUpdate = (update: IUpdate) => ({
-  type: ADD_FLIGHTS_UPDATE,
-  payload: update,
-});
+export const addFlightsUpdate = (description: string) => {
+  const date = new Date(Date.now());
+  return {
+    type: ADD_FLIGHTS_UPDATE,
+    payload: {
+      description,
+      date: date.toUTCString(),
+    },
+  };
+};
 
 export const clearFlightsUpdates = () => ({
   type: CLEAR_FLIGHTS_UPDATES,

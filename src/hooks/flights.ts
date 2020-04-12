@@ -52,18 +52,16 @@ export const calculateFlights = async (
     const dateString = date.toLocaleDateString("us");
 
     dispatch(
-      addFlightsUpdate({
-        description: `Gathering flight information for ${dateString}.`,
-      })
+      addFlightsUpdate(`Gathering flight information for ${dateString}.`)
     );
 
     const flights = await queryFlights(departure, destination, date);
     dispatch(setFlightsBatch(time, flights));
 
     dispatch(
-      addFlightsUpdate({
-        description: `Found ${flights.length} potential flights on ${dateString}.`,
-      })
+      addFlightsUpdate(
+        `Found ${flights.length} potential flights on ${dateString}.`
+      )
     );
   }
 
