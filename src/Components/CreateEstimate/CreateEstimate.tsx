@@ -11,7 +11,6 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { IBase } from "../../types";
 import { RootState } from "../../Redux";
 import { setDestination, setEmail } from "../../Redux/createEstimate";
-import useCalculateEstimate from "../../hooks/useCalculateEstimate";
 import BaseAutoComplete from "./BaseAutocomplete";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -29,14 +28,13 @@ const useStyles = makeStyles((theme: Theme) => ({
 const useCreateEstimate = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const calculateEstimate = useCalculateEstimate();
   return useSelector((state: RootState) => ({
     classes,
     isCalculating: state.system.isCalculating,
     base: state.createEstimate.destination,
     handleBaseChange: (base: IBase | null) => dispatch(setDestination(base)),
     email: state.createEstimate.email,
-    handleExecute: () => calculateEstimate(),
+    handleExecute: () => console.log("TODO"),
     handleEmailChange: (e: any) =>
       dispatch(setEmail(e.target.value === "" ? null : e.target.value)),
   }));
