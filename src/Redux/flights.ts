@@ -4,6 +4,7 @@ import { IFlightsState, IFlight, IUpdate } from "../types";
 
 export const SET_FLIGHTS_BATCH = "SET_FLIGHTS_BATCH";
 export const ADD_FLIGHTS_UPDATE = "ADD_FLIGHTS_UPDATE";
+export const CLEAR_FLIGHTS_UPDATES = "CLEAR_FLIGHTS_UPDATES";
 
 interface SetFlightsBatchAction {
   type: typeof SET_FLIGHTS_BATCH;
@@ -18,7 +19,14 @@ interface AddFlightsUpdateAction {
   payload: IUpdate;
 }
 
-export type FlightsActionType = SetFlightsBatchAction | AddFlightsUpdateAction;
+interface ClearFlightsUpdatesAction {
+  type: typeof CLEAR_FLIGHTS_UPDATES;
+}
+
+export type FlightsActionType =
+  | SetFlightsBatchAction
+  | AddFlightsUpdateAction
+  | ClearFlightsUpdatesAction;
 
 /* Actions */
 
@@ -33,6 +41,10 @@ export const setFlightsBatch = (time: number, flights: IFlight[]) => ({
 export const addFlightsUpdate = (update: IUpdate) => ({
   type: ADD_FLIGHTS_UPDATE,
   payload: update,
+});
+
+export const clearFlightsUpdates = () => ({
+  type: CLEAR_FLIGHTS_UPDATES,
 });
 
 /* Reducer */
@@ -59,6 +71,11 @@ export const flightsReducer = (
       return {
         ...state,
         updates: state.updates.concat([action.payload]),
+      };
+    case CLEAR_FLIGHTS_UPDATES:
+      return {
+        ...state,
+        updates: [],
       };
     default:
       return state;

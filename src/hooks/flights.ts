@@ -6,8 +6,13 @@ import {
   removeLoadingLink,
   addLoadingLink,
   addActiveLink,
+  setCalculating,
 } from "../Redux/system";
-import { addFlightsUpdate, setFlightsBatch } from "../Redux/flights";
+import {
+  addFlightsUpdate,
+  setFlightsBatch,
+  clearFlightsUpdates,
+} from "../Redux/flights";
 import { queryFlights } from "../API/queryFlights";
 import { getFutureDate } from "../utility";
 
@@ -19,10 +24,16 @@ export const useCalculateFlights = () => {
     destination: state.createEstimate.destination,
   }));
 
-  return () => {
+  return async () => {
     if (departure === null || destination === null) return;
 
-    return calculateFlights(dispatch, departure, destination, times);
+    dispatch(clearFlightsUpdates());
+    dispatch(setCalculating(true));
+    try {
+      await calculateFlights(dispatch, departure, destination, times);
+    } finally {
+      dispatch(setCalculating(false));
+    }
   };
 };
 
