@@ -1,28 +1,24 @@
 import { Dispatch } from "redux";
-import { IAirport, Links } from "../types";
-import { setFlightsBatch } from "../Redux/flights";
+import { IBase, Links } from "../types";
 import {
   removeLoadingLink,
   addLoadingLink,
   addActiveLink,
 } from "../Redux/system";
-import { queryFlights } from "../API/queryFlights";
+import { queryFlightAverages } from "../API/queryFlights";
 
 export const calculateFlights = async (
   dispatch: Dispatch<any>,
-  departure: IAirport,
-  destination: IAirport,
-  time: number
+  departure: IBase,
+  destination: IBase,
+  times: number[]
 ) => {
-  console.log("Calculating flight averages for " + time);
+  console.log("Calculating flight averages for " + times);
   dispatch(addActiveLink(Links.Flights));
   dispatch(addLoadingLink(Links.Flights));
 
-  const date = new Date(Date.now());
-  date.setDate(date.getDate() + time);
-  const flights = await queryFlights(departure, destination, date, 0, 2400);
+  const averages = await queryFlightAverages(departure, destination, times);
 
-  dispatch(setFlightsBatch(time, flights));
   dispatch(removeLoadingLink(Links.Flights));
-  console.log("Finished calculating flight averages for " + time);
+  console.log("Finished calculating flight averages for " + times);
 };

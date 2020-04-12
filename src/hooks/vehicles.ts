@@ -4,5 +4,5 @@ export const calculateVehicles = async (
   dispatch: any,
   departure: IBase,
   destination: IBase,
-  time: number
+  times: number[]
 ) => {};

@@ -35,20 +35,19 @@ const calculateEstimate = async (
 ) => {
   console.log("calculating estimate");
   dispatch(setCalculating(true));
-
-  for (const t of times) {
+  try {
     if (averages.flights === true)
-      await calculateFlights(dispatch, departure, destination, t);
+      await calculateFlights(dispatch, departure, destination, times);
 
     if (averages.lodging === true)
-      await calculateLodging(dispatch, departure, destination, t);
+      await calculateLodging(dispatch, departure, destination, times);
 
     if (averages.vehicles === true)
-      await calculateVehicles(dispatch, departure, destination, t);
+      await calculateVehicles(dispatch, departure, destination, times);
+  } finally {
+    dispatch(setCalculating(false));
+    console.log("finished calculating estimate");
   }
-
-  dispatch(setCalculating(false));
-  console.log("finished calculating estimate");
 };
 
 export default useCalculateEstimate;
