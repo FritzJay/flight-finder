@@ -1,4 +1,30 @@
-import { IAirport, IFlight } from "../types";
+import { IAirport, IFlight, IBase } from "../types";
+
+export const queryFlightAverages = async (
+  departure: IBase,
+  destination: IBase,
+  times: number[]
+) => {
+  const queryParameters = formatFlightAveragesParameters(
+    departure,
+    destination,
+    times
+  );
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}/flights?${queryParameters}`
+  );
+  console.log(response);
+  console.log(await response.json());
+};
+
+const formatFlightAveragesParameters = (
+  departure: IBase,
+  destination: IBase,
+  times: number[]
+) =>
+  `departureBaseId=${departure.id}&arrivalBaseId=${
+    destination.id
+  }${times.reduce((s, time) => `${s}&times[]=${time}`, "")}`;
 
 interface ILocation {
   city?: any;
