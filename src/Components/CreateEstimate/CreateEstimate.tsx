@@ -12,6 +12,7 @@ import { IBase } from "../../types";
 import { RootState } from "../../Redux";
 import { setDestination, setEmail } from "../../Redux/createEstimate";
 import BaseAutoComplete from "./BaseAutocomplete";
+import { useCalculateFlights } from "../../hooks/flights";
 
 const useStyles = makeStyles((theme: Theme) => ({
   paper: {
@@ -28,13 +29,14 @@ const useStyles = makeStyles((theme: Theme) => ({
 const useCreateEstimate = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
+  const calculateEstimate = useCalculateFlights();
   return useSelector((state: RootState) => ({
     classes,
     isCalculating: state.system.isCalculating,
     base: state.createEstimate.destination,
     handleBaseChange: (base: IBase | null) => dispatch(setDestination(base)),
     email: state.createEstimate.email,
-    handleExecute: () => console.log("TODO"),
+    handleExecute: calculateEstimate,
     handleEmailChange: (e: any) =>
       dispatch(setEmail(e.target.value === "" ? null : e.target.value)),
   }));
