@@ -8,12 +8,12 @@ import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import Typography from "@material-ui/core/Typography";
 import { RootState } from "../../Redux";
 import { IUpdate } from "../../types";
-import { getSecondsBetweenDates } from "../../utility";
+import { getTimeStringSinceDate } from "../../utility";
 
 const useStyles = makeStyles((theme: Theme) => ({
   paper: {
@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   progress: {
     width: "100%",
-    marginBottom: theme.spacing(2),
   },
   hidden: {
     visibility: "hidden",
@@ -40,34 +39,28 @@ const useUpdates = () => {
 };
 
 const Updates = ({ updates }: { updates: IUpdate[] }) => {
-  const { loading, classes } = useUpdates();
+  const { classes, loading } = useUpdates();
+  const secondsAgo = updates.map((update) =>
+    getTimeStringSinceDate(new Date(update.date))
+  );
 
   return (
     <Grid item xs={12}>
       <Paper className={classes.paper}>
+        <Typography variant="h5">Progress</Typography>
+
+        <LinearProgress
+          className={clsx(classes.progress, loading ? null : classes.hidden)}
+          variant="query"
+        />
+
         <TableContainer>
           <Table aria-label="updates table" size="small">
-            <TableHead>
-              <TableRow>
-                <TableCell colSpan={4}>
-                  <LinearProgress
-                    className={clsx(
-                      classes.progress,
-                      loading ? null : classes.hidden
-                    )}
-                    variant="query"
-                  />
-                </TableCell>
-              </TableRow>
-            </TableHead>
             <TableBody>
-              {updates.map(({ description, date }) => (
+              {updates.map(({ description, date }, i) => (
                 <TableRow key={date + description}>
                   <TableCell colSpan={3}>{description}</TableCell>
-                  <TableCell align="right">{`${getSecondsBetweenDates(
-                    new Date(date),
-                    new Date(Date.now())
-                  )} seconds ago`}</TableCell>
+                  <TableCell align="right">{secondsAgo[i]}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

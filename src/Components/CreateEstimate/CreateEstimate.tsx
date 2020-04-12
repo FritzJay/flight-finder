@@ -104,7 +104,7 @@ const CreateEstimate = () => {
         </Paper>
       </Grid>
 
-      <Updates updates={updates} />
+      {updates.length > 0 && <Updates updates={updates} />}
     </React.Fragment>
   );
 };

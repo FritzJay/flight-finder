@@ -55,7 +55,7 @@ const Flights = () => {
                     <ListSubheader color="primary">Test</ListSubheader>
                     {flights.map((flight) => (
                       <ListItem>
-                        <ListItemText>{flight.fare}</ListItemText>
+                        <ListItemText>{flight}</ListItemText>
                       </ListItem>
                     ))}
                   </List>
