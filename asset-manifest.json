@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/flight-finder/static/js/main.74fd6c27.chunk.js",
-    "main.js.map": "/flight-finder/static/js/main.74fd6c27.chunk.js.map",
+    "main.js": "/flight-finder/static/js/main.95093179.chunk.js",
+    "main.js.map": "/flight-finder/static/js/main.95093179.chunk.js.map",
     "runtime-main.js": "/flight-finder/static/js/runtime-main.b6a55afa.js",
     "runtime-main.js.map": "/flight-finder/static/js/runtime-main.b6a55afa.js.map",
-    "static/js/2.ca6307cd.chunk.js": "/flight-finder/static/js/2.ca6307cd.chunk.js",
-    "static/js/2.ca6307cd.chunk.js.map": "/flight-finder/static/js/2.ca6307cd.chunk.js.map",
+    "static/js/2.a7ef5eac.chunk.js": "/flight-finder/static/js/2.a7ef5eac.chunk.js",
+    "static/js/2.a7ef5eac.chunk.js.map": "/flight-finder/static/js/2.a7ef5eac.chunk.js.map",
     "index.html": "/flight-finder/index.html",
-    "precache-manifest.756b0f36949a42a9cd4078d63af0d4e2.js": "/flight-finder/precache-manifest.756b0f36949a42a9cd4078d63af0d4e2.js",
+    "precache-manifest.98ca645f2a027734708d02f6237e1dca.js": "/flight-finder/precache-manifest.98ca645f2a027734708d02f6237e1dca.js",
     "service-worker.js": "/flight-finder/service-worker.js",
-    "static/js/2.ca6307cd.chunk.js.LICENSE.txt": "/flight-finder/static/js/2.ca6307cd.chunk.js.LICENSE.txt"
+    "static/js/2.a7ef5eac.chunk.js.LICENSE.txt": "/flight-finder/static/js/2.a7ef5eac.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b6a55afa.js",
-    "static/js/2.ca6307cd.chunk.js",
-    "static/js/main.74fd6c27.chunk.js"
+    "static/js/2.a7ef5eac.chunk.js",
+    "static/js/main.95093179.chunk.js"
   ]
 }
