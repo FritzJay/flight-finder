@@ -11,7 +11,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { IBase } from "../../types";
 import { RootState } from "../../Redux";
 import { setDestination, setEmail } from "../../Redux/createEstimate";
-import { useCalculateFlights } from "../../hooks/flights";
+import useCalculateEstimate from "../../hooks/useCalculateEstimate";
 import BaseAutoComplete from "./BaseAutocomplete";
 import Updates from "../Updates/Updates";
 
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const useCreateEstimate = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const calculateEstimate = useCalculateFlights();
+  const calculateEstimate = useCalculateEstimate();
   return useSelector((state: RootState) => ({
     classes,
     isCalculating: state.system.isCalculating,

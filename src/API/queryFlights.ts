@@ -4,7 +4,7 @@ import { IBase } from "../types";
 export const queryFlights = async (from: IBase, to: IBase, date: Date) => {
   const response = await fetch(
     process.env.REACT_APP_API_URL +
-      `/flights?${formatFlightQueryParameters(from, to, date)}`
+      `/flightsFromBaseToBase?${formatFlightQueryParameters(from, to, date)}`
   );
   return await response.json();
 };

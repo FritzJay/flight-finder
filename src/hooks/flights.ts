@@ -43,7 +43,6 @@ export const calculateFlights = async (
   destination: IBase,
   times: number[]
 ) => {
-  console.log("Calculating flight averages for " + times);
   dispatch(addActiveLink(Links.Flights));
   dispatch(addLoadingLink(Links.Flights));
 
@@ -52,7 +51,10 @@ export const calculateFlights = async (
     const dateString = date.toLocaleDateString("us");
 
     dispatch(
-      addFlightsUpdate(`Gathering flight information for ${dateString}.`)
+      addFlightsUpdate(
+        `Gathering flight information for ${dateString}.`,
+        new Date(Date.now())
+      )
     );
 
     const flights = await queryFlights(departure, destination, date);
@@ -60,11 +62,10 @@ export const calculateFlights = async (
 
     dispatch(
       addFlightsUpdate(
-        `Found ${flights.length} potential flights on ${dateString}.`
+        `Found ${flights.length} potential flights on ${dateString}.`,
+        new Date(Date.now())
       )
     );
   }
-
   dispatch(removeLoadingLink(Links.Flights));
-  console.log("Finished calculating flight averages for " + times);
 };
