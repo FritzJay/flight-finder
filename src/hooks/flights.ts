@@ -46,26 +46,31 @@ export const calculateFlights = async (
   dispatch(addActiveLink(Links.Flights));
   dispatch(addLoadingLink(Links.Flights));
 
-  for (const time of times) {
-    const date = getFutureDate(time);
-    const dateString = date.toLocaleDateString("us");
+  try {
+    for (const time of times) {
+      const date = getFutureDate(time);
+      const dateString = date.toLocaleDateString("us");
 
-    dispatch(
-      addFlightsUpdate(
-        `Gathering flight information for ${dateString}.`,
-        new Date(Date.now())
-      )
-    );
+      dispatch(
+        addFlightsUpdate(
+          `Gathering flight information for ${dateString}.`,
+          new Date(Date.now())
+        )
+      );
 
-    const flights = await queryFlights(departure, destination, date);
-    dispatch(setFlightsBatch(time, flights));
+      const flights = await queryFlights(departure, destination, date);
+      dispatch(setFlightsBatch(time, flights));
 
-    dispatch(
-      addFlightsUpdate(
-        `Found ${flights.length} potential flights on ${dateString}.`,
-        new Date(Date.now())
-      )
-    );
+      dispatch(
+        addFlightsUpdate(
+          `Found ${flights.length} potential flight${
+            flights.length > 1 || flights.length === 0 ? "s" : ""
+          } on ${dateString}.`,
+          new Date(Date.now())
+        )
+      );
+    }
+  } finally {
+    dispatch(removeLoadingLink(Links.Flights));
   }
-  dispatch(removeLoadingLink(Links.Flights));
 };
