@@ -16,12 +16,6 @@ import { IUpdate } from "../../types";
 import { getTimeStringSinceDate } from "../../utility";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  paper: {
-    padding: theme.spacing(3),
-    display: "flex",
-    overflow: "auto",
-    flexDirection: "column",
-  },
   progress: {
     width: "100%",
   },
@@ -45,29 +39,25 @@ const Updates = ({ updates }: { updates: IUpdate[] }) => {
   );
 
   return (
-    <Grid item xs={12}>
-      <Paper className={classes.paper}>
-        <Typography variant="h5">Progress</Typography>
+    <React.Fragment>
+      <LinearProgress
+        className={clsx(classes.progress, loading ? null : classes.hidden)}
+        variant="query"
+      />
 
-        <LinearProgress
-          className={clsx(classes.progress, loading ? null : classes.hidden)}
-          variant="query"
-        />
-
-        <TableContainer>
-          <Table aria-label="updates table" size="small">
-            <TableBody>
-              {updates.map(({ description, date }, i) => (
-                <TableRow key={date + description}>
-                  <TableCell colSpan={3}>{description}</TableCell>
-                  <TableCell align="right">{secondsAgo[i]}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Paper>
-    </Grid>
+      <TableContainer>
+        <Table aria-label="updates table" size="small">
+          <TableBody>
+            {updates.map(({ description, date }, i) => (
+              <TableRow key={date + description}>
+                <TableCell colSpan={3}>{description}</TableCell>
+                <TableCell align="right">{secondsAgo[i]}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </React.Fragment>
   );
 };
 

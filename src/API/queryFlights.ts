@@ -1,7 +1,20 @@
 import { IBase } from "../types";
 
-// TODO: Accept array of flights
-export const queryFlights = async (from: IBase, to: IBase, date: Date) => {
+interface IResponse {
+  flightPath: string;
+  flights: [
+    {
+      id: number;
+      price: number;
+    }
+  ];
+}
+
+export const queryFlights = async (
+  from: IBase,
+  to: IBase,
+  date: Date
+): Promise<IResponse[]> => {
   const response = await fetch(
     process.env.REACT_APP_API_URL +
       `/flightsFromBaseToBase?${formatFlightQueryParameters(from, to, date)}`

@@ -103,8 +103,14 @@ const CreateEstimate = () => {
           </Grid>
         </Paper>
       </Grid>
-
-      {updates.length > 0 && <Updates updates={updates} />}
+      {updates.length > 0 && (
+        <Grid item xs={12}>
+          <Paper className={classes.paper}>
+            <Typography variant="h5">Progress</Typography>
+            <Updates updates={updates} />
+          </Paper>
+        </Grid>
+      )}
     </React.Fragment>
   );
 };
