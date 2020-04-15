@@ -16,21 +16,6 @@ interface IAvailableFlight {
   price: number;
 }
 
-interface IPossibleFlight {
-  departure: IAirport;
-  arrival: IAirport;
-}
-
-interface IAirport {
-  id: number;
-  name: string;
-  code: string;
-  locID: string;
-  city: string | null;
-  notes: string | null;
-  distance: string | null;
-}
-
 export const queryFlights = async (
   from: IBase,
   to: IBase,
@@ -50,6 +35,6 @@ export const formatFlightQueryParameters = (
 ) =>
   `departureBaseId=${from.id}&arrivalBaseId=${
     to.id
-  }&date="${date.toLocaleDateString().replace(/\//g, "-")}`;
+  }&date=${date.toISOString()}`;
 
 export default queryFlights;
