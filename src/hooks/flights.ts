@@ -59,12 +59,18 @@ export const calculateFlights = async (
       );
 
       const flights = await queryFlights(departure, destination, date);
-      dispatch(setFlightsBatch(time, flights));
+      const numberOfAvailableFlights = flights.flightsInformation.reduce(
+        (total, next) => total + next.flights.length,
+        0
+      );
+      dispatch(setFlightsBatch(flights));
 
       dispatch(
         addFlightsUpdate(
-          `Found ${flights.length} potential flight${
-            flights.length > 1 || flights.length === 0 ? "s" : ""
+          `Found ${numberOfAvailableFlights} potential flight${
+            numberOfAvailableFlights > 1 || numberOfAvailableFlights === 0
+              ? "s"
+              : ""
           } on ${dateString}.`,
           new Date(Date.now())
         )

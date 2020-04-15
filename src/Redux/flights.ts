@@ -1,4 +1,5 @@
 import { IFlightsState, IFlight, IUpdate } from "../types";
+import { IFlightsResponse } from "../API/queryFlights";
 
 /* Types */
 
@@ -30,12 +31,9 @@ export type FlightsActionType =
 
 /* Actions */
 
-export const setFlightsBatch = (time: number, flights: IFlight[]) => ({
+export const setFlightsBatch = (flights: IFlightsResponse) => ({
   type: SET_FLIGHTS_BATCH,
-  payload: {
-    time: time.toString(),
-    flights,
-  },
+  payload: flights,
 });
 
 export const addFlightsUpdate = (description: string, date: Date) => ({

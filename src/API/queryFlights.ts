@@ -1,20 +1,41 @@
 import { IBase } from "../types";
 
-interface IResponse {
+export interface IFlightsResponse {
+  flightDate: string;
+  flightsInformation: IFlightInformation[];
+}
+
+interface IFlightInformation {
   flightPath: string;
-  flights: [
-    {
-      id: number;
-      price: number;
-    }
-  ];
+  flights: IAvailableFlight[];
+  averagePrice: number;
+}
+
+interface IAvailableFlight {
+  id: number;
+  price: number;
+}
+
+interface IPossibleFlight {
+  departure: IAirport;
+  arrival: IAirport;
+}
+
+interface IAirport {
+  id: number;
+  name: string;
+  code: string;
+  locID: string;
+  city: string | null;
+  notes: string | null;
+  distance: string | null;
 }
 
 export const queryFlights = async (
   from: IBase,
   to: IBase,
   date: Date
-): Promise<IResponse[]> => {
+): Promise<IFlightsResponse> => {
   const response = await fetch(
     process.env.REACT_APP_API_URL +
       `/flightsFromBaseToBase?${formatFlightQueryParameters(from, to, date)}`
